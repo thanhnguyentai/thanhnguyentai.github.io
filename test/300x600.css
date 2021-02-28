@@ -132,6 +132,82 @@
   }
 }
 
+/*-- fade in up --*/
+@-webkit-keyframes fadeInUp {
+  0%   {
+    visibility: visible;
+    -webkit-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% { 
+    visibility: visible;
+    -webkit-transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeInUp {
+  0%   {
+    visibility: visible;
+    -moz-transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% { 
+    visibility: visible;
+    -moz-transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0%   {
+    visibility: visible;
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  100% { 
+    visibility: visible;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/*-- fade out animation--*/
+@-webkit-keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    visibility: visible;
+    -webkit-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 0; 
+    -webkit-transform: translate(0,0);
+    visibility: visible;
+  }
+}
+@-moz-keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    -moz-transform: translate(0,0);
+    visibility: visible;
+  }
+  100% { 
+    opacity: 0; 
+    -moz-transform: translate(0,0);
+    visibility: visible;
+  }
+}
+@keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    transform: translate(0,0);
+    visibility: visible;
+  }
+  100% { 
+    opacity: 0; 
+    transform: translate(0,0);
+    visibility: visible;
+  }
+}
+
 /*-- reveal half image --*/
 @-webkit-keyframes revealHalfImage {
   0%   { 
@@ -173,6 +249,68 @@
   100% { 
     width: 251px;
     height: 180px; 
+  }
+}
+
+/*-- arrow animation --*/
+@-webkit-keyframes arrowAnimation {
+  0%   { 
+    -webkit-transform: translate(-100%,0);
+  }
+  20% {
+    -webkit-transform: translate(100%,0);
+  }
+  40% {
+    -webkit-transform: translate(-50%,0);
+  }
+  60% {
+    -webkit-transform: translate(50%,0);
+  }
+  80% {
+    -webkit-transform: translate(-25%,0);
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes arrowAnimation {
+  0%   { 
+    -moz-transform: translate(-100%,0);
+  }
+  20% {
+    -moz-transform: translate(50%,0);
+  }
+  40% {
+    -moz-transform: translate(-50%,0);
+  }
+  60% {
+    -moz-transform: translate(50%,0);
+  }
+  80% {
+    -moz-transform: translate(-25%,0);
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+  }
+}
+@keyframes arrowAnimation {
+  0%   { 
+    transform: translate(-100%,0);
+  }
+  20% {
+    transform: translate(50%,0);
+  }
+  40% {
+    transform: translate(-50%,0);
+  }
+  60% {
+    transform: translate(50%,0);
+  }
+  80% {
+    transform: translate(-25%,0);
+  }
+  100% { 
+    transform: translate(0,0);
   }
 }
 
@@ -304,4 +442,54 @@
   -moz-transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
+}
+.logo {
+  background: url('./images/300x600_logo.png') no-repeat center center;
+  width: 131px;
+  height: 29px;
+  top: 399px;
+  left: 122px;
+  -webkit-animation: fadeIn 0.75s ease-in-out 3.5s forwards;
+  -moz-animation: fadeIn 0.75s ease-in-out 3.5s forwards;
+  animation: fadeIn 0.75s ease-in-out 3.5s forwards;
+}
+.text1 {
+  background: url('./images/300x600_text1.png') no-repeat center center;
+  width: 146px;
+  height: 116px;
+  top: 120px;
+  left: 58px;
+  -webkit-animation: fadeInUp 0.75s ease-in-out 3.75s forwards;
+  -moz-animation: fadeInUp 0.75s ease-in-out 3.75s forwards;
+  animation: fadeInUp 0.75s ease-in-out 3.75s forwards;
+}
+.text1-container {
+  -webkit-animation: fadeOut 0.75s ease-in-out 6s forwards;
+  -moz-animation: fadeOut 0.75s ease-in-out 6s forwards;
+  animation: fadeOut 0.75s ease-in-out 6s forwards;
+}
+.text2 {
+  background: url('./images/300x600_text2.png') no-repeat center center;
+  width: 161px;
+  height: 78px;
+  top: 115px;
+  left: 52px;
+  -webkit-animation: fadeInUp 0.75s ease-in-out 6.5s forwards;
+  -moz-animation: fadeInUp 0.75s ease-in-out 6.5s forwards;
+  animation: fadeInUp 0.75s ease-in-out 6.5s forwards;
+}
+.arrow-container {
+  -webkit-animation: fadeIn 0.25s ease-in-out 7s forwards;
+  -moz-animation: fadeIn 0.25s ease-in-out 7s forwards;
+  animation: fadeIn 0.25s ease-in-out 7s forwards;
+}
+.arrow {
+  background: url('./images/300x600_arrow.png') no-repeat center center;
+  width: 24px;
+  height: 21px;
+  top: 195px;
+  left: 59px;
+  -webkit-animation: arrowAnimation 1.25s ease-in-out 7s forwards;
+  -moz-animation: arrowAnimation 1.25s ease-in-out 7s forwards;
+  animation: arrowAnimation 1.25s ease-in-out 7s forwards;
 }
