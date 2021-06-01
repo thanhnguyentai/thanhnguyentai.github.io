@@ -1,0 +1,102 @@
+<html>
+<head>
+	<title>Phluant | Template - Expandable</title>	
+	<script type="text/javascript">
+	//Ad definitions - set the general properties
+	var ad = {
+		banner: {
+			width: "728", //banner width in pixels
+			height: "90", //banner height in pixels
+			expand: "ph_conBanner" //id of div (or object) to expand the ad
+		},
+		expandable: {
+			width: "728", //expand panel width in pixels
+			height: "90", //expand panel height in pixels
+			close: "ph_close", //id of div (or object) for the close button (calls contract)
+			expDir: "down" //expansion direction, options are "down", "up", "left", "right"
+		},
+		clicks: { //define all clickthrus here
+			clickTag1: "http://m.youtube.com/playlist?list=PL523A51293FEE12A0" //set as id of div surrounding clickthru (do not use a tags)
+		}
+	}
+	</script>
+
+	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="top_toy_728x90.js"></script>
+	<style type="text/css">
+		.logo {
+			position: absolute;
+			top: 23px;
+			left: 40px;
+			z-index: 10;
+		}
+		.banner1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.banner2{
+			position: absolute;
+			top: 90px;
+			left: 0;
+		}
+		.banner3{
+			position: absolute;
+			top: 180px;
+			left: 0;
+		}
+		.banner {
+			overflow: hidden;	
+		}
+		#slide{
+			width:728px;
+			height:270px;
+			position: absolute;
+			top:0px;
+			left:0px;
+		}
+	</style>
+</head>
+<body>
+<!-- Phluant Container -->
+<div id="ph_container" style="position:relative; display:block; margin:auto; z-index:1; width:728px; height: 90px;">
+<!-- Phluant Container -->	
+
+<!-- BEGIN CONTRACTED PANEL -->
+	<!-- Banner Notes
+		- Edit styles inline
+		- Should only need to modify height and width for banner
+		- Set the background image of the banner div to the banner image
+		- Any HTML can be added as children of the banner container
+			- In case a custom CTA or animation is needed 
+	-->
+	<div id='ph_conBanner' style='position:absolute; display:block; visibility:visible; width:728px; height:90px; left:0px; top:0px; background-image: url(images/EA_MADDEN320x50.jpg);' class="banner">
+		<div id="slide">
+			<img id="banner1" class="banner1" src="img/728x90_TopToys1.png">
+			<img id="banner2" class="banner2" src="img/728x90_TopToys2.png">
+			<img id="banner3" class="banner3" src="img/728x90_TopToys3.png">
+		</div>
+		<img id="logo" class="logo" src="img/728x90_TopToys_Logo.png">
+	</div>
+<!-- END CONTRACTED PANEL -->
+
+<!-- BEGIN EXPANDED PANEL -->
+	<!-- Expand Panel Notes
+		- Edit styles inline
+		- Modify width and height of the "Expand container"
+		- If there is a background image for the entire expand panel, apply in CSS
+		- Any HTML can be added as children of the expand container
+	-->
+	<div id='ph_conExpand' style='display:none; visibility:hidden; position:absolute; width:300px; height:250px; left:0px; top:0px; overflow:hidden; z-index:10000; background-image: url(images/EA_MADDEN300x250.jpg);'>
+	    <div id='ph_close' style='position:absolute;width:90px;height:35px;left:230px;top:0px;'></div>
+	    <div id='clickTag1' style='position:absolute;width:320px;height:50px;left:0px;bottom:0px;'></div>
+	</div>
+<!-- END EXPANDED PANEL -->
+
+<!-- Phluant Container -->
+</div>
+<!-- Phluant Container -->
+<!-- Phluant JS - Leave at end -->
+<script type="text/javascript" src="http://mdn2.phluantmobile.net/3/production/templates/expandable/ph_template.js"></script>
+</body>
+</html>

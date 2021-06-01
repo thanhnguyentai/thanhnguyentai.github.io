@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>IBM</title>
+        
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="banner_300x250.js"></script>
+        
+        <style type="text/css">
+        	/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*--------------------------------*/
+			
+        	#banner,.frame{
+        		width:300px;
+        		height:250px;
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+        		overflow:hidden;
+        	}
+        	img{
+        		position:absolute;
+        	}
+			
+			#text1{
+				top:100px;/*65*/
+				left:20px;
+				display:none;
+			}
+			#text2{
+				left:20px;
+				top:300px;/*160*/
+			}
+			#frame2,#frame3{
+				display:none;
+			}
+			#pic,#pic0{
+				top:6px;
+				left:-1px;
+			}
+			#topball{
+				top:20px;
+				left:205px;
+			}
+			#gpic{
+				top:150px;
+				left:160px;
+				display:none;
+			}
+			#ball1,#ball2,#ball3,#ball4{
+				top:140px;
+				left:180px;
+				-webkit-transform:rotate(-30deg);
+				-moz-transform:rotate(-30deg);
+				opacity:0;
+			}
+			#bg3{
+				left:5px;
+				bottom:5px;
+			}
+			
+			#ball5,#ball6,#ball7{
+				top:100px;
+				left:-150px;
+			}
+			
+			#ball8{
+				top:200px;
+				left:115px;
+				opacity:0;
+			}
+			
+			#ball9{
+				top:205px;
+				left:85px;
+				opacity:0;
+			}
+			
+			#ball10{
+				top:220px;
+				left:45px;
+				opacity:0;
+			}
+			
+			#button{
+				top:180px;
+				left:15px;
+				opacity:0;
+			}
+			#text3{
+				top:-60px;/*60*/
+				left:15px;
+			}
+			#text4{
+				top:-60px;/*118*/
+				left:15px;
+			}
+			#logo{
+				top:10px;
+				left:225px;
+				opacity:0;
+			}
+			#planet{
+				top:10px;
+				left:190px;
+				opacity:0;
+			}
+			#replay{
+				top:0px;
+				left:-2px;
+				opacity:0;
+			}
+        </style>
+    </head>
+    <body>
+        <div id="banner">
+			<img src="img/300x250_bg.png" alt=""/>
+			<div id="frame1" class="frame">
+				<img id="text1" src="img/300x250_text1.png" alt=""/>
+				<img id="text2" src="img/300x250_text2.png" alt=""/>
+			</div>
+			<div id="frame2" class="frame">
+				<img id="pic0" src="img/300x250_pic0.png" alt=""/>
+				<img id="pic" src="img/300x250_pic.png" alt=""/>
+				<img id="topball" src="img/300x250_topball.png" alt=""/>
+				<img id="gpic" src="img/300x250_gpic.png" alt=""/>
+				
+				<img id="ball1" src="img/tball_fly.png" alt=""/>
+				<img id="ball2" src="img/tball_fly.png" alt=""/>
+				<img id="ball3" src="img/tball_fly.png" alt=""/>
+				<img id="ball4" src="img/tball_fly.png" alt=""/>
+			</div>
+			
+			<div id="frame3" class="frame">
+				<img id="bg3" src="img/300x250_bg3.png" alt=""/>
+				<img id="ball5" src="img/tball_fly.png" alt=""/>
+				<img id="ball6" src="img/tball_fly.png" alt=""/>
+				<img id="ball7" src="img/tball_fly.png" alt=""/>
+				
+				<img id="ball8" src="img/tball.png" alt=""/>
+				<img id="ball9" src="img/tball.png" alt=""/>
+				<img id="ball10" src="img/tball.png" alt=""/>
+				
+				<img id="button" src="img/300x250_button.png" alt=""/>
+				<img id="text3" src="img/300x250_text3.png" alt=""/>
+				<img id="text4" src="img/300x250_text4.png" alt=""/>
+				<img id="logo" src="img/300x250_logo.png" alt=""/>
+				<img id="planet" src="img/300x250_planet.png" alt=""/>
+				<img id="replay" src="img/300x250_replay.png" alt=""/>
+			</div>
+        </div>
+    </body>
+</html>

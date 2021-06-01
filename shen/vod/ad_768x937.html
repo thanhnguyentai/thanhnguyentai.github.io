@@ -1,0 +1,589 @@
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script language="javascript" src="jquery-1.4.2.min.js"></script>
+	<script language="javascript" src="jquery.cross-slide.min.js"></script>
+	<script language="javascript" src="portrait.js"></script>
+	<style>
+		#banner {
+			background-color:white;
+			width:768px;
+			height:950px;
+			position:absolute;
+			overflow:hidden;
+			top:0;
+			left:0;
+			border:0;
+		}
+		
+		img{
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		#img_bg{
+			width:768px;
+		}
+		
+		#playtext{
+			display:none;
+			top:910px;
+			left:215px;
+			z-index:12;
+		}
+		
+		#headtitle{
+			left:230px;
+			top:105px;
+			z-index:15;
+		}
+		
+		#headtitle_text{
+			left:385px;
+			top:105px;
+			z-index:15;
+		}
+		
+		#logo{
+			left:560px;
+			top:850px;
+			z-index:15;
+			-webkit-transform: scale(0.8);
+			-moz-transform: scale(0.8);
+			-o-transform: scale(0.8);
+			-ms-transform: scale(0.8);
+			transform: scale(0.8);
+		}
+		
+		/* controller */
+		
+		#controller{
+			z-index:10;
+			background-color:transparent;
+			width:300px;
+			height:300px;
+			overflow:visible;
+			position:absolute;
+			left:234px;
+			top:-300px;
+			
+			
+			-webkit-transform: scale(0.85);
+			-moz-transform: scale(0.85);
+			-o-transform: scale(0.85);
+			-ms-transform: scale(0.85);
+			transform: scale(0.85);
+			
+			
+			-webkit-transition:all 1.0s ease-in-out;
+			-moz-transition:all 1.0s ease-in-out;
+			-o-transition:all 1.0s ease-in-out;
+			-ms-transition:all 1.0s ease-in-out;	
+			transition:all 1.0s ease-in-out;
+		}
+		
+		#arm{
+			z-index:2;
+			top:20px;
+			left:132px;
+			-webkit-transition:all 1s ease-in-out;
+			-moz-transition:all 1s ease-in-out;
+			-o-transition:all 1s ease-in-out;
+			-ms-transition:all 1s ease-in-out;	
+			transition:all 1s ease-in-out;
+		}
+		
+		#controller #img_controller{
+			width:300px;
+			height:300px;
+			top:0px;
+			left:0px;
+		}
+		
+		#controller #slider{
+			background-color:#74f60c;
+			overflow:hidden;
+			position:absolute;
+			top:77px;
+			left:79px;
+			width:148px;
+			height:148px;
+			z-index:8;
+		}
+		
+		#controller #slider img{
+			width:146px;
+			height:146px;
+			position:relative;
+			display:block;
+			float:left;
+			padding:0px;
+			border:0px;
+			margin:0px 0px 0px 1px;
+		}
+		
+		#slider_content{
+			position:absolute;
+			top:1px;
+			left:0px;
+			height:146px;
+			width:1029px;
+			border:0px;
+			margin:0;
+			padding:0;
+			
+			-webkit-transition:all 0.6s ease-in-out;
+			-moz-transition:all 0.6s ease-in-out;
+			-o-transition:all 0.6s ease-in-out;
+			-ms-transition:all 0.6s ease-in-out;	
+			transition:all 0.6s ease-in-out;
+		}
+		
+		#buttonLeft{
+			top:218px;
+			left:57px;
+		}
+		
+		#buttonRight{
+			top:211px;
+			left:200px;
+		}
+		
+		#buttonPlay{
+			top:239px;
+			left:108px;
+		}
+		
+		/* main screen*/
+		#mainscreen{
+			width:712px;
+			/*width:2px;*/
+			height:322px;
+			position:absolute;
+			overflow:visible;
+			left:156px;
+			/*left:511px;*/
+			/*top:71px;*/
+			top:0px;
+			
+			/*
+			-webkit-transition-property: width,left;
+			-webkit-transition-duration: 1s,1s;
+			-moz-transition-property: width,left;
+			-moz-transition-duration: 1s,1s;
+			-o-transition-property: width,left;
+			-o-transition-duration: 1s,1s;
+			-ms-transition-property: width,left;
+			-ms-transition-duration: 1s,1s;
+			transition-property: width,left;
+			transition-duration: 1s,1s;
+			*/
+		}
+		#mainscreen_bg{
+			width:712px;
+			height:322px;
+			position:absolute;
+			left:0px;
+			top:0px;
+			background-color:rgba(0,0,0,1);
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: 1s;
+			-moz-transition-property: opacity;
+			-moz-transition-duration: 1s;
+			-o-transition-property: opacity;
+			-o-transition-duration: 1s;
+			-ms-transition-property: opacity;
+			-ms-transition-duration: 1s;
+			transition-property: opacity;
+			transition-duration: 1s;
+		}
+		
+		#mainscreen_content,#mainscreen_video{
+			width:543px;
+			height:314px;
+			position:absolute;
+			top:8px;
+			left: 84.5px;
+			overflow:hidden;
+			background-color:#ffffff;
+		}
+		#mainscreen_video{
+			display:none;
+		}
+		
+		#mainscreen_list_keyart{
+			height:314px;
+			width:3801px;
+			position:absolute;
+			top:0px;
+			left:0px;
+			margin:0;
+			padding:0;
+			border:0;
+			-webkit-transition:all 0.6s ease-in-out;
+			-moz-transition:all 0.6s ease-in-out;
+			-o-transition:all 0.6s ease-in-out;
+			-ms-transition:all 0.6s ease-in-out;	
+			transition:all 0.6s ease-in-out;
+		}
+		
+		#mainscreen_list_keyart img{
+			position:relative;
+			width:543px;
+			height:314px;
+			display:block;
+			float:left;
+			margin:0;
+			border:0;
+			padding:0;
+		}
+		
+		/* fan*/
+		#fan_1,#fan_2{
+			position:absolute;
+			/*top:71px;*/
+			/*left:356px;*/
+			top:0px;
+			height:322px;
+			width:156px;
+			background-color:rgba(0,0,0,1);
+			border:0;
+			
+			-webkit-transition-property: opacity,left;
+			-webkit-transition-duration: 1s,1s;
+			-moz-transition-property: opacity, left;
+			-moz-transition-duration: 1s,1s;
+			-o-transition-property: opacity,left;
+			-o-transition-duration: 1s, 1s;
+			-ms-transition-property: opacity,left;
+			-ms-transition-duration: 1s, 1s;
+			transition-property: opacity,left;
+			transition-duration: 1s,1s;
+		}
+		#fan_1{
+			left:0px;
+		}
+		
+		#fan_2{
+			/*left:512px;*/
+			right:0px;
+		}
+		
+		#slider_img{
+			z-index:1px;
+			position:absolute;
+			top:0px;
+			left:157px;
+			
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: 0.2s;
+			-moz-transition-property: opacity;
+			-moz-transition-duration: 0.2s;
+			-o-transition-property: opacity;
+			-o-transition-duration: 0.2s;
+			-ms-transition-property: opacity;
+			-ms-transition-duration: 0.2s;
+			transition-property: opacity;
+			transition-duration: 0.2s;
+		}
+		
+		#all_main_screen{
+			z-index:1;
+			filter: alpha(opacity=0); 
+			-khtml-opacity: 0.0;      
+			-moz-opacity: 0.0;       
+			opacity: 0.0;    
+			
+			position:absolute;
+			/*top:71px;*/
+			top:630px;
+			/*left:353px;*/
+			/*width:312px;*/
+			
+			left:383px;
+			width:2px;
+			
+			/*height:322px;*/
+			height:2px;
+			-webkit-transition-property: width,left,opacity,height,top;
+			-webkit-transition-duration: 1s,1s,1s,0.5s,0.5s;
+			-moz-transition-property: width,left,opacity,height,top;
+			-moz-transition-duration: 1s,1s,1s,0.5s,0.5s;
+			-o-transition-property: width,left,opacity,height,top;
+			-o-transition-duration: 1s,1s,1s,0.5s,0.5s;
+			-ms-transition-property: width,left,opacity,height,top;
+			-ms-transition-duration: 1s,1s,1s,0.5s,0.5s;
+			transition-property: width,left,opacity,height,top;
+			transition-duration: 1s,1s,1s,0.5s,0.5s;
+			overflow:hidden;
+			border:0px;
+		}
+		
+		#super_below{
+			left:128px;
+			top:593px;
+			z-index:12;
+			display:none;
+			-webkit-transition-property: top;
+			-webkit-transition-duration: 0.5s;
+			-moz-transition-property: top;
+			-moz-transition-duration: 0.5s;
+			-o-transition-property: top;
+			-o-transition-duration: 0.5s;
+			-ms-transition-property: top;
+			-ms-transition-duration: 0.5s;
+			transition-property: top;
+			transition-duration: 0.5s;
+		}
+		
+		#super_top{
+			left:128px;
+			top:302px;
+			z-index:12;
+			display:none;
+			-webkit-transition-property: top;
+			-webkit-transition-duration: 0.3s;
+			-moz-transition-property: top;
+			-moz-transition-duration: 0.3s;
+			-o-transition-property: top;
+			-o-transition-duration: 0.3s;
+			-ms-transition-property: top;
+			-ms-transition-duration: 0.3s;
+			transition-property: top;
+			transition-duration: 0.3s;
+		}
+		
+		/* thumbnail*/
+		#line_top, #line_bottom, #thumbnail{
+			-webkit-transition-property: left;
+			-webkit-transition-duration: 0.6s;
+			-moz-transition-property: left;
+			-moz-transition-duration: 0.6s;
+			-o-transition-property: left;
+			-o-transition-duration: 0.6s;
+			-ms-transition-property: left;
+			-ms-transition-duration: 0.6s;
+			transition-property: left;
+			transition-duration: 0.6s;
+		}
+		#line_top{
+			left:-872px;
+			top:730px;
+		}
+		#line_bottom{
+			left:768px;
+			top:822px;
+		}
+		
+		#thumbnail{
+			position:absolute;
+			overflow:visible;
+			height:133px;
+			width:1024px;
+			top:710px;
+			left:-256px;
+		}
+		#thumbnail_left,#thumbnail_right{
+			position:absolute;
+			width:512px;
+			height:133px;
+			top:0px;
+			overflow:visible;
+			
+			-webkit-transition-property: left;
+			-webkit-transition-duration: 2s;
+			-moz-transition-property: left;
+			-moz-transition-duration: 2s;
+			-o-transition-property: left;
+			-o-transition-duration: 2s;
+			-ms-transition-property: left;
+			-ms-transition-duration: 2s;
+			transition-property: left;
+			transition-duration: 2s;
+		}
+		
+		#thumbnail_left{
+			left:512px;
+		}
+		#thumbnail_right{
+			left:-512px;
+		}
+		
+		#thumbnail img{
+			position:relative;
+			height:92px;
+			display:block;
+			float:left;
+			margin:0;
+			padding:0;
+			border:0;
+			margin-top:20px;
+		}
+		
+		#thumbnail img.line_separate{
+			height:133px;
+			z-index:10;
+			margin-top:0px;
+		}
+		
+		#thumbnail_left_mask,#thumbnail_right_mask{
+			position:absolute;
+			top:0px;
+			width:563px;
+			height:133px;
+			overflow:hidden;
+		}
+		#thumbnail_left_mask{
+			left:128px;
+		}
+		#thumbnail_right_mask{
+			left:640px;
+		}
+		
+		.thumbnailmask{
+			visibility:hidden;
+		}
+		
+		/*---background animation---*/
+		@keyframes fadein
+		{
+		0% {
+			filter: alpha(opacity=0); 
+			-khtml-opacity: 0.0;      
+			-moz-opacity: 0.0;       
+			opacity: 0.0;           
+		}
+		
+		100% {
+			filter: alpha(opacity=100);
+			-khtml-opacity: 1.0;     
+			-moz-opacity: 1.0;       
+			opacity: 1.0;
+		}
+		}
+
+		@-moz-keyframes fadein 
+		{
+		0% {
+			filter: alpha(opacity=0); 
+			-khtml-opacity: 0.0;      
+			-moz-opacity: 0.0;       
+			opacity: 0.0;           
+		}
+		
+		100% {
+			filter: alpha(opacity=100);
+			-khtml-opacity: 1.0;     
+			-moz-opacity: 1.0;       
+			opacity: 1.0;
+		}
+		}
+
+		@-webkit-keyframes fadein 
+		{
+		0% {
+			filter: alpha(opacity=0); 
+			-khtml-opacity: 0.0;      
+			-moz-opacity: 0.0;       
+			opacity: 0.0;
+		}
+		
+		100% {
+			filter: alpha(opacity=100);
+			-khtml-opacity: 1.0;     
+			-moz-opacity: 1.0;       
+			opacity: 1.0;
+		}
+		}
+		
+	</style>
+	<body>
+		<div id="banner">
+			<img id="img_bg" src="img/portrait_bg.jpg" alt=""/>
+			
+			<div id="thumbnail">
+				<div id="thumbnail_left_mask" class="thumbnailmask">
+					<div id="thumbnail_left">
+						<img src="img/thumbnail_1.jpg" alt=""/>
+						<img class="line_separate" src="img/line_ver.png" alt=""/>
+						<img src="img/thumbnail_2.jpg" alt=""/>
+						<img class="line_separate" src="img/line_ver.png" alt=""/>
+						<img src="img/thumbnail_3.jpg" alt=""/>
+						<img class="line_separate" src="img/line_ver.png" alt=""/>
+					</div>
+				</div>
+				
+				<div id="thumbnail_right_mask" class="thumbnailmask">
+					<div id="thumbnail_right">
+						<img src="img/thumbnail_4.jpg" alt=""/>
+						<img class="line_separate" src="img/line_ver.png" alt=""/>
+						<img src="img/thumbnail_5.jpg" alt=""/>
+						<img class="line_separate" src="img/line_ver.png" alt=""/>
+						<img src="img/thumbnail_6.jpg" alt=""/>
+					</div>
+				</div>
+			</div>
+			<img id="line_top" src="img/line.png" alt=""/>
+			<img id="line_bottom" src="img/line.png" alt=""/>
+			
+			
+			<div id="controller">
+				<img id="arm" src="img/arm.png" alt=""/>
+				<div id="slider">
+					<div id="slider_content">
+						<img id="reel_1" src="img/reel_1.png" alt=""/>
+						<img id="reel_2" src="img/reel_2.png" alt=""/>
+						<img id="reel_3" src="img/reel_3.png" alt=""/>
+						<img id="reel_4" src="img/reel_4.png" alt=""/>
+						<img id="reel_5" src="img/reel_5.png" alt=""/>
+						<img id="reel_6" src="img/reel_6.png" alt=""/>
+						<img id="reel_7" src="img/reel_7.png" alt=""/>
+					</div>
+				</div>
+				<div style="position:absolute;top:0px;left:0px;z-index:10;">				
+					<img id="img_controller" src="img/landscape_controller.png" alt=""/>
+					<img id="buttonLeft" src="img/btLeft.png" alt="" onclick="clickMoveReelRight();"/>
+					<img id="buttonRight" src="img/btRight.png" alt="" onclick="clickMoveReelLeft();"/>
+					<img id="buttonPlay" src="img/btPlay.png" alt="" onclick="playVideo();"/>
+				</div>
+			</div>
+			
+			<img id="super_below" src="img/super_below.png" alt=""/>
+			<img id="super_top" src="img/super_top_0.png" alt=""/>
+			
+			<div id="all_main_screen">
+				<div id="mainscreen">
+					<div id="mainscreen_bg">
+					</div>
+					<div id="mainscreen_content">
+						<div id="mainscreen_list_keyart">
+							<div style="width:543px;height:314px;float:left;"></div>
+							<img src="img/film_1.jpg" alt=""/>
+							<img src="img/film_2.jpg" alt=""/>
+							<img src="img/film_3.jpg" alt=""/>
+							<img src="img/film_4.jpg" alt=""/>
+							<img src="img/film_5.jpg" alt=""/>
+							<img src="img/film_6.jpg" alt=""/>
+						</div>
+					</div>
+					<div id="mainscreen_video">
+					</div>
+				</div>
+				
+				<div id="fan_1">
+				</div>
+				
+				<div id="fan_2">
+				</div>
+				
+				<img id="slider_img" src="img/slider.png" alt=""/>
+			</div>
+			
+			<a href="http://www.starhub.com/ondemand">
+				<img id="headtitle" src="img/headline_1.png" alt=""/>
+			</a>
+			<img id="headtitle_text" src="img/headline_2.png" alt=""/>
+			<img id="logo" src="img/landscape_logo.png" alt=""/>
+			<img id="playtext" src="img/play_text.png" alt=""/>
+		</div>
+	</body>
+</html>

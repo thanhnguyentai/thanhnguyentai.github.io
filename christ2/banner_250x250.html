@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TPL</title>
+
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="banner_250x250.js"></script>
+
+        <style type="text/css">
+            /* fade in*/
+            @keyframes fadein
+            {
+                100% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            0% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-moz-keyframes fadein 
+            {
+                100% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            0% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-webkit-keyframes fadein 
+            {
+                100% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            0% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            /* fade out*/
+            @keyframes fadeout
+            {
+                0% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            100% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-moz-keyframes fadeout 
+            {
+                0% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            100% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-webkit-keyframes fadeout 
+            {
+                0% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            100% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            /*--------------------------------*/
+            #banner{
+                width:250px;
+                height:250px;
+                position:absolute;
+                top:0px;
+                left:0px;
+                text-decoration: none;
+                overflow:hidden;
+            }
+            img{
+                position:absolute;
+            }
+            #bg{
+               z-index: -1;
+            }
+            #logo{
+                top:10px;
+                left: 6px;
+				z-index:6;
+            }
+           
+            #text_make{
+                opacity: 0;
+                top: 92px;
+                left: 20px;
+				z-index:5;
+            }
+            #circle{
+                opacity: 0;
+                top: 70px;
+                left: 29px;
+				z-index:5;
+            }
+            #facebook{
+                opacity: 0;
+                top: 148px;
+                left: 40px;
+				z-index:5;
+            }
+            #facebook_fly{
+                opacity: 0;
+                top: 127px;
+                left: 51px;
+				z-index:5;
+            }
+            #gold{
+                opacity: 0;
+                top: 88px;
+				z-index:5;
+            }
+           
+            #shine_gold{
+                opacity: 0;
+                top: 80px;
+				z-index:5;
+            }
+            #text_and{
+                opacity: 0;
+                top: 81px;
+                left: 17px;
+            }
+            
+            #twitter{
+                opacity: 0;
+                top: 160px;
+                left: 144px;
+				z-index:5;
+            }
+            #twitter_fly{
+                opacity: 0;
+                top: 142px;
+                left: 152px;
+				z-index:5;
+            }
+			
+			#planet{
+               /*top: 21px;
+			   left:24px;
+			   */
+			   top:0px;
+			   left:0px;
+			   z-index:3;
+			   
+            }
+			#circlelight_down,#circlelight_up{
+				top:120px;
+				left:0px;
+				z-index:4;
+				display:none;
+			}
+			#circlelight_down{
+				z-index:1;
+			}
+			#planet_frame{
+				width:250px;
+				height:250px;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			
+			#winnerrotate{
+				top:137px;
+				left:190px;
+				z-index:5;
+				opacity:0;
+			}
+			#twitterrotate{
+				top:94px;
+				left:145px;
+				z-index:1;
+				opacity:0;
+			}
+			#facebookrotate{
+				top:150px;
+				left:-10px;
+				z-index:5;
+				opacity:0;
+			}
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="https://www.theplayerslottery.com/">
+            <img id="bg" src="img/250x250_bg.png"/>
+			<img id="logo" src="img/250x250_logo.png"/>
+			<div id="planet_frame">
+				<img id="circlelight_down" src="img/250x250_circlelight_down.png"/>
+				<img id="planet" src="img/250x250_planet.png"/>
+				<img id="circlelight_up" src="img/250x250_circlelight_up.png"/>
+				<img id="facebookrotate" src="img/250x250_facebook.png"/>
+				<img id="twitterrotate" src="img/250x250_twitter.png"/>
+				<img id="winnerrotate" src="img/250x250_winner.png"/>
+			</div>
+            
+			<img id="circle" src="img/250x250_circle.png"/>
+            <img id="facebook" src="img/250x250_facebook.png"/>
+            <img id="facebook_fly" src="img/250x250_facebook_fly.png"/>
+            <img id="twitter" src="img/250x250_twitter.png"/>
+            <img id="twitter_fly" src="img/250x250_twitter_fly.png"/>
+            <img id="gold" src="img/250x250_gold.png"/>
+            <img id="shine_gold" src="img/250x250_shine_gold.png"/>
+            <img id="text_and" src="img/250x250_text_and.png"/>
+            <img id="text_make" src="img/250x250_text_make.png"/>
+        </a>
+    </body>
+</html>

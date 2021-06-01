@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Toyota</title>
+        
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="banner_300x50.js"></script>
+        
+        <style type="text/css">
+        	/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*--------------------------------*/
+			
+        	#banner{
+        		width:300px;
+        		height:50px;
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+				text-decoration: none;
+        		overflow:hidden;
+        	}
+        	img{
+        		position:absolute;
+        	}
+			#car{
+				top:5px;
+				left:60px;
+				opacity:0;
+			}
+			#text{
+				top:7px;
+				left:10px;
+				opacity:0;
+			}
+			#option{
+				top:65px;
+				left:165px;
+			}
+			#button{
+				top:6px;
+				left:219px;
+				opacity:0;
+			}
+			#containericon1{
+				position:absolute;
+				top:6px;
+				left:171px;
+				opacity:0;
+			}
+			#backicon1{
+				width:20px;
+				height:18px;
+				background:url('img/banner300x50_bg1.png');
+				position:absolute;
+			}
+			#icon1{
+			}
+			#containericon2{
+				top:6px;
+				left:196px;
+				position:absolute;
+				opacity:0;
+			}
+			#icon2{
+			}
+			#backicon2{
+				background:url('img/banner300x50_bg2.png');
+				position:absolute;
+				width:18px;
+				height:17px;
+			}
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="#">
+        	<img src="img/banner300x50_bg.jpg" alt=""/>
+			<img id="car" src="img/banner300x50_car.png" alt=""/>
+			<img id="text" src="img/banner300x50_text.png" alt=""/>
+			<img id="option" src="img/banner300x50_option.png" alt=""/>
+			<img id="button" src="img/banner300x50_button.png" alt=""/>
+			<div id='containericon1'>
+				<img id="icon1" src="img/banner300x50_icon1.png" alt=""/>
+				<div id="backicon1">
+				</div>
+			</div>
+			<div id='containericon2'>
+				<img id="icon2" src="img/banner300x50_icon2.png" alt=""/>
+				<div id="backicon2">
+				</div>
+			</div>
+        </a>
+    </body>
+</html>

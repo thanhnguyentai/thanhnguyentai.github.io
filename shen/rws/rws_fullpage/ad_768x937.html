@@ -1,0 +1,381 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="javascript" src="jquery-1.4.2.min.js"></script>
+		<script language="javascript" src="jquery.cross-slide.min.js"></script>
+		<script language="javascript" src="portrait.js"></script>
+		<title>	
+			RWS
+		</title>
+		<style>
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			
+			#banner {
+				background-color:white;
+				width:768px;
+				height:934px;
+				position:absolute;
+				overflow:hidden;
+				top:0;
+				left:0;
+				border:0;
+				background-color:#ffffff;
+			}
+			
+			#banner  img{
+				position:absolute;
+			}
+			
+			#background{
+				top:0px;
+				left:0px;
+			}
+			#main{
+				position:absolute;
+				top:78px;
+				left:0px;
+				right:0px;
+				bottom:78px;
+				overflow:hidden;
+			}
+			.frame{
+				position:absolute;
+				top:0px;
+				left:0px;
+				right:0px;
+				bottom:0px;
+				
+				-webkit-backface-visibility:hidden;
+				/*height:778px;*/
+			}
+			
+			#frame1{
+				top:-85px;
+				left:-80px;
+			}
+			
+			#logo{
+				left:-554px;
+				top:-16px;
+			}
+			
+			#door{
+				top:364px;
+				left:445px;
+			}
+			
+			#tab{
+				opacity:0;
+				top:450px;
+				left:262px;
+			}
+			
+			#frame2{
+				opacity:0;
+				top:30px;
+			}
+			
+			#ballloon{
+				left:146px;
+				top:-300px;
+				-webkit-backface-visibility:hidden;
+			}
+			#logo_small{
+				left:207px;
+				top:220px;
+			}
+			
+			#shake{
+				opacity:0;
+				left:227px;
+				top:500px;
+			}
+			
+			#frame3{
+				opacity:0;
+			}
+			
+			#sparkle{
+				opacity:0;
+				left:121px;
+				top:123px;
+			}
+			
+			.card{
+				width:322px;
+				height:202px;
+				background:#ffffff;
+				border-radius:10px;
+				position:absolute;
+				box-shadow:0 0 5px #000000;
+				border:1px solid #000000;
+			}
+			
+			#about{
+				/*
+				top:50px;
+				left:90px;
+				*/
+			}
+			
+			#benefit{
+				/*
+				top:50px;
+				right:90px;
+				*/
+			}
+			
+			#event{
+				/*
+				left:60px;
+				bottom:100px;
+				*/
+			}
+			#signup{
+				/*
+				right:70px;
+				bottom:100px;
+				*/
+			}
+			
+			#tabcard{
+				opacity:0;
+				left:243px;
+				top:650px;
+			}
+			
+			#popup{
+				display:none;
+			}
+			
+			#popup_content{
+				width:704px;
+				height:437px;
+				background:#ffffff;
+				border-radius:10px;
+				position:absolute;
+				left:32px;
+				top:172px;
+			}
+			#popup_close{
+				top:-24px;
+				right:-24px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<img id="background" src="img_banner/portrait_bg.png" usemap="#map"/>
+			<map name="map">
+				<area shape="Rect" Coords="580,872,750,921" href="https://reservations.rwsentosa.com/ResortCardMembership/RCMembershipSignup.aspx"> </area>
+				<area shape="Rect" Coords="617,36,645,64" href="https://www.facebook.com/ResortsWorldatSentosa"> </area>
+				
+				<area shape="Rect" Coords="650,36,678,64" href="https://twitter.com/#!/rwsentosa"> </area>
+				<area shape="Rect" Coords="686,36,750,64" href="http://www.youtube.com/rwsentosa"> </area>
+			</map> 
+			
+			<div id="main">
+				<div id="frame1" class="frame">
+					<img id="logo" src="img_banner/logo.png"/>
+					<img id="door" src="img_banner/door.png"/>
+				</div>
+				<img id="tab" src="img_banner/tabhere.png"/>
+				
+				<div id="frame3" class="frame">
+					<div id="about" class="card">
+						<img style="left:15px;top:15px" src="img_banner/about_img_min1.png"/>
+						<img style="left:15px;top:110px;" src="img_banner/about_img_min2.png"/>
+						
+						<img style="top:15px;left:115px;" src="img_banner/about_text_min.png"/>
+					</div>
+					
+					<div id="benefit" class="card">
+						<img style="left:15px;top:15px;width:125px;" src="img_banner/benefit_img.png"/>
+						<img style="left:155px;top:15px;" src="img_banner/benefit_text_min.png"/>
+					</div>
+					
+					<div id="event" class="card">
+						<div id="gallery_min" style="position:absolute;top:0px;left:0px;">
+							<img id="gallery_min_1" style="top:15px;left:15px;width:290px; border-radius:10px;" src="img_banner/event_img1.png"/>
+							<img id="gallery_min_2" style="top:15px;left:15px;width:290px; border-radius:10px; opacity:0;" src="img_banner/event_img2.png"/>
+							<img id="gallery_min_3" style="top:15px;left:15px;width:290px; border-radius:10px; opacity:0;" src="img_banner/event_img3.png"/>
+							<img id="gallery_min_4" style="top:15px;left:15px;width:290px; border-radius:10px; opacity:0;" src="img_banner/event_img4.png"/>
+						</div>
+						
+						<img style="right:15px;bottom:7px;" src="img_banner/event_text_min.png"/>
+					</div>
+					
+					<div id="signup" class="card">
+						<img style="left:12px;top:15px;width:125px;" src="img_banner/signup_image_min.png"/>
+						<img style="left:147px;top:15px;" src="img_banner/signup_text_min.png"/>
+					</div>
+				</div>
+				
+				<div id="frame2" class="frame" style="pointer-events:none;">
+					<img id="ballloon" src="img_banner/ballloon.png"/>
+					<img id="logo_small" src="img_banner/logo_small.png"/>
+				</div>
+				<img id="shake" src="img_banner/shake.png"/>
+				
+				<img id="sparkle" src="img_banner/sparkle.png"/>
+				
+				<img id="tabcard" src="img_banner/tapcard.png"/>
+				
+				<div id="popup" class="frame">
+					<div class="frame" style="background:black;opacity:0.9;">
+					</div>
+					
+					<div id="popup_content">
+						<img id="popup_close" src="img_banner/close.png"/>
+						
+						<div id="about_content" class="content">
+							<img style="top:15px;left:15px;" src="img_banner/about_image1.png"/>
+							<img style="top:226px;left:15px;" src="img_banner/about_image2.png"/>
+							
+							<img style="top:30px;left:240px;" src="img_banner/about_text_full.png"/>
+						</div>
+						
+						<div id="benefit_content" class="content">
+							<img style="top:15px;left:15px;" src="img_banner/benefit_img_full.png"/>
+							<img style="top:30px;left:310px;" src="img_banner/benefit_title.png"/>
+							
+							<img id="benefit_text1" style="top:100px;left:310px;" src="img_banner/benefit_text1.png"/>
+							<img id="benefit_text2" style="top:100px;left:310px;display:none;" src="img_banner/benefit_text2.png"/>
+							
+							<img id="benefit_left_1" style="bottom:15px;left:310px;" src="img_banner/button_left_disable.png"/>
+							<img id="benefit_left_2" style="bottom:15px;left:310px;display:none;" src="img_banner/button_left_enable.png"/>
+							<img id="benefit_right_1" style="bottom:15px;right:30px; display:none;" src="img_banner/button_right_disable.png"/>
+							<img id="benefit_right_2" style="bottom:15px;right:30px;" src="img_banner/button_right_enable.png"/>
+						</div>
+						
+						<div id="event_content" class="content">
+							<div id="gallery_max" style="position:absolute;top:0px;left:0px;">
+								<img id="gallery_max_1" style="top:25px;left:25px; border-radius:10px;" src="img_banner/event_img1.png"/>
+								<img id="gallery_max_2" style="top:25px;left:25px; border-radius:10px; opacity:0;" src="img_banner/event_img2.png"/>
+								<img id="gallery_max_3" style="top:25px;left:25px; border-radius:10px; opacity:0;" src="img_banner/event_img3.png"/>
+								<img id="gallery_max_4" style="top:25px;left:25px; border-radius:10px; opacity:0;" src="img_banner/event_img4.png"/>
+							</div>
+							<div style="position:absolute;left:25px;top:234px;width:656px;height:137px;background:rgba(0,0,0,0.6);border:0px 0px 10px 10px;">
+								<img style="top:15px;left:36px" src="img_banner/event_text_full.png"/>
+							</div>
+							<img style="right:25px;bottom:20px;" src="img_banner/event_title.png"/>
+						</div>
+						
+						<div id="signup_content" class="content">
+							<img style="top:30px;left:30px;" src="img_banner/benefit_img.png"/>
+							<img style="top:40px;left:330px;" src="img_banner/signup_text_full.png"/>
+							
+							<a href="https://reservations.rwsentosa.com/ResortCardMembership/RCMembershipSignup.aspx">
+								<img style="bottom:30px;left:330px;" src="img_banner/signup_button.png"/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

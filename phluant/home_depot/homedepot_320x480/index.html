@@ -1,0 +1,215 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="javascript" src="jquery-1.4.2.min.js"></script>
+		<script language="javascript" src="homedepot_320x480.js"></script>
+		
+		<style>
+			#banner{				
+				width:320px;
+				height:480px;
+				position:absolute;
+				overflow:hidden;
+				top:0;
+				left:0;
+				border:0;
+				background-color:#ffffff;
+			}
+			
+			#banner  img{
+				position:absolute;
+			}
+			
+			.frame{
+				width:320px;
+				height:480px;
+				position:absolute;
+				overflow:hidden;
+				top:0;
+				left:0;
+			}
+			
+			#frame1{
+				background:url('img/bg_fr1.png') no-repeat;
+				z-index:10;
+			}
+			
+			#bt_play{
+				top:220px;
+				left:27px;
+			}
+			
+			#bt_live{
+				left:0px;
+				bottom:0px;
+			}
+			#fr1_text1,#fr1_text2,#fr1_text3{
+				top:88px;
+				left:27px;
+			}
+			#fr1_text2,#fr1_text3{
+				opacity:0;
+			}
+			
+			/*--------------------------------------------*/
+			#frame2{
+				opacity:0;
+				z-index:1;
+				background:url('img/bg_fr2.png') no-repeat;
+			}
+			#bt_shop{
+				left:10px;
+				bottom:10px;
+			}
+			#game_area{
+				position:absolute;
+				width:320px;
+				height:398px;
+				top:38px;
+				left:0px;
+				overflow:hidden;
+			}
+			
+			@font-face {
+				font-family: 'DS-DIGIB';
+				src:url('DS-DIGIB.ttf') format('truetype');
+				font-weight: bold;
+				font-style: normal;
+			}
+			#game_score{
+				width:66px;
+				height:28px;
+				font-size:28px;
+				line-height:28px;
+				position:absolute;
+				left:239px;
+				top:5px;
+				color:green;
+				font-family:'DS-DIGIB';
+				text-align:right;
+			}
+			#game_tree{
+				top:0px;
+				left:0px;
+				-webkit-transform:translateX(70px) translateY(176px);
+				width:172px;
+				height:236px;
+				display: inline-block;
+			}
+			/*--------------------------------------------*/
+			#frame3{
+				opacity:0;
+				z-index:1;
+				background:url('img/bg_fr3.png') no-repeat;
+			}
+			
+			#leaf{
+				right:0px;
+				bottom:0px;
+				z-index:20;
+			}
+			
+			@-webkit-keyframes item-animation-fx {
+				0% {-webkit-transform: translate3d(0, 0, 0);}
+				100% {-webkit-transform: translate3d(0, 480px, 0);}
+			}
+		
+			.item-animation {
+				z-index: 100;
+				-webkit-animation-name: item-animation-fx;
+				-webkit-animation-timing-function: linear;
+			}
+			
+			.level{
+				display:none;
+				top:0px;
+				left:54px;
+			}
+			#level1{
+				top:105px;
+			}
+			#level2{
+				top:99px;
+			}
+			#level3{
+				top:102px;
+			}
+			#level4{
+				top:100px;
+			}
+			#final_score{
+				position:absolute;
+				top:170px;
+				left:185px;
+				-webkit-transform:rotate(-5deg);
+				font-size:44px;
+				font-weight:bold;
+				color:#e6781e;
+			}
+			#bt_playagain{
+				top:250px;
+				left:61px;
+			}
+			#bt_facebook{
+				top:250px;
+				left:173px;
+			}
+			#bt_shopholiday{
+				top:284px;
+				left:50%;
+				margin-left:-106px;
+			}
+			#bt_store{
+				top:317px;
+				left:50%;
+				margin-left:-70px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<img id="bg" src="img/bg.png"/>
+			
+			<div id="frame1" class="frame">
+				<img id="fr1_text1" src="img/fr1_text1.png"/>
+				<img id="fr1_text2" src="img/fr1_text2.png"/>
+				<img id="fr1_text3" src="img/fr1_text3.png"/>
+			
+				<img id="bt_play" src="img/bt_play.png" />
+				<img id="bt_live" src="img/bt_live.png"/>
+			</div>
+			
+			<div id="frame2" class="frame">
+				<div id="game_score">
+					0000
+				</div>
+				<div id="game_area">
+					<div id="game_tree">
+						<img id="tree" src="img/tree.png"/>
+					</div>
+
+				</div>
+				<img id="bt_shop" src="img/bt_shop.png"/>
+			</div>
+			
+			<div id="frame3" class="frame">
+				<img class="level" id="level1" src="img/level1.png"/>
+				<img class="level" id="level2" src="img/level2.png"/>
+				<img class="level" id="level3" src="img/level3.png"/>
+				<img class="level" id="level4" src="img/level4.png"/>
+				
+				<div id="final_score">
+					8764
+				</div>
+				
+				<img id="bt_playagain" src="img/bt_playagain.png"/>
+				<img id="bt_facebook" src="img/bt_facebook.png"/>
+				<img id="bt_shopholiday" src="img/bt_shopholiday.png"/>
+				<img id="bt_store" src="img/bt_store.png"/>
+			</div>
+			
+			<img id="leaf" src="img/leaf.png"/>
+		</div>
+	</body>
+</html>

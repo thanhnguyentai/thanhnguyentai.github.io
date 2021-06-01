@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Walmart Fight Hunger</title>	
+		<style type="text/css">
+			@font-face
+			{
+				font-family: 'mybriad';
+				src: url('./fonts/MyriadProRegular.otf');
+			}	
+			.wrapper{
+				width: 768px;
+				height: 1024px;
+				position: absolute;
+				display: block;
+				top: 0px;
+				left: 50%;
+				margin-left: -384px;
+			}
+			.mini{
+				width: 768px;
+				height: 90px;
+				background: url('img/mini.jpg') no-repeat;
+				display: none;
+				opacity: 0;
+			}
+			.mini img{
+				position: absolute;
+			}
+			.expand{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 768px;
+				height: 1024px;
+				background: url('./img/expand_bg.jpg');
+				display: none;
+				opacity: 0;
+				overflow: hidden;
+			}
+			.expand .legal{
+				position: absolute;
+				top: 23px;
+				left: 53px;
+			}
+			
+			.expand .expandtext1{
+				position: absolute;
+				top: 70px;
+				left: 40px;
+			}
+			.expand .expand_logo{
+				position: absolute;
+				top: 10px;
+				left: 230px;
+			}
+			.expandtext1 .character{
+				position: absolute;
+				display: none;
+				opacity: 0;
+			}
+			.expand .xBt{
+				position: absolute;
+				right: 22px;
+				top: 19px;
+			}
+	
+			.expand .showyourBt{
+				position: absolute;
+				top: 214px;
+				left: 245px;
+			}
+	
+			.expand .productListImg{
+				position: absolute;
+				top: 305px;
+				left: 195px;
+				width: 350px;
+				height: 260px;
+				overflow: hidden;
+			}
+			.expand .previous{
+				position: absolute;
+				width: 15px;
+				opacity: 0.2;
+				right: 10px;
+				top: 10px;
+			}
+			.expand .next{
+				position: absolute;
+				width: 15px;
+				opacity: 0.2;
+				top: 10px;
+				left: 10px;
+			}
+	
+			
+			.productListImg .productListImg-Content{
+				position: absolute;
+				left: 0px;
+				top: 0;
+				height: 258px;
+			}
+			.imageItem{
+				float: left;
+				display: block;
+				width: 350px;
+				height: 260px;
+				text-align: center;
+			}
+
+			.expand .productList{
+				position: absolute;
+				top: 551px;
+				left: 52px;
+				width: 665px;
+				height: 258px;
+				background: url('./img/list.png');
+			}
+			.productList .ul{
+				list-style-type: none;
+				margin: 0;
+				position: absolute;
+				top: 4px;
+				left: 8px;
+				padding: 0;
+				width: 646px;
+				height: 266px;
+				text-align: center;
+				font-size: 24px;
+				font-family: 'mybriad';
+				color: rgb(194, 194, 194);
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				-ms-border-radius: 10px;
+				overflow: hidden;
+			}
+			#sidebarright{
+				position: absolute;
+				right: 51px;
+				top: 540px;
+				z-index: 5;
+				opacity: 1;
+			}
+			#sidebarleft{
+				position: absolute;
+				left: 52px;
+				top: 551px;
+				z-index: 5;
+				opacity: 1;
+			}
+		
+			.ul .list-item{
+				position: relative;
+				width: 663px;
+				height: 69px;
+				display: block;
+			}
+			.list-item >span{
+				position: relative;
+				height: 24px;
+				top: 21px;
+			}
+			.expand .email{
+				position: absolute;
+				top: 829px;
+				left: 56px;
+				width: 664px;
+				height: 54px;
+			}
+			.email .emailInput{
+				position: absolute;
+				top: 0px;
+				left: 1px;
+				width: 433px;
+				height: 54px;
+				border-radius: 9px;
+				border: 1px;
+				font-size: 24px;
+				padding-left: 10px;
+			}
+			
+			.email .emailSm{
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 5;
+			}
+			
+			#minimize{
+				width: 70px;
+				height: 70px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			#strimmer_container{
+				width: 263px;
+				height: 48px;
+				position: absolute;
+				top: 220px;
+				left: 250px;
+				overflow: hidden;
+			}
+			#strimmer{
+				position: absolute;
+				top: -17px;
+				left: -70px;
+			}
+			#legalContent{
+				width: 289px;
+				height: 288px;
+				position: absolute;
+				background: url('img/legal_txt.png') no-repeat;
+				left: 235px;
+				top: 1024px;
+				z-index: 10;
+			}
+			#legal_close{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 50px;
+				height: 50px;
+			}
+			#legal{
+				width: 160px;
+				height: 60px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			.hide{
+				display: none;
+				opacity: 0;
+			}
+			#lastImage,#firstImage{
+				position: absolute;
+				top: 0px;
+			}
+			#lastImage{
+				left: -100%;
+			}
+			#firstImage{
+				left: 100%;
+			}
+		</style>
+		<script src="jquery.js" type="text/javascript"></script>
+		<script src="jquery.xdomainajax.js" type="text/javascript"></script>
+		<script src="iScroll.js" type="text/javascript"></script>
+		<script src="jScroll.js" type="text/javascript"></script>
+		<script src="swipe.js" type="text/javascript"></script>
+		<script src="main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="mini" id="mini">
+				<img class="hide" id="tap1" style="top: 17px; right: 81px;" src="img/tap1.png"/>
+				<img class="hide" id="tap2" style="top: 17px; right: 67px;" src="img/tap2.png"/>
+				<img class="hide" id="tap3" style="top: 17px; right: 54px;" src="img/tap3.png"/>
+				<img class="hide" id="tap4" style="top: 17px; right: 32px;" src="img/tap4.png"/>
+				<img class="hide" id="tap5" style="top: 17px; right: 19px;" src="img/tap5.png"/>
+				<img class="hide" id="tap6" style="top: 17px; right: 10px;" src="img/tap6.png"/>
+				<img class="hide" id="tap7" style="top: 47px; right: 80px;" src="img/tap7.png"/>
+				<img class="hide" id="tap8" style="top: 47px; right: 71px;" src="img/tap8.png"/>
+				<img class="hide" id="tap9" style="top: 47px; right: 59px;" src="img/tap9.png"/>
+				<img class="hide" id="tap10" style="top: 41px; right: 45px;" src="img/tap10.png"/>
+				<img class="hide" id="tap11" style="top: 46px; right: 38px;" src="img/tap11.png"/>
+				<img class="hide" id="tap12" style="top: 47px; right: 28px;" src="img/tap12.png"/>
+				<img class="hide" id="tap13" style="top: 47px; right: 12px;" src="img/tap13.png"/>
+			</div> 
+			<div class="expand" id="expand">
+				<div id="legal">
+					<img src="./img/legal.png" class="legal"/>
+				</div>
+				
+				<img src="./img/expandlogo.png" class="expand_logo"/>
+				<div id="minimize">
+					<img src="./img/x.png" class="xBt"/>
+				</div>
+				<div class="expandtext1" id="expandtext1">
+					<img src="./img/ext10.png" class="character" style="top: 32px; left: 60px" id="character0"/>
+					<img src="./img/ext11.png"  class="character" style="top: 36px; left: 90px" id="character1"/>
+					<img src="./img/ext12.png"  class="character" style="top: 34px; left: 110px" id="character2"/>
+					<img src="./img/ext13.png"  class="character" style="top: 33px; left: 138px" id="character3"/>
+					<img src="./img/ext14.png"  class="character" style="top: 30px; left: 156px" id="character4"/>
+					<img src="./img/ext15.png"  class="character" style="top: 33px; left: 206px" id="character5"/>
+					<img src="./img/ext16.png"  class="character" style="top: 24px; left: 227px" id="character6"/>
+					<img src="./img/ext17.png"  class="character" style="top: 22px; left: 262px" id="character7"/>
+					<img src="./img/ext18.png"  class="character" style="top: 22px; left: 294px" id="character8"/>
+					<img src="./img/ext19.png"  class="character" style="top: 19px; left: 339px" id="character9"/>
+					<img src="./img/ext110.png"  class="character" style="top: 18px; left: 361px" id="character10"/>
+					<img src="./img/ext111.png"  class="character" style="top: 20px; left: 374px" id="character11"/>
+					<img src="./img/ext112.png"  class="character" style="top: 20px; left: 389px" id="character12"/>
+					<img src="./img/ext113.png"  class="character" style="top: 20px; left: 406px" id="character13"/>
+					<img src="./img/ext114.png"  class="character" style="top: 20px; left: 423px" id="character14"/>
+					<img src="./img/ext115.png"  class="character" style="top: 24px; left: 466px" id="character15"/>
+					<img src="./img/ext116.png"  class="character" style="top: 25px; left: 479px" id="character16"/>
+					<img src="./img/ext117.png"  class="character" style="top: 26px; left: 497px" id="character17"/>
+					<img src="./img/ext118.png"  class="character" style="top: 25px; left: 527px" id="character18"/>
+					<img src="./img/ext119.png"  class="character" style="top: 36px; left: 549px" id="character19"/>
+					<img src="./img/ext120.png"  class="character" style="top: 32px; left: 569px" id="character20"/>
+					<img src="./img/ext121.png"  class="character" style="top: 36px; left: 587px" id="character21"/>
+					<img src="./img/ext122.png"  class="character" style="top: 35px; left: 603px" id="character22"/>
+					<img src="./img/ext123.png"  class="character" style="top: 110px; left: 17px" id="character23"/>
+					<img src="./img/ext124.png"  class="character" style="top: 105px; left: 39px" id="character24"/>
+					<img src="./img/ext125.png"  class="character" style="top: 98px; left: 56px" id="character25"/>
+					<img src="./img/ext126.png"  class="character" style="top: 95px; left: 102px" id="character26"/>
+					<img src="./img/ext127.png"  class="character" style="top: 93px; left: 123px" id="character27"/>
+					<img src="./img/ext128.png"  class="character" style="top: 91px; left: 134px" id="character28"/>
+					<img src="./img/ext129.png"  class="character" style="top: 88px; left: 150px" id="character29"/>
+					<img src="./img/ext130.png"  class="character" style="top: 87px; left: 184px" id="character30"/>
+					<img src="./img/ext131.png"  class="character" style="top: 77px; left: 206px" id="character31"/>
+					<img src="./img/ext132.png"  class="character" style="top: 75px; left: 249px" id="character32"/>
+					<img src="./img/ext133.png"  class="character" style="top: 82px; left: 270px" id="character33"/>
+					<img src="./img/ext134.png"  class="character" style="top: 75px; left: 289px" id="character34"/>
+					<img src="./img/ext135.png"  class="character" style="top: 67px; left: 316px" id="character35"/>
+					<img src="./img/ext136.png"  class="character" style="top: 79px; left: 346px" id="character36"/>
+					<img src="./img/ext137.png"  class="character" style="top: 75px; left: 387px" id="character37"/>
+					<img src="./img/ext138.png"  class="character" style="top: 77px; left: 409px" id="character38"/>
+					<img src="./img/ext139.png"  class="character" style="top: 79px; left: 429px" id="character39"/>
+					<img src="./img/ext140.png"  class="character" style="top: 81px; left: 445px" id="character40"/>
+					<img src="./img/ext141.png"  class="character" style="top: 85px; left: 495px" id="character41"/>
+					<img src="./img/ext142.png"  class="character" style="top: 84px; left: 516px" id="character42"/>
+					<img src="./img/ext143.png"  class="character" style="top: 91px; left: 553px" id="character43"/>
+					<img src="./img/ext144.png"  class="character" style="top: 97px; left: 575px" id="character44"/>
+					<img src="./img/ext145.png"  class="character" style="top: 95px; left: 590px" id="character45"/>
+					<img src="./img/ext146.png"  class="character" style="top: 94px; left: 613px" id="character46"/>
+					<img src="./img/ext147.png"  class="character" style="top: 104px; left: 635px" id="character47"/>
+					<img src="./img/ext148.png"  class="character" style="top: 105px; left: 649px" id="character48"/>
+					<img src="./img/ext149.png"  class="character" style="top: 120px; left: 668px" id="character49"/>
+				</div>
+				<img src="./img/buttonshowyour.png" class="showyourBt" id="showyourBt"/>
+				<div id="strimmer_container">
+					<img id="strimmer" src="img/strimmer.png"/>
+				</div>
+				
+				<div id="previous" style="position: absolute; width: 45px; height: 45px; top: 370px; left: 70px; z-index: 5;">
+					<img src="./img/previous.png" class="previous"/>
+				</div>
+				<div id="next" style="position: absolute; width: 45px; height: 45px; top: 370px; right: 70px; z-index: 5">
+					<img src="./img/next.png" class="next"/>			
+				</div>
+				<div class="productListImg" id="productListImg">
+					<div id="lastImage" class="imageItem">
+						<img src="./img/product1.png" class="productItemImg"/>
+					</div>
+					<div class="productListImg-content" id="productListImgContent">
+						<div class="imageItem">
+							<img src="./img/product5.png" class="productItemImg" id="productItemImg0"/>
+						</div>
+						<div class="imageItem">
+							<img src="./img/product4.png" class="productItemImg" id="productItemImg1"/>
+						</div>
+						<div class="imageItem">
+							<img src="./img/product2_3.png" class="productItemImg" id="productItemImg2"/>
+						</div>
+						<div class="imageItem">
+							<img src="./img/product1.png" class="productItemImg" id="productItemImg3"/>
+						</div>
+					</div>
+					<div id="firstImage" class="imageItem">
+						<img src="./img/product5.png" class="productItemImg"/>
+					</div>
+				</div>
+				<img src="./img/sidebar_left.png" id="sidebarleft"/>
+				<img src="./img/sidebar_right.png" id="sidebarright"/>
+				<div class="productList" id="productList">
+					<div class="scroller" style="width: 283px;">
+						<ul class="ul" id="listProductItem">
+							<li class="list-item" id="productItem0" style="background: url(./img/highlight.png); color: #FFF">
+								<span>Honey Nut Cheerios Banded Pack</span></li>
+							<li class="list-item" id="productItem1"><span>Cinnamon Toast crunch Banded Pack</span></li>
+							<li class="list-item" id="productItem2"><span>Banquet Meals</span></li>
+							<li class="list-item" id="productItem3"><span>Reddi Wip</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="email">
+					<input type="email" class="emailInput" placeholder="Enter email for full product list" id="emailInput"/>
+					<img src="./img/smEmBt.png" class="emailSm" id="emailSm"/>
+				</div>
+				<img src="./img/footer1.png" style="position: absolute; left: 173px; bottom: 10px;" id="footer"/>
+				
+				<div id="legalContent">
+					<div id="legal_close">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

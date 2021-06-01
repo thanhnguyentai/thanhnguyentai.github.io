@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<link rel="stylesheet" href="segoe-ui-semibold.css" media="all"/>
+		<link rel="stylesheet" href="segoe-ui.css" media="all"/>
+		<link rel="stylesheet" href="flexslider.css" media="all"/>
+		
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			#minimize{
+				position: absolute; 
+				top: 0;
+				left: 50%;
+				margin-left: -160px;
+				width: 320px;
+				height: 50px;
+				overflow: hidden;
+				
+				opacity: 0;
+				
+				background: #ed1d25;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#m_logo{
+				position: absolute;
+				top: 14px;
+				left: 15px;
+			}
+			#banner_text1{
+				position: absolute;
+				top: 10px;
+				left: 180px;
+				width: 112px;
+				height: 17px;
+				background: url('img/m_discover.png') no-repeat 0px 0px;
+				opacity: 0;
+			}
+			#banner_text2{
+				position: absolute;
+				top: 27px;
+				left: 180px;
+				width: 95px;
+				height: 17px;
+				background: url('img/m_discover.png') no-repeat 0px -17px;
+				opacity: 0;
+			}
+			#banner_arrow{
+				position: absolute;
+				top: 27px;
+				left: 275px;
+				width: 17px;
+				height: 17px;
+				background: url('img/m_discover.png') no-repeat -95px -17px;
+				opacity: 0;
+			}
+			#banner{
+				position: absolute; 
+				top: 0;
+				left: 50%;
+				margin-left: -160px;
+				width: 320px;
+				height: 416px;
+				overflow: hidden;
+				display: none;
+				opacity: 0;
+				
+				background: #ed1d25;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#logo{
+				position: absolute;
+				top: 20px;
+				left: 28px;
+			}
+			#text1{
+				position: absolute;
+				top: 86px;
+				left: 28px;
+				width: 250px;
+				color: #ffffff;
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+				font-size: 16px;
+			}
+			#text2{
+				position: absolute;
+				top: 86px;
+				left: 28px;
+				width: 250px;
+				color: #ffffff;
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+				font-size: 16px;
+				display: none;
+			}
+			#container_all{
+				width: 320px;
+				height: 225px;
+				position: absolute;
+				top: 125px;
+				left: 0px;
+			}
+			#slider_container{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 320px;
+				height: 225px;
+				background: transparent;
+				border: 0px;
+				margin: 0px;
+				padding: 0px;
+				
+				overflow: hidden;
+				
+				border-radius: 0px;
+				-webkit-border-radius: 0px;
+				-moz-border-radius: 0px;
+				-ms-border-radius: 0px;
+				
+				box-shadow: 0px 0px 0px #000000;
+				-webkit-box-shadow: 0px 0px 0px #000000;
+				-moz-box-shadow: 0px 0px 0px #000000;
+				-ms-box-shadow: 0px 0px 0px #000000;
+			}
+			#slider_container .slides li{
+				position: relative;
+				height: 225px;
+				width: 320px !important;
+			}
+			#slider_container .slides img{
+				width: auto;
+			}
+			#slide1,#slide2,#slide3,#bingmap{
+				position: absolute;
+				width: 320px;
+				height: 225px;
+				left: 0px;
+				top: 0px;
+			}
+			#slide2{
+				left: 320px;
+			}
+			#slide3{
+				left: 640px;
+			}
+			#bingmap{				
+				height: 200px;
+				top: 12px;
+				overflow: hidden;
+			}
+			.surface{
+				margin-top: 20px;
+				margin-left: 40px;
+			}
+			.phone{
+				margin-left: 90px;
+				margin-top: 17px;
+			}
+			.surface-text{
+				position: absolute;
+				top: 175px;
+				left: 30px;
+				width: 240px;
+				color: #ffffff;
+			}
+			.phone-text{
+				position: absolute;
+				top: 180px;
+				left: 30px;
+				width: 250px;
+				color: #ffffff;
+			}
+			.xbox{
+				margin-left: 60px;
+				margin-top: 20px;
+			}
+			.xbox-text{
+				position: absolute;
+				top: 170px;
+				left: 30px;
+				width: 250px;
+				color: #ffffff;
+			}
+			.surface-text-header{
+				font-family: 'SegoeUISemibold', Arial, Helvetica, sans-serif;
+				font-size: 15px;
+			}
+			.surface-text-content{
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+				font-size: 13px;
+			}
+			
+			#mask_slide{
+				width: 320px;
+				height: 225px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#microsoft_logo{
+				position: absolute;
+				left: 28px;
+				bottom: 21px;
+			}
+			#findstore{
+				position: absolute;
+				left: 216px;
+				bottom: 23px;
+				width: 81px;
+				height: 13px;
+			}
+			#findstore_text{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 68px;
+				height: 13px;
+				background: url('img/find_store.png') no-repeat 0px 0px;
+			}
+			#findstore_arrow{
+				position: absolute;
+				top: 0px;
+				left: 68px;
+				width: 13px;
+				height: 13px;
+				background: url('img/find_store.png') no-repeat -68px 0px;
+			}
+			.getDirection{
+				position: absolute;
+				bottom: 24px;
+				right: 20px;
+			}
+			#getDirection{
+				width: 92px;
+				height: 13px;
+				display: none;
+				opacity: 0;
+				background: url('img/direction.png') no-repeat;
+				background-size: contain;
+			}
+			#bt_close{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				width: 50px;
+				height: 50px;
+				background: url('img/close.png') no-repeat 100% 0%;
+			}
+			.map-image{
+				display: inline-block;
+				position: relative;
+				top: 0px;
+				width: 46px !important;
+				float: left;
+			}
+			.address-text{
+				width: 200px;
+				font-size: 12px;
+				font-family: "SegoeUINormal", Helvetica, Arial, sans-serif;
+				display: inline-block;
+				float: left;
+				position: relative;
+				margin: 0 0 0 5px;		
+				text-align: left;	
+				color: #ffffff;
+			}
+			.address-name{
+				float: left;
+				width: 200px;
+				text-align: left;
+			}
+			.address-location{
+				float: left;
+				width: 200px;
+				text-align: left;
+			}
+			.clear-both{
+				height: 2px;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="minimize">
+			<img src="img/m_mslogo.png" alt="logo" id="m_logo"/>
+			<div id="banner_text1">
+			</div>
+			<div id="banner_text2">
+			</div>
+			<div id="banner_arrow">
+			</div>
+		</div>
+		<div id="banner">
+			<div id="bt_close">
+			</div>
+			<img id="logo" src="img/logo.png" />
+			<div id="text1">
+				Swipe to find the perfect gift at<br/>
+				Microsoft at [Mall Name]
+			</div>
+			<div id="text2">
+				Find the perfect gift at Microsoft<br/>
+				at [Mall Name]
+			</div>
+			<div id="container_all">
+				<div id="slider_container" class="flexslider" >
+					<ul class="slides">
+						<li>
+							<img class="surface" src="img/surface.png"/>
+							<div class="surface-text">
+								<div class="surface-text-header">For the student</div>
+								<div class="surface-text-content">
+									Surface 2&mdash;Faster, lighter, and outfitted<br/>
+									with Office 2013
+								</div>
+							</div>
+						</li>
+						<li>
+							<img class="phone" src="img/phone.png"/>
+							<div class="phone-text">
+								<div class="surface-text-header">For the shutterbug</div>
+								<div class="surface-text-content">
+									Nokia Lumia 1020&mdash;41 megapixels.<br/>
+									Nothing else comes close.<br/>
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="img/xbox.png" class="xbox"/>
+							<div class="xbox-text">
+								<div class="surface-text-header">For everyone</div>
+								<div class="surface-text-content">
+									Xbox One&mdash;The all-in-one<br/>
+									entertainment system
+								</div>
+							</div>
+						</li>
+						<li>
+							<div id="bingmap">
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="mask_slide">
+				</div>
+			</div>
+			
+			<img id="microsoft_logo" src="img/microsoft_logo.png"/>
+			<div id="findstore">
+				<div id="findstore_text">
+				</div>
+				<div id="findstore_arrow">
+				</div>
+			</div>
+			<div class="getDirection">
+				<div id="getDirection">
+				</div>
+			</div>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>			
+			<script type="text/javascript" src="jquery.flexslider-min.js"></script>
+			<script type="text/javascript" src="main.js"></script>
+		</div>
+	</body>
+</html>

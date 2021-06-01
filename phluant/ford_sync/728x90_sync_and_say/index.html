@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_conBanner{
+				position: absolute;
+				left: 50%;
+				margin-left: -364px;
+				background: url(img/bg.jpg) no-repeat top left;
+				width: 728px;
+				height: 90px;
+				top: 0;
+				opacity: 0;
+				display: block;
+				overflow: hidden;
+			}
+			#play_btn{
+				position: absolute;
+				width: 34px;
+				top: 30px;
+				left: 132px;
+				opacity: 0;
+				z-index: 200;
+			}
+			#play_btn:hover{
+				cursor: pointer;
+			}
+			.car{
+				position: absolute;
+				height: 100%;
+				top: 0;
+				left: 193px;
+				z-index: 15;
+			}
+			.video_preview{
+				position: absolute;
+				top: -40px;
+				left: 0;
+				width: 276px;
+				opacity: 0;
+				z-index: 5;
+			}
+			#preview1{
+				opacity: 1;
+			}
+			#car-1,#car-2,#car-3{display: none;}
+			#video_container{
+				position: absolute;
+				top: 0;
+				left: 0px;
+				width: 728px;
+				height: 90px;
+				opacity: 0;
+				z-index: 300;
+				display: none;
+				background: #000000;
+			}
+			#video{
+				position: absolute;
+				left: 50%;
+				margin-left: -80px;
+			}
+			#close_video{
+				position: absolute;
+				top: 5px;
+				right: 5px;
+			}
+			#border{
+				position: absolute;
+				top: 0;
+				left: 50%;
+				z-index: 100;
+				width: 724px;
+				margin-left: -364px;
+				height: 86px;
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+				<div id="border"> </div>
+				<img src="img/play.png" alt="play" id="play_btn">
+				<img id="preview1" class="video_preview" src="img/SyncNSay1.jpg">
+				<img style="top: -30px;" id="preview2" class="video_preview" src="img/SyncNSay2.jpg">
+				<img style="top: 0px;" id="preview3" class="video_preview" src="img/SyncNSay3.jpg">
+				<img id="car-1" class="car" src="img/fusion.png" alt="fusion">
+				<img id="car-2" class="car" src="img/escape.png" alt="escape">
+				<img id="car-3" class="car" src="img/focus.png" alt="focus">
+				
+				<div id="video_container" class="absolute">
+					<div id="video_play" class="absolute">
+						<video class="absolute" id="video" height="90" controls>
+							<source src="video.webm" type='video/webm' >
+							<source src="video.mp4" type='video/mp4'>
+						</video>
+					</div>
+					<div id="mute" class="absolute"> </div>
+					<div id="unmute" class="absolute"> </div>
+					<img src="img/bt_close_disclame.png" alt="close" id='close_video'>
+				</div>
+			</div>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="728x90.js"></script>
+		</div>
+	</body>
+</html>

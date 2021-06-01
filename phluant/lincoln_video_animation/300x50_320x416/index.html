@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{
+				width: 300px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -150px;
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#ph_conBanner{
+				width: 300px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				overflow: hidden;
+				background: url('img/300x50.jpg') no-repeat;
+				display: none;
+				opacity: 0;
+			}
+			
+			/*---------------------------------------------------*/
+			#ph_conExpand{
+				width: 320px;
+				height: 416px;
+				overflow: hidden;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				display: none;
+				opacity: 0;
+			}
+			#ph_conExpand img{
+				position: absolute;
+			}
+			#ph_conExpand canvas{
+				position: absolute;
+				top: 195px;
+				left: -146px;
+			}
+			#bt_close{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			#close{
+				top: 10px;
+				right: 10px;
+			}
+			#text{
+				top: 272px;
+				left: 8px;
+				opacity: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+			</div>
+			<div id="ph_conExpand">
+				<canvas id="canvas" width="708px" height="92px"></canvas>
+				<img src="img/320x416.png" alt=""/>
+				<img id="text" src="img/320x416_text.png" alt=""/>
+				<div id="bt_close">
+					<img id="close" src="img/close.png" alt=''/>
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="300x50_320x416.js"></script>
+		</div>
+	</body>
+</html>

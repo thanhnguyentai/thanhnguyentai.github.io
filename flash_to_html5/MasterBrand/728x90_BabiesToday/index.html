@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			FlashToHtml
+		</title>
+		<style type="text/css">
+			#container{
+				width: 728px;
+				height: 90px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -364px;
+				background: url('img/bg.png');
+			}
+			
+			#wapper {
+				postion : absolute;
+				width : 700px;
+				height : 90px;
+				opacity : 1;
+			}
+			
+			#logo {
+				position : absolute;
+				width : 30px;
+				height : 30px;
+				top : 7px;
+				right: 7px;
+				opacity : 1;
+			}
+			#babies_parent {
+				position : absolute;
+				width : 150px;
+				height : 30px;
+				top : 15px;
+				left : 10px;
+				overflow : hidden;
+			}
+			
+			#babies {
+				position : absolute;
+				width : 150px;
+				height : 30px;
+				top : 30px;
+				opacity : 1;
+			}
+			
+			#today_parent{
+				position : absolute;
+				width : 190px;
+				height : 30px;
+				top : 15px;
+				left : 160px;
+				overflow : hidden;
+			}
+			#today {
+				position : absolute;
+				width : 190px;
+				height : 30px;
+				top : 30px;
+				opacity : 1;
+				
+			}
+			#likely_parent {
+				position : absolute;
+				width : 165px;
+				height : 30px;
+				top : 15px;
+				left : 350px;
+				opacity : 1;
+				overflow : hidden;
+			}
+			
+			#likely {
+				position : absolute;
+				width : 165px;
+				height : 30px;
+				top : 30px;
+				opacity : 1;
+			}
+			
+			#to100_parent{
+				position : absolute;
+				width : 155px;
+				height : 30px;
+				top : 45px;
+				left : 10px;
+				opacity : 1;
+				overflow : hidden;
+			}
+			
+			#to100 {
+				position : absolute;
+				width : 155px;
+				height : 30px;
+				top : 30px;
+				opacity : 1;
+			}
+			
+			#text-yellow-parent{
+				position : absolute;
+				top : 50px;
+				left : 166px;
+				width : 360px;
+				height : 30px;
+				overflow : hidden;
+				
+			}
+			
+			#text-yellow-1 {
+				position : absolute;
+				top : -20px;
+			}
+			#text-yellow-2 {
+				position : absolute;
+				top : -20px;
+			}
+			
+			#end-screen {
+				position : absolute;
+				opacity : 0;
+				top : 15px;
+				left : 10px;
+			}
+			
+			#logo-end {
+				position : absolute;
+				opactity : 0;
+				top : 10px;
+				right : 10px;
+				opacity : 0;
+			}
+			#go-now{
+				position : absolute;
+				opacity : 0;
+				width : 100px;
+				height : 35px;	
+				top : 33px;
+				left : 353px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img id="logo" src="img/logo.png" />
+			
+			<div id="wapper">
+				<div id="babies_parent">
+					<img id="babies" src="img/babies.png" />
+				</div>
+				<div id="today_parent">						
+					<img id="today" src="img/today.png" />
+				</div>
+				<div id="likely_parent">
+					<img id="likely" src="img/likely.png" />
+				</div>
+				<div id="to100_parent">
+					<img id="to100" src="img/to100.png" />
+				</div>
+				<div id="text-yellow-parent">
+					<img id="text-yellow-1" src="img/be-left-handed.png"/>
+					<img id="text-yellow-2" src="img/have-blue eyes.png"/>
+				</div>
+			</div>
+			<img id="end-screen" src="img/end-screen.png">
+			<img id="logo-end" src="img/logo-end.png">
+			<img id="go-now" src="img/go-now.png">
+			
+							
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="728x90.js"></script>
+	</body>
+</html>

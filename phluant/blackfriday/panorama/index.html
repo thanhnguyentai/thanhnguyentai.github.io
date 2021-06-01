@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<link rel="stylesheet" href="fonts.css" media="all"/>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#minimize{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				background: #ed1d25;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				opacity: 0;
+			}
+			#logo{
+				position: absolute;
+				width: 106px;
+				top: 14px;
+				left: 16px;
+				opacity: 0;
+			}
+			#expand{
+				position: absolute;
+				width: 107px;
+				height: 32px;
+				top: 10px;
+				right: 28px;
+			}
+			#text{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 107px;
+				opacity: 0;
+			}
+			#nav{
+				position: absolute;
+				width: 15px;
+				top: 16px;
+				right: 0;
+				cursor: pointer;
+				
+				opacity: 0;
+			}
+			#full{
+				height: 416px;
+				margin: 0;
+				padding: 0;
+				display: none;
+				opacity: 0;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				overflow-x: auto;
+				overflow-y: hidden;
+				
+				-webkit-overflow-scrolling: touch;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#full::-webkit-scrollbar {
+				height: 4px;
+			}
+			#full::-webkit-scrollbar-thumb {
+				border-color: black;
+				border-radius: 1px;
+				-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1.0);
+				background: #ffffff;
+			}
+			#full::-webkit-scrollbar-track {
+				height: 1px;
+				-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1.0);
+				border-radius: 0px;
+				background: #d0e1f2;
+			}
+			#full_image{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 1600px;
+				height: 416px;
+				background: url('img/full.jpg') no-repeat;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#find{
+				position: absolute;
+				top: 48px;
+				right: 20px;
+				width: 120px;
+				height: 30px;
+			}
+			#bt_close{
+				background: url('img/close.png') no-repeat 100% 0px;
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			.scrollBar{
+				height: 2px !important;
+			}
+			#see_store{
+				position: absolute;
+				right: 10px;
+				bottom: 5px;
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				color: #ffffff;
+				font-size: 13px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="minimize">
+			<img src="img/mslogo.png" alt="logo" id="logo"/>
+			<div id="expand">
+				<img src="img/text.png" alt="text" id="text"/>
+				<img src="img/nav.png" alt="narrow" id="nav"/>
+			</div>
+		</div>
+		<div id="full">
+			<div id="full_image">
+				<div id="find"> 
+				</div>
+				<div id="bt_close">
+				</div>
+				<div id="see_store">
+					See store for details
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" src="main.js"></script>
+		
+	</body>
+</html>

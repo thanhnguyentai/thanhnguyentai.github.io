@@ -1,0 +1,189 @@
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script language="javascript" src="jquery-1.4.2.min.js"></script>
+	<script language="javascript" src="landscape.js"></script>
+	<style>
+		/* fade in*/
+		@keyframes fadein
+		{
+			100% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			0% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-moz-keyframes fadein 
+		{
+			100% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			0% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-webkit-keyframes fadein 
+		{
+			100% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			0% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+		
+		/* fade out*/
+		@keyframes fadeout
+		{
+			0% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			100% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-moz-keyframes fadeout 
+		{
+			0% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			100% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-webkit-keyframes fadeout 
+		{
+			0% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			100% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+		
+		/*-------------------------------------------------*/
+		body{
+			border:0;
+			margin:0;
+			padding:0;
+		}
+		#banner{
+			background-color:white;
+			width:1024px;
+			height:678px;
+			position:absolute;
+			overflow:hidden;
+			top:0;
+			left:0;
+		}
+		
+		img{
+			position:absolute;
+		}
+		
+		#bg{
+			top:0px;
+			left:50%;
+			margin-left:-513px;
+		}
+		#cr4{
+			top:30px;
+			left:484px;
+			opacity:0;
+		}
+		
+		#cr3{
+			top:54px;
+			left:611px;
+			opacity:0;
+		}
+		#cr2{
+			top:200px;
+			left:600px;
+			opacity:0;
+		}
+		#cr1{
+			top:288px;
+			left:737px;
+			opacity:0;
+		}
+		#text{
+			top:340px;
+			left:97px;
+			opacity:0;
+		}
+		#bt{
+			top:450px;
+			left:117px;
+			opacity:0;
+		}
+		#footer{
+			left:0px;
+			bottom:0px;
+		}
+	</style>
+	<body>
+		<div id="banner">
+			<img id="bg" src="img/1024x678_bg.png" alt=""/>
+			
+			<img id="cr4" src="img/1024x678_cr4.png" alt=""/>
+			<img id="cr3" src="img/1024x678_cr3.png" alt=""/>
+			<img id="cr2" src="img/1024x678_cr2.png" alt=""/>
+			<img id="cr1" src="img/1024x678_cr1.png" alt=""/>
+			
+			<img id="footer" src="img/1024x678_footer.png" alt=""/>
+			
+			<img id="text" src="img/1024x678_text.png" alt="" usemap="#map"/>
+			<map name="map">
+				<area shape="Rect" Coords="185,165,433,190" href="http://www.rwsentosa.com" target="blank"> </area>
+			</map> 
+			<a href="http://www.rwsentosa.com/language/en-US/Attractions/UniversalStudiosSingapore/AnnualPass"><img id="bt" src="img/1024x678_bt.png" alt=""/></a>
+		</div>
+	</body>
+</html>

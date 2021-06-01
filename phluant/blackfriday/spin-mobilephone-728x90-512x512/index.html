@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		
+		<link rel="stylesheet" href="fonts.css" media="all"/>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			#minimize{
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -364px;
+				width: 728px;
+				height: 90px;
+				background: url('img/banner.jpg') no-repeat;
+				opacity: 0;
+			}
+			
+			#full{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				background: rgba(0,0,0,0.7);
+				
+				opacity: 0;
+				display: none;	
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#full_content{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 512px;
+				height: 512px;
+				overflow: hidden;
+				background: #ed1d25;
+				margin-left: -256px;
+				margin-top: -256px;
+			}
+			
+			#close{
+				position: absolute;
+				top:30px;
+				right:40px;
+				width: 50px;
+				height: 50px;
+			}
+			#close .closeBt{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			#ohfun{
+				position: absolute;
+				top: 30px;
+				left: 40px;
+			}
+			#text1{
+				position: absolute;
+				top: 85px;
+				left: 84px;
+				width: 343px;
+			}
+			#text2{
+				position: absolute;
+				top: 85px;
+				left: 84px;
+				width: 343px;
+				opacity: 0;
+			}
+			#replay{
+				position: absolute;
+				top: 160px;
+				right: 53px;
+				opacity: 0;
+			}
+			
+			#slide{
+				position: absolute;
+				top: 190px;
+				left: 0px;
+				width: 1024px;
+				height: 270px;
+				overflow: hidden;
+				text-align: center;
+				z-index: 5;
+			}
+			
+			#frame1{
+				position: absolute;
+				top: 0px;
+				left: 60px;
+				width: 392px;
+				height: 238px;
+				background: url("img/spin_bg.png"); 
+				background-size: contain;
+			}
+			#frame1 .column{
+				position: absolute;
+				width: 101px;
+				height: 230px;
+				top: 5px;
+				overflow: hidden
+			}
+			.column1{
+				left: 14px;
+			}
+			#column1{
+				top: -385px;
+			}
+			.column2{
+				left: 146px;
+			}
+			#column2{
+				top: -1756px;
+			}
+			.column3{
+				left: 276px;
+			}
+			#column3{
+				top: -408px;
+			}
+			.column .column-content{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.column-content .product{
+				display: block;
+				width: 100%;
+				height: auto;
+				margin: 10px 0;
+				text-align: center;
+			}
+			.product >img{
+				width: auto;
+			}
+			#spinbt{
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				margin-left: -74px;
+			}
+			.frame{
+				position: absolute;
+				top: 0;
+				width: 512px;
+				height: 270px;
+				overflow: hidden;
+			}
+			#frame2{
+				position: absolute;
+				top: 0;
+				left: 56px;
+				width:  400px;
+				height: 240px;
+			}
+			#fulllogo{
+				position: absolute;
+				bottom: 30px;
+				left: 40px;
+				width: 113px;
+			}
+			#findmap{
+				position: absolute;
+				bottom: 30px;
+				right: 40px;
+				width: 78px;
+			}
+			#direction{
+				position: absolute;
+				right: 40px;
+				bottom: 30px;
+				opacity: 0;
+				display: none;
+				width: 112px;
+				height: 19px;
+			}
+			#direct_text{
+				width: 94px;
+				height: 19px;
+				background: url('img/direction.png') no-repeat 0px 0px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			
+			#direct_arrow{
+				width: 18px;
+				height: 19px;
+				background: url('img/direction.png') no-repeat -94px 0px;
+				position: absolute;
+				top: 0px;
+				left: 94px;
+			}
+			
+			.bigText{
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				font-size: 30px;
+				color: #ffffff;
+				width: 343px;
+				margin: 0 auto 3px;
+			}
+			.smallText{
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				font-size: 18px;
+				color: #ffffff;
+				width: 343px;
+				margin: 0 auto;
+			}
+			
+			.map-image{
+				display: inline-block;
+				position: relative;
+				top: 0px;
+				width: 46px;
+				float: left;
+			}
+			.address-text{
+				width: 200px;
+				font-size: 12px;
+				font-family: "SEGOE", Helvetica, Arial, sans-serif;
+				display: inline-block;
+				float: left;
+				position: relative;
+				margin: 0 0 0 5px;		
+				text-align: left;	
+				color: #ffffff;
+			}
+			.address-name{
+				float: left;
+				width: 200px;
+				text-align: left;
+			}
+			.address-location{
+				float: left;
+				width: 200px;
+				text-align: left;
+			}
+			.clear-both{
+				height: 2px;
+				clear: both;
+			}
+			#see_store{
+				position: absolute;
+				left: 2px;
+				top: 15px;
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				color: #ffffff;
+				font-size: 11px;
+			}
+		</style>
+	</head>
+	<body>
+		
+			<div id="minimize">
+			</div>
+			<div id="full">
+				<div id="full_content">
+					<div id="close">
+						<img src="./img/close.png" class="closeBt"/>
+					</div>
+					<img src="./img/text1.png" id="ohfun"/>
+					<div id="text1">
+						<div class="bigText">
+							Spin to save
+						</div>
+						<div class="smallText">
+							Click to start the wheel and see if you<br/>
+							land on an exclusive Black Friday deal
+						</div>
+					</div>
+					<div id="text2">
+						<div class="bigText">
+							You've got game
+						</div>
+						<div class="smallText">
+							Save $100 on a qualified mobile phone<br/>
+							with a 2-year contract
+						</div>
+					</div>
+					<img src="./img/text3.png" id="replay" />
+					<div class="slider" id="slide">
+						<div class="frame" style="left: 0">
+							<div id="frame1">
+								<div class="column column1">
+									<div class="column-content" id="column1">
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+									</div>
+								</div>
+								<div class="column column2">
+									<div class="column-content" id="column2">
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+									</div>
+								</div>
+								<div class="column column3">
+									<div class="column-content" id="column3">
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/head-phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/inspiron.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone1.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/phone2.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/surface.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/xbox.png"/>
+										</div>
+										<div class="product">
+											<img src="./img/pinkbox.png"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<img src="img/spinbt.png" id="spinbt"/>
+						</div>
+						<div class="frame" style="left: 512px;">
+							<div id="frame2">
+							</div>
+						</div>
+					</div>
+					<img src="img/mslogo.png" id="fulllogo"/>
+					<img src="img/findmap.png" id="findmap"/>
+					<div id="direction">
+						<div id="direct_text">
+						</div>
+						<div id="direct_arrow">
+						</div>
+						<div id="see_store">
+							See store for details
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+				<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+				</script>
+				
+				<script type="text/javascript" src="main.js"></script>
+			</div>
+	</body>
+</html>

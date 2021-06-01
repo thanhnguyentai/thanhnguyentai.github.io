@@ -1,0 +1,165 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="javascript" src="jquery-1.4.2.min.js"></script>
+		<script language="javascript" src="jquery.cross-slide.min.js"></script>
+		<script language="javascript" src="s_476x630.js"></script>
+		
+		<style>
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			
+			#banner{				
+				width:476px;
+				height:630px;
+				position:absolute;
+				overflow:hidden;
+				top:0;
+				left:0;
+				border:0;
+				background-color:#ffffff;
+			}
+			
+			#banner  img{
+				position:absolute;
+			}
+			#bg{
+				top:0px;
+				left:0px;
+			}
+			
+			#text{
+				top:390px;
+				left:0px;
+				display:none;
+			}
+			#bt1{
+				top:387px;
+				right:0px;
+				display:none;
+			}
+			#bt2{
+				top:520px;
+				right:0px;
+				display:none;
+			}
+			#bt3{
+				top:565px;
+				right:0px;
+				display:none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<img id="bg" src="img_banner/476x630_bg.jpg" alt=""/>
+			<img id="text" src="img_banner/476x630_text1.jpg" alt=""/>
+			<img id="bt1" src="img_banner/476x630_bt1.jpg" alt=""/>
+			<img id="bt2" src="img_banner/476x630_bt2.jpg" alt=""/>
+			<img id="bt3" src="img_banner/476x630_bt3.jpg" alt=""/>
+		</div>
+	</body>
+</html>

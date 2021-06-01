@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#minimize{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				background: #ed1d25;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				opacity: 0;
+				display: none;
+				overflow: hidden;
+			}
+			#logo{
+				position: absolute;
+				top: 14px;
+				left: 16px;
+			}
+			#text{
+				position: absolute;
+				top: 12px;
+				left: 190px;
+			}
+			#arrow{
+				position: absolute;
+				top: 30px;
+				left: 266px;
+				width: 15px;
+				height: 15px;
+				background: url('img/arrow.png') no-repeat;
+				opacity: 0;
+			}
+			
+			#hand{
+				position: absolute;
+				top: 5px;
+				left: -42px;
+			}
+			
+			#cover{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#scratch{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				overflow: hidden;
+			}
+			#scratch_img{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="minimize">
+			<img src="img/logo.png" alt="logo" id="logo"/>
+			<img src="img/text.png" id="text"/>
+			<div id="arrow">
+			</div>
+			
+			<img id="cover" src="img/cover.png" alt=""/>
+			<div id="scratch">
+				<img id="scratch_img" src="img/scratch.png"/>
+			</div>
+			
+			<img id="hand" src="img/hand.png"/>
+		</div>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		
+	</body>
+</html>

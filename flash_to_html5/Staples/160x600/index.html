@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			160x600
+		</title>
+		<style type="text/css">
+			#container{
+				width: 160px;
+				height: 600px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -80px;
+				background : url(./images/bkg.png);
+				overflow : hidden;
+			}
+			
+			#logo {
+				position: absolute;
+				top :5px;
+				left : 5px;
+				width : 70px;
+				height : 34px;
+				z-index : 10;
+			}
+			
+			#text-logo {
+				position : absolute;
+				top : 40px;
+				left : 45px;
+				z-index : 10;
+			}
+			
+			
+			#blue1, #blue2, #blue3, #blue4,#blue1_parent, #blue2_parent, #blue3_parent, #blue4_parent,
+			#yellow1 ,#yellow2, #yellow3, #yellow4,#yellow1_parent,#yellow2_parent, #yellow3_parent, #yellow4_parent,
+			#green1, #green2, #green3, #green4,#green1_parent, #green2_parent, #green3_parent, #green4_parent,
+			#red1, #red2, #red3, #red4,#red1_parent,#red2_parent,#red3_parent,#red4_parent {
+				position : absolute;
+				width : 80px;
+				height : 300px;
+				overflow: hidden;
+				z-index : 1;
+			}
+			
+			#blue1 , #yellow1, #green1, #red1 {
+				-webkit-transition : all 0s linear;
+				transition :all 0s linear;
+				-webkit-transform-origin : 0% 100%;
+				-webkit-transform : rotate(-90deg) scale(1);
+			}
+			#blue2 , #yellow2, #green2, #red2 {
+				-webkit-transition : all 0s linear;
+				transition : all 0s linear;
+				-webkit-transform-origin : 100% 100%;
+				-webkit-transform : rotate(90deg) scale(1);
+			}
+			#blue3 , #yellow3, #green3, #red3 {
+				-webkit-transition : all 0s linear;
+				transition : all 0s linear;
+				-webkit-transform-origin : 0% 0%;
+				-webkit-transform : rotate(90deg) scale(1);
+			}
+			#blue4 , #yellow4, #green4, #red4 {
+				-webkit-transition : all 0s linear;
+				transition : all 0s linear;
+				-webkit-transform-origin : 100% 0%;
+				-webkit-transform : rotate(-90deg) scale(1);
+			}
+			
+			#blue1 img, #yellow1 img , #green1 img, #red1 img {
+				position: absolute;
+				top :0px;
+				left :0px;
+			}
+			#red1_parent{
+				top: 0px;
+				left: 0px;
+			}
+			#red1,#red2,#red3,#red4{
+				top: 0px;
+				left: 0px;
+			}
+			#blue2_parent , #yellow2_parent , #green2_parent , #red2_parent {
+				top :0px;
+				left : 80px;
+			}
+			
+			#blue3_parent , #yellow3_parent , #green3_parent , #red3_parent {
+				top :300px;
+				left : 0px;
+			}
+			
+			#blue4_parent , #yellow4_parent , #green4_parent , #red4_parent {
+				top :300px;
+				left : 80px;
+			}
+			
+			#blue2 img, #yellow2 img, #green2 img, #red2 img {
+				position: absolute;
+				top :0px;
+				left :-80px;
+			}
+			#blue3 img, #yellow3 img, #green3 img, #red3 img {
+				position: absolute;
+				top :-300px;
+				left :0px;
+			}
+			#blue4 img, #yellow4 img, #green4 img, #red4 img{
+				position: absolute;	
+				top :-300px;
+				left :-80px;
+			}
+			
+			#red1_parent ,#red2_parent, #red3_parent, #red4_parent{
+				z-index :5;
+			}
+			
+			#red_base {
+				position : absolute;
+				width : 160px;
+				height : 600px;
+				background : url(./images/red_base1.png);
+				opacity : 0;
+			}
+			
+			
+			#symbol2 {
+				position : absolute;
+				width : 148px;
+				height : 84px;
+				top : 70px;
+				left : 10px;
+				opacity :0;
+			}
+			#symbol3 {
+				position : absolute;
+				width : 157px;
+				height : 10px;
+				top : 550px;
+				left : 5px;
+				opacity :0;
+			}
+			#shop-now{
+				position : absolute;
+				width : 109px;
+				height : 29px;
+				top : 567px;
+				left : 25px;
+				opacity :0;
+				z-index: 100;
+			}
+			
+			#black-bottom {
+				position : absolute;
+				width : 160px;
+				height : 60px;
+				top : 540px;
+				left :0px;
+				background :#333333;
+				opacity :0;
+			}
+			
+			#slide_show{
+				position: absolute;
+				height: 350px;
+				width: 160px;
+				top: 165px;
+				right: 0px;
+				overflow: hidden;
+				opacity: 0;
+			}
+			#banner_arrow_left{
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -12px;
+				z-index: 100;
+			}
+			#banner_arrow_right{
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				margin-left: -12px;
+				z-index: 100;
+			}
+			.banner-item{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -114px; 
+				margin-left: -68px;
+			}
+			.banner-item-state1{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scale(1);
+				z-index: 20;
+			}
+			.banner-item-state2{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(100px) rotate(0deg) scale(0.6);
+				z-index: 19;
+			}
+			.banner-item-state3{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(100px) rotate(0deg) scale(0.6);
+				z-index: 18;
+				opacity: 0;
+			}
+			.banner-item-state4{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(100px) rotate(0deg) scale(0.6);
+				z-index: 18;
+				opacity: 0;
+			}
+			.banner-item-state5{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(100px) rotate(0deg) scale(0.6);
+				z-index: 18;
+				opacity: 0;
+			}
+			.banner-item-state6{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(100px) rotate(0deg) scale(0.6);
+				z-index: 18;
+				opacity: 0;
+			}
+			.banner-item-state7{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(-100px) rotate(0deg) scale(0.6);
+				z-index: 19;
+				opacity: 0;
+			}
+			.banner-item-state8{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(-100px) rotate(0deg) scale(0.6);
+				z-index: 19;
+				opacity: 0;
+			}
+			.banner-item-state9{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(-100px) rotate(0deg) scale(0.6);
+				z-index: 19;
+				opacity: 0;
+			}
+			.banner-item-state10{
+				-webkit-transition: all 0.5s linear;
+				transition: all 0.5s linear;
+				-webkit-transform-origin: 50% 50%;
+				-webkit-transform: translateX(0px) translateY(-100px) rotate(0deg) scale(0.6);
+				z-index: 19;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+				 <img id="logo" src="./images/staples.png" />
+				 <img id="text-logo" src="./images/text-logo1.png" />
+				 
+				 <img id="symbol2" src="./images/symbol2.png" >
+				 <div id="black-bottom" ></div>
+				 <img id="symbol3" src="./images/symbol3.png" >
+				 <img id="shop-now" src ="./images/shop-now.png">
+				 
+				 				 
+				 <div id="red1_parent">
+				 	<div id="red1">
+					 	<img src="images/red_base1.png" />
+					 </div>
+				 </div>
+				 <div id="red2_parent">
+				 	<div id="red2">
+					 	<img src="images/red_base1.png" />
+					 </div>
+			 	 </div>
+			 	 <div id="red3_parent">
+		 	 		<div id="red3">
+					 	<img src="images/red_base1.png" />
+					 </div>
+			 	 </div>
+			 	 <div id="red4_parent">
+		 	 		<div id="red4">
+					 	<img src="images/red_base1.png" />
+					 </div>
+			 	 </div>
+				 
+				 
+				 <div id="blue1_parent">
+				 	<div id="blue1">
+					 	<img  src ="./images/blue.png" />
+					 </div>
+				 </div>
+				 <div id="blue2_parent">
+				 	<div id="blue2">
+					 	<img  src ="./images/blue.png" />
+					 </div>
+				 </div>
+				 <div id="blue3_parent">
+				 	<div id="blue3">
+			 			<img  src ="./images/blue.png" />
+				 	</div>
+				 </div>
+				 <div id="blue4_parent">
+				 	<div id="blue4">
+				 		<img  src ="./images/blue.png" />
+				 	</div>
+				 </div>
+				 
+				 <div id="yellow1_parent">
+				 	<div id="yellow1">
+					 	<img  src ="./images/yellow.png" />
+					 </div>	
+				 </div>
+				 
+				 <div id="yellow2_parent">
+				 	<div id="yellow2">
+					 	<img  src ="./images/yellow.png" />
+					 </div>	
+				 </div>
+				 <div id="yellow3_parent">
+				 	<div id="yellow3">
+					 	<img  src ="./images/yellow.png" />
+					 </div>	
+				 </div>
+				 <div id="yellow4_parent">
+				 	<div id="yellow4">
+					 	<img  src ="./images/yellow.png" />
+					 </div>	
+				 </div>
+				 
+				 <div id="green1_parent">
+				 	<div id="green1">
+					 	<img  src ="./images/green.png" />
+					 </div>	
+				 </div>
+				 
+				 <div id="green2_parent">
+				 	<div id="green2">
+					 	<img  src ="./images/green.png" />
+					 </div>	
+				 </div>
+				 <div id="green3_parent">
+				 	<div id="green3">
+					 	<img  src ="./images/green.png" />
+					 </div>	
+				 </div>
+				 <div id="green4_parent">
+				 	<div id="green4">
+					 	<img  src ="./images/green.png" />
+					 </div>	
+				 </div>
+				 
+				 <div id="red_base" ></div>
+				
+				<div id="slide_show">
+				 	<img id="banner_arrow_left" src="images/arrow_left.png"/>
+				 	
+				 	<img class="banner-item banner-item-state1" data-state="1" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state2" data-state="2" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state3" data-state="3" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state4" data-state="4" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state5" data-state="5" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state6" data-state="6" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state7" data-state="7" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state8" data-state="8" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state9" data-state="9" src="images/box.png"/>
+				 	<img class="banner-item banner-item-state10" data-state="10" src="images/box.png"/>
+				 	
+				 	<img id="banner_arrow_right" src="images/arrow_right.png"/>
+				 </div>
+		</div>
+		
+		
+		<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>  -->
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="160x600.js"></script>
+		
+	</body>
+</html>

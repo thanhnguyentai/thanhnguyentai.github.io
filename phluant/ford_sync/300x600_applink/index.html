@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{
+				width: 300px;
+				height: 600px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				overflow: hidden;
+				margin-left: -150px;
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+				
+				background: #ffffff;
+				
+			}
+			#ph_conBanner{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 300px;
+				height: 600px;
+				display: block;
+				opacity: 0;
+			}
+			
+			.absolute{
+				position: absolute;
+			}
+			#video_container{
+				position: absolute;
+				width: 300px;
+				height: 155px;
+				overflow: hidden;
+				top: 0px;
+				left: 0px;
+			}
+			#preview1,#preview2{
+				top: 0px;
+				left: 0px;
+			}
+			#preview2{
+				display: none;
+				opacity: 0;
+			}
+
+			#replay {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -25px;
+				margin-left: -25px;
+				z-index: 5;
+				display: none;
+				opacity: 0;
+			}
+			#header_text{
+				top: 158px;
+				left: 0px;
+				background: #414141;
+				width: 300px;
+				height: 43px;
+			}
+			
+			#header_text_image{
+				top: 50%;
+				left: 50%;
+				margin-top: -7px;
+				margin-left: -71px;				
+			}
+
+			#quote_container{
+				position: absolute;
+				width: 300px;
+				height: 155px;
+				background: #3cb6d3;
+				top : 205px;
+			}
+			#quote{
+				position: absolute;
+				top: 45px;
+				left: 20px;
+				
+			}
+			
+			#footer{
+				position: absolute;
+				bottom: 0px;
+			}
+			
+			#border{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 298px;
+				height: 598px;
+				border: 1px solid #020202;
+			}
+			
+			#video_native {
+				position: absolute;
+				display: none;
+				opacity: 0;
+				width: 300px;
+				height: 155px;
+				background: #000000;
+				z-index: 10;
+			}
+			#video{
+				position: absolute;
+				top: -10px;
+				left: 0px;
+				z-index: 100;
+			}
+			#bt_close_video{
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				background: url('img/close.png') center center no-repeat;
+				display: none;
+			}
+			
+			#car_1{
+				top: 450px;
+				left: 40px;
+				display: none;
+			}
+			#car_2{
+				top: 450px;
+				left: 40px;
+				display: none;
+			}
+			#car_3{
+				top: 445px;
+				left: 60px;
+				display: none;
+			}
+			#tab_more{
+				width: 76px;
+				height: 28px;
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				z-index: 1;
+			}
+			#disclame{
+				width: 300px;
+				height: 237px;
+				background-color: #1f1f1f;
+				bottom: 0px;
+				left: 0px; 
+				opacity: 0;
+				display: none;
+				z-index: 10;
+			}
+			#bt_close_disclame{
+				width: 30px;
+				height: 30px;
+				background: url('img/close.png') no-repeat center center;
+				top: 0px;
+				right: 0px;
+			}
+			#disclame_text{
+				top: 50%;
+				left: 50%;
+				margin-top: -60px;
+				margin-left: -119px;
+				position: absolute;
+				width: 238px;
+				font-size: 11px;
+				color: #fff;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+				<div id="video_container" class="absolute">
+					<img id="preview1" class="absolute" src="img/AppLink1.jpg" alt=""/>
+					<img id="preview2" class="absolute" src="img/AppLink2.jpg" alt=""/>
+					<img id="replay" class="absolute" src="img/replay.png" alt=""/>
+					
+					<div id="video_native" class="absolute">
+						<video class="absolute" id="video" width="300" controls>
+						  	<source src="video.webm" type='video/webm' >
+							<source src="video.mp4" type='video/mp4'>
+						</video>
+						
+						<div id="bt_close_video" class="absolute">
+						</div>
+					</div>
+				</div>
+				<div id="header_text" class="absolute">
+					<img id="header_text_image" class="absolute" src="img/header_text.png" alt=""/>
+				</div>
+				
+				<div id="quote_container" class="absolute">
+					<img id="quote" class="absolute" src="img/text.png" alt=""/>
+				</div>
+				
+				<img id="footer" class="absolute" src="img/footer.jpg" alt=""/>
+				
+				<img id="car_1" class="absolute" src="img/focus.png" alt=""/>
+				<img id="car_2" class="absolute" src="img/escape.png" alt=""/>
+				<img id="car_3" class="absolute" src="img/fusion.png" alt=""/>
+				
+				<div id="border"> </div>
+				
+				<div id="tab_more"> </div>
+				
+				<div id="disclame" class="absolute">
+					<div id="bt_close_disclame" class="absolute">
+					</div>
+					<div id="disclame_text">
+						SYNC AppLink is available on select vehicles.
+						Don't drive while distracted. Even with voice commands, 
+						only use phones/other devices when safe. 
+						Not all features are compatible with all phones.<br/><br/> 
+						
+						You must have a Bluetooth&reg;-enabled phone paired to your SYNC system. 
+						The Bluetooth word mark is a trademark of the Bluetooth SIG, Inc.
+					</div>
+				</div>
+
+				
+			</div>
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="300x600.js"></script>
+		</div>
+	</body>
+</html>

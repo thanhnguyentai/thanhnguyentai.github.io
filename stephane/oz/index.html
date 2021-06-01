@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="javascript" src="jquery.min.js"></script>
+		<script language="javascript" src="main.js"></script>
+		
+		<style>
+			#banner, .frame{				
+				width:320px;
+				height:480px;
+				position:absolute;
+				overflow:hidden;
+				top:0;
+				left:0;
+				border:0;
+				background-color:#ffffff;
+			}
+			
+			#banner  img{
+				position:absolute;
+			}
+			
+			#bg_loading{
+				top: 320px;
+				left: 50%;
+				margin-left: -49px;
+			}
+			#point_loading{
+				top: 323px;
+				left: 114px;
+			}
+			#bottom_logo{
+				bottom: 80px;
+				right: 8px;
+				pointer-events: none;
+			}
+			
+			#pointer{
+				top: 62px;
+				left: 355px/*215px*/;
+			}
+			#swipe{
+				top: 30px;
+				left: 0px;
+				display: none;
+				opacity: 0;
+			}
+			#top_logo{
+				top: 30px;
+				left: 0px;
+				display: none;
+				opacity: 0;
+			}
+			#more_infor{
+				bottom: 85px;
+				left: 10px;
+				display: none;
+				opacity: 0;
+			}
+			#site{
+				display: none;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<img id="color_img" src="img/color_scene.jpg" style="display: none;"/>
+			<canvas style="position: absolute;" id="gray_canvas" width="640px" height="960px"></canvas>
+			<img id="bottom_logo" src="img/bottom_logo.png"/>
+			<div id="loading_scene" class="frame">
+				<img src="img/start.jpg"/>
+				<img id="bg_loading" src="img/bg_loading.png"/>
+				<img id="point_loading" src="img/load_point.png"/>
+			</div>
+			
+			<img id="swipe" src="img/swipe_guide.png"/>
+			<img id="top_logo" src="img/top_logo.png"/>
+			<a target="_blank" href="http://m.mobileembrace.com/mcs/publish/5101/79524"><img id="more_infor" src="img/more_infor.png"/></a>
+			<img id="pointer" src="img/pointer.png"/>
+			
+			<img id="site" src="img/site.jpg"/>
+		</div>
+	</body>
+</html>

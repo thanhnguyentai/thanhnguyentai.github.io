@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			FlashToHtml
+		</title>
+		<style type="text/css">
+			#container{
+				width: 300px;
+				height: 250px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -150px;
+				background: url('img/bg.png');
+				overflow : hidden;
+			}
+			
+			
+			#logo{
+				position : absolute;
+				width : 30px;
+				height : 30px;
+				top : 7px;
+				right : 7px;
+			}
+			
+			#text-1{
+				position : absolute;
+				opacity : 0;
+				top : 40px;
+				left : 10px;
+			}
+			
+			#text-2{
+				position : absolute;
+				opacity : 0;
+				top : 73px;
+				left : 10px;
+			}
+			
+			#text-3{
+				position : absolute;
+				opacity : 0;
+				top : 73px;
+				left : 105px;
+			}
+			#text-4{
+				position : absolute;
+				opacity : 0;
+				top : 106px;
+				left : 10px;
+			}
+			
+			#text-parent{
+				position: absolute;
+				width : 70px;
+				height : 30px;
+				top : 107px;
+				left : 40px;
+				overflow : hidden;
+			}
+			#text-5{
+				position : absolute;
+				opacity : 0;
+				top : 0px;
+				left : 0px;
+			}
+			#text-6{
+				position : absolute;
+				opacity : 0;
+				top : 139px;
+				left : 10px;
+			}
+			#text-7{
+				position : absolute;
+				opacity : 0;
+				top : 139px;
+				left : 44px;
+			}
+			#text-8{
+				position : absolute;
+				opacity : 0;
+				top : 139px;
+				left : 70px;
+			}
+			#text-9{
+				position : absolute;
+				opacity : 0;
+				top : 172px;
+				left : 10px;
+			}
+			
+			#blink-parent{
+				position : absolute;
+				opacity : 0;
+				width : 80px;
+				height : 30px;
+				top : 106px;
+				left : 110px;
+				overflow : hidden;
+			}
+			
+			#blink {
+				position : absolute;
+				opacity :0;
+				width : 14px;
+				height : 4px;
+				top : 129px;
+				left : 111px;
+			}
+			
+			
+			#end-screen {
+				position : absolute;
+				opacity : 0;
+				top : 10px;
+				left : 10px;
+			}
+			
+			#logo-end {
+				position : absolute;
+				opactity : 0;
+				top : 10px;
+				right : 10px;
+				opacity : 0;
+			}
+			
+			#other-text{
+				position : absolute;
+				width : 230px;
+				height : 150px;
+				left : 70px;
+				top : 40px;
+				opacity : 0;
+			}
+			#wrapper {
+				position : absolute;
+			}
+			
+			#end-text {
+				position : absolute;
+				with :280px;
+				height : 120px;
+				top : 50px;
+				left : 20px;
+				opacity : 0;
+			}
+			#end-logo {
+				position : absolute;
+				with : 175px;
+				height : 60px;
+				top : 177px;
+				left : 120px;
+				opacity : 0;
+			}
+			#go-now {
+				position : absolute;
+				width : 90px;
+				height : 30px;
+				top : 134px;
+				left : 203px;
+				opacity : 0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img id="logo" src="img/logo.png" />
+			
+		<div id="wrapper">
+			<img id="text-1" src="img/text-1.png">
+			<img id="text-2" src="img/text-2.png">
+			<img id="text-3" src="img/text-3.png">
+			<img id="text-4" src="img/text-4.png">
+			<div id="text-parent">
+				<img id="text-5" src="img/text-5.png">
+			</div>
+			<img id="text-6" src="img/text-6.png">
+			<img id="text-7" src="img/text-7.png">
+			<img id="text-8" src="img/text-8.png">
+			<img id="text-9" src="img/text-9.png">
+			
+			<img id="blink" src="img/blinking.png"/>
+		</div>
+		
+		<div id="other-text-parent">		
+			<img id="other-text" src="img/other-text.png" >
+		</div>
+			<img id="end-text" src="img/end-text.png">
+			<img id="end-logo" src="img/end-logo.png">
+			<div id="go-now" ></div>
+				
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="320x250.js"></script>
+	</body>
+</html>

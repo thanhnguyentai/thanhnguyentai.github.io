@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TPL</title>
+        
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="banner_120x600.js"></script>
+        
+        <style type="text/css">
+        	/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*--------------------------------*/
+			
+        	#banner{
+        		width:120px;
+        		height:600px;
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+                        text-decoration: none;
+        		overflow:hidden;
+        	}
+        	img{
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+        	}
+        	
+        	#logo{
+        		top:470px;
+        		left:3px;
+        	}
+        	
+        	.frame{
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+        		width:120px;
+        		height:600px;
+        	}
+        	
+        	#logo_last{
+        		top:200px;
+        		left:3px;	
+        	}
+        	#slide{
+        		left:-50px;
+        		top:0px;
+        	}
+        	
+        	
+        	#beam1{
+        		top:20px;
+        		left:-2px;
+        		display:none;
+        	}
+        	
+        	#light1{
+        		left:0px;
+        		top:34px;
+        		display:none;
+        	}
+        	#text1{
+        		top:110px;
+        		display:none;
+        	}
+        	
+        	#beam2{
+        		top:70px;
+        		left:80px;
+        		display:none;
+        	}
+        	#light2{
+        		top:85px;
+        		left:-2px;
+        		display:none;
+        	}
+        	#light2_2{
+        		top:85px;
+        		left:-2px;
+        		display:none;
+        	}
+        	
+        	#ticket1{
+        		top:220px;
+        		left:0px;
+        		display:none;
+        	}
+        	
+        	#ticket2{
+        		top:260px;
+        		left:2px;
+        		display:none;
+        	}
+        	#text2{
+        		display:none;
+        		left:4px;
+        		top:60px;
+        	}
+
+                #container_slide{
+                    width:112px;
+                    height:34px;
+                    position:absolute;
+                    overflow:hidden;
+                    left:4px;
+                    top:291px;
+                }
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="https://www.theplayerslottery.com/">
+        	<img src="img/banner_120x600_bg.jpg" alt=""/>
+        	<img id="logo" src="img/banner_120x600_logo.png" alt=""/>
+        	
+        	<img id="beam1" src="img/banner_120x600_beam1.png" alt=""/>
+        	<img id="light1" src="img/banner_120x600_light1.png" alt=""/>
+    		<img id="text1" src="img/banner_120x600_text1.png" alt=""/>
+    		
+    		<img id="beam2" src="img/banner_120x600_beam2.png" alt=""/>
+    		<img id="light2_2" src="img/banner_120x600_light2_2.png" alt=""/>
+    		<img id="light2" src="img/banner_120x600_light2.png" alt=""/>
+    		
+                <img id="ticket2" src="img/banner_120x600_ticket2.png" alt=""/>
+                <img id="ticket1" src="img/banner_120x600_ticket1.png" alt=""/>
+                <img id="text2" src="img/banner_120x600_text2.png"/>
+			
+        	
+        	<div id="frame_logo" class="frame" style="top:-400px;">
+                    <img id="logo_last" src="img/banner_120x600_logo.png" alt=""/>
+                    <div id="container_slide">
+                        <img id="slide" src="img/banner_120x600_slide.png" alt=""/>
+                    </div>
+        	</div>
+        </a>
+    </body>
+</html>

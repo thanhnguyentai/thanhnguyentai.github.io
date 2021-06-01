@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#minimize_container{
+				width: 320px;
+				height: 50px;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				position: absolute;
+				overflow: hidden;
+			}
+			#minimize{
+				top: 0px;
+				left: 0px;
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				background: #ed1d25;
+				opacity: 0;
+				display: none;
+				overflow: hidden;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#logo{
+				position: absolute;
+				top: 14px;
+				left: 16px;
+			}
+			#text{
+				position: absolute;
+				top: 12px;
+				left: 190px;
+			}
+			#arrow{
+				position: absolute;
+				top: 30px;
+				left: 266px;
+				width: 15px;
+				height: 15px;
+				background: url('img/arrow.png') no-repeat;
+				opacity: 0;
+			}
+			
+			#hand{
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				opacity: 0;
+			}
+			
+			#cover{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				opacity: 0.95;
+			}
+			#scratch{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				overflow: hidden;
+				opacity: 0.95;
+			}
+			#scratch_img{
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			
+			.handframe-animation{
+				animation: handframe 3.2s ease;
+				-webkit-animation: handframe 3.2s ease;
+				-moz-animation: handframe 3.2s ease;
+				-ms-animation: handframe 3.2s ease;
+				
+				animation-fill-mode: forwards;
+				-webkit-animation-fill-mode: forwards;
+				-moz-animation-fill-mode: forwards;
+				-ms-animation-fill-mode: forwards;
+			}
+			
+			.scratch-animation{
+				animation: scratch 3.2s ease;
+				-webkit-animation: scratch 3.2s ease;
+				-moz-animation: scratch 3.2s ease;
+				-ms-animation: scratch 3.2s ease;
+				
+				animation-fill-mode: forwards;
+				-webkit-animation-fill-mode: forwards;
+				-moz-animation-fill-mode: forwards;
+				-ms-animation-fill-mode: forwards;
+			}
+			
+			.arrow-animation{
+				animation: arrow 1s ease;
+				-webkit-animation: arrow 1s ease;
+				-moz-animation: arrow 1s ease;
+				-ms-animation: arrow 1s ease;
+				
+				animation-fill-mode: forwards;
+				-webkit-animation-fill-mode: forwards;
+				-moz-animation-fill-mode: forwards;
+				-ms-animation-fill-mode: forwards;
+			}
+			
+			@keyframes handframe
+			{
+				0%   {
+					top: 10px;
+					left: 10px;
+				}
+				31.25%  {
+					top: 1px;
+					left: 170px;
+				}
+				68.75%  {
+					top: 19px;
+					left: 110px;
+				}
+				100% {
+					top: -10px;
+					left: 330px;
+				}
+			}
+			
+			@-webkit-keyframes handframe
+			{
+				0%   {
+					top: 10px;
+					left: 10px;
+				}
+				25%  {
+					top: 1px;
+					left: 170px;
+				}
+				55%  {
+					top: 19px;
+					left: 110px;
+				}
+				80% {
+					top: -10px;
+					left: 330px;
+				}
+				100% {
+					top: -10px;
+					left: 330px;
+				}
+			}
+			
+			@-moz-keyframes handframe
+			{
+				0%   {
+					top: 10px;
+					left: 10px;
+				}
+				25%  {
+					top: 1px;
+					left: 170px;
+				}
+				55%  {
+					top: 19px;
+					left: 110px;
+				}
+				80% {
+					top: -10px;
+					left: 330px;
+				}
+				100% {
+					top: -10px;
+					left: 330px;
+				}
+			}
+			
+			@-ms-keyframes handframe
+			{
+				0%   {
+					top: 10px;
+					left: 10px;
+				}
+				25%  {
+					top: 1px;
+					left: 170px;
+				}
+				55%  {
+					top: 19px;
+					left: 110px;
+				}
+				80% {
+					top: -10px;
+					left: 330px;
+				}
+				100% {
+					top: -10px;
+					left: 330px;
+				}
+			}
+			
+			/*----- scratch animation -----*/
+			@keyframes scratch
+			{
+				0%   {
+					width: 320px;
+				}
+				25%  {
+					width: 120px;
+				}
+				55%  {
+					width: 120px;
+				}
+				80% {
+					width: 0px;
+				}
+				100% {
+					width: 0px;
+				}
+			}
+			
+			@-webkit-keyframes scratch
+			{
+				0%   {
+					width: 320px;
+				}
+				25%  {
+					width: 120px;
+				}
+				55%  {
+					width: 120px;
+				}
+				80% {
+					width: 0px;
+				}
+				100% {
+					width: 0px;
+				}
+			}
+			
+			@-moz-keyframes scratch
+			{
+				0%   {
+					width: 320px;
+				}
+				25%  {
+					width: 120px;
+				}
+				55%  {
+					width: 120px;
+				}
+				80% {
+					width: 0px;
+				}
+				100% {
+					width: 0px;
+				}
+			}
+			
+			@-ms-keyframes scratch
+			{
+				0%   {
+					width: 320px;
+				}
+				25%  {
+					width: 120px;
+				}
+				55%  {
+					width: 120px;
+				}
+				80% {
+					width: 0px;
+				}
+				100% {
+					width: 0px;
+				}
+			}
+			
+			/*---- arrow animation ----*/
+			@keyframes arrow
+			{
+				0%   {
+					left: 266px;
+				}
+				25%  {
+					left: 276px;
+				}
+				50%  {
+					left: 266px;
+				}
+				75% {
+					left: 276px;
+				}
+				100% {
+					left: 266px;
+				}
+			}
+			
+			@-webkit-keyframes arrow
+			{
+				0%   {
+					left: 266px;
+				}
+				25%  {
+					left: 276px;
+				}
+				50%  {
+					left: 266px;
+				}
+				75% {
+					left: 276px;
+				}
+				100% {
+					left: 266px;
+				}
+			}
+			
+			@-moz-keyframes arrow
+			{
+				0%   {
+					left: 266px;
+				}
+				25%  {
+					left: 276px;
+				}
+				50%  {
+					left: 266px;
+				}
+				75% {
+					left: 276px;
+				}
+				100% {
+					left: 266px;
+				}
+			}
+			
+			@-ms-keyframes arrow
+			{
+				0%   {
+					left: 266px;
+				}
+				25%  {
+					left: 276px;
+				}
+				50%  {
+					left: 266px;
+				}
+				75% {
+					left: 276px;
+				}
+				100% {
+					left: 266px;
+				}
+			}
+			
+			#scratch_container,#scratch_content{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 320px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="minimize_container">
+			<div id="minimize">
+				<img src="img/logo.png" alt="logo" id="logo"/>
+				<img src="img/text.png" id="text"/>
+				<div id="arrow">
+				</div>
+				
+				<div id="scratch_container">
+					<img id="hand" src="img/hand.png"/>
+			
+					<div id="scratch">
+						<img id="scratch_img" src="img/scratch_new.png"/>
+					</div>
+					
+					<img id="cover" src="img/cover_new.png" alt=""/>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="javascript" src="jquery-1.4.2.min.js"></script>
+		<script language="javascript" src="s_768x1004.js"></script>
+		<title>	
+			Galaxy S3
+		</title>
+		<style>
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*----------------------------------------------*/
+			#banner{
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:768px;
+				height:1004px;
+				overflow:hidden;
+			}
+			img{
+				position:absolute;
+			}
+			
+			#bg{
+				top:0px;
+				left:0px;
+			}
+			
+			#logo_top{
+				top:50px;
+				left:236px;
+			}
+			#logo_bottom{
+				bottom:20px;
+				left:660px;
+			}
+			
+			/*----------------------*/
+			.frame{
+				width:768px;
+				height:1004px;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			
+			/*-- frame1 -------------*/
+			#txtIntro{
+				left:241px;
+				top:130px;
+				display:none;
+			}
+			#txtTheNext{
+				top:130px;
+				left:208px;
+				display:none;
+			}
+			
+			#txtNewWay{
+				left:130px;
+				top:200px;
+				display:none;
+			}
+			#txtThing{
+				top:200px;
+				left:206px;
+				display:none;
+			}
+			
+			#txtShare{
+				left:489px;
+				top:200px;
+				display:none;
+			}
+			#bigphone{
+				top:360px;
+				left:768px;/*251*/
+			}
+			#div_phone{
+				width:232px;
+				height:415px;
+				position:absolute;
+				top:420px;/*540*/
+				left:268px;/*120*/
+			}
+			#phone{
+				top:0px;
+				left:500px;/*268*/
+			}
+			#phone2{
+				top:420px;
+				left:268px;
+				display:none;
+			}
+			#light{
+				top:250px;
+				left:0px;
+				display:none;
+			}
+			#light2{
+				top:180px;
+				left:0px;
+				display:none;
+			}
+			#txtOneByOne{
+				bottom:90px;
+				left:277px;/*227*/
+				opacity:0;
+			}
+			#button{
+				bottom:95px;
+				left:308px;
+				display:none;
+			}
+			#txtOneByMany{
+				bottom:82px;
+				left:261px;/*211*/
+				opacity:0;
+			}
+			#txtOneToAny{
+				bottom:80px;
+				left:235px;/*185*/
+				opacity:0;
+			}
+			#phonesmall1{
+				top:445px;
+				left:268px;/*140*/
+				display:none;
+			}
+			#phonesmall2{
+				top:445px;
+				left:268px;/*434*/
+				display:none;
+			}
+			#phonemedium1{
+				top:435px;
+				left:268px;/*190*/
+				display:none;
+			}
+			#phonemedium2{
+				top:435px;
+				left:268px;/*363*/
+				display:none;
+			}
+			#txtSimulate{	
+				left:465px;
+				bottom:170px;
+				display:none;
+			}
+			#tv{
+				top:420px;
+				left:768px;/*131*/
+			}
+			#miniImg{
+				top:111px;
+				left:-35px;
+				display:none;
+				-webkit-transform:rotateX(0deg) rotateY(0deg) rotateZ(90deg);
+				-moz-transform:rotate(90deg);
+			}
+			
+			#txtWith,#txtSingle,#txtTap{
+				left:80px;
+				opacity:0;
+			}
+			#txtWith{
+				top:370px;
+			}
+			#txtSingle{
+				top:450px;
+			}
+			#txtTap{
+				top:530px;
+			}
+			#beam{
+				top:430px;
+				left:270px;
+				display:none;
+			}
+			#light_small{
+				top:170px;
+				left:350px;
+				display:none;
+			}
+			#light_small2{
+				top:170px;
+				left:90px;
+				display:none;
+			}
+			.phone-container{
+				width:232px;
+				height:415px;
+				
+				-webkit-perspective:1000;
+				-webkit-perspective-origin: 50% 50%;
+				-o-perspective:1000;
+				-o-perspective-origin: 50% 50%;
+				-moz-perspective:1000;
+				-moz-perspective-origin: 50% 50%;
+				perspective:1000;
+				perspective-origin: 50% 50%;
+				
+				position:absolute;
+			}
+			#phone-container{
+				/*
+				top:300px;
+				left:1004px;
+				*/
+				top:0px;
+				left:500px;/*268*/
+			}
+			#phone-container2{
+				/*
+				top:300px;
+				left:390px;
+				display:none;
+				*/
+				top:420px;
+				left:268px;
+				display:none;
+				
+			}
+			
+			#phone_small,#camera{
+				top:0;/*300*/
+				left:0;/*1004 - 390*/
+			}
+			#camera{
+				display:none;
+			}
+			#phone_small2{
+				top:0;
+				left:0px;/*390 - 130*/
+			}
+			#phone_flip2{
+				top:0px;
+				left:0px;
+				display:none;
+			}
+			
+			#phone_flip{
+				top:0px;
+				right:0px;
+				display:none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<img id="bg" src="img/bg.jpg" alt=""/>
+			
+			<img id="txtIntro" src="img/txtIntro.png" alt=""/>
+			<img id="txtNewWay" src="img/txtNewWay.png" alt=""/>
+			<img id="txtShare" src="img/txtShare.png" alt=""/>
+			
+			<div id="frame1" class="frame">
+				<img id="light" src="img/light.png" alt=""/>
+				
+				<img id="beam" src="img/beam.png" alt=""/>
+				
+				<div id="phone-container2" class="phone-container">
+					<img id="phone_small2" src="img/phone_flower.png" alt=""/>
+					<img id="phone_flip2" src="img/phone_flip.png" alt=""/>
+				</div>
+				
+				<img id="phonesmall1" src="img/smallphone.png" alt=""/>
+				<img id="phonesmall2" src="img/smallphone.png" alt=""/>
+				<img id="phonemedium1" src="img/mediumphone.png" alt=""/>
+				<img id="phonemedium2" src="img/mediumphone.png" alt=""/>
+				
+				<img id="tv" src="img/tv.png" alt=""/>
+				
+				<div id="div_phone">
+					<div id="phone-container" class="phone-container">
+						<img id="phone_small" src="img/phone.png" alt=""/>
+						<img id="camera" src="img/camera.png" alt=""/>
+						<img id="phone_flip" src="img/phone_flip2.png" alt=""/>
+						
+						<img id="miniImg" src="img/smallDevice.png" alt=""/>
+					</div>
+				</div>
+			</div>
+			
+			<img id="light_small" src="img/light_small.png" alt=""/>
+			<img id="light_small2" src="img/light_small.png" alt=""/>
+			
+			
+			<!--
+			<img id="txtWith" src="img/txt_with.png" alt=""/> 
+			<img id="txtSingle" src="img/txt_single.png" alt=""/> 
+			<img id="txtTap" src="img/txt_tap.png" alt=""/> 
+			-->
+			
+			<img id="txtTheNext" src="img/txtTheNext.png" alt=""/>
+			<img id="txtThing" src="img/txtThing.png" alt=""/>
+			<div id="frame2" class="frame">
+				<img id="light2" src="img/light.png" alt=""/>
+				<img id="bigphone" src='img/bigphone.png' alt=""/>
+			</div>
+			
+			<img id="button" src="img/button.png" alt=""/>
+			
+			<img id="txtSimulate" src="img/txtSimulate.png" alt=""/>
+			<img id="txtOneByOne" src="img/txtOneByOne.png" alt=""/>
+			<img id="txtOneByMany" src="img/txtOneByMany.png" alt=""/>
+			<img id="txtOneToAny" src="img/txtOneToAny.png" alt=""/>
+			
+			<img id="logo_top" src="img/top_logo.png" alt=""/>
+			<img id="logo_bottom" src="img/bottom_logo.png" alt=""/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{
+				z-index:10000;position:absolute;top:0px;left:0px; display:block; width:728px; height: 90px;
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#ph_container .absolute{position:absolute;}
+			
+			#ph_conBanner{z-index:0;position:absolute; visibility:visible; width:728px; height:90px;overflow:hidden; left:0px; top:0px;}
+			
+			/*--- 300x250 ----*/
+			#banner300x250{
+				position: absolute;
+				width: 300px;
+				height: 250px;
+				top: 0px;
+				left: 0px;
+			}
+			.frame_300x250{
+				position: absolute;
+				width: 300px;
+				height: 250px;
+				top: 90px;
+				left: 0px;
+			}
+			#frame1_300x250{
+				background: url('img/bg1.jpg') no-repeat;
+			}
+			#frame2_300x250{
+				background: url('img/bg2.jpg') no-repeat;
+				opacity: 0;
+			}
+			#remember_300x250{
+				bottom: 45px;
+				left: 50%;
+				margin-left: -63.5px;
+				opacity: 0;
+			}
+			#whenyoufelt_300x250{
+				bottom: 20px;
+				left: 50%;
+				margin-left: -89.5px;
+				opacity: 0;
+			}
+			#every_inch_of_the_world_300x250{
+				bottom: 20px;
+				left: 50%;
+				margin-left: -102.5px;
+				opacity: 0;
+			}
+			#button_300x250{
+				bottom: 20px;
+				right: 10px;
+				opacity: 0;	
+			}
+			#legal_300x250{
+				bottom: 5px;
+				right: 8px;
+				opacity: 0;
+			}
+			#text_300x250{
+				top: 50px;/*32*/
+				left: 50%;
+				margin-left: -116.5px;
+				opacity: 0;
+			}
+			
+			#logo_320x250{
+				top: 5px;
+				right: 5px;
+			}
+			#mask{
+				top: 0px;
+				left: 0px;
+				background: #000000;
+				width: 300px;
+				height: 250px;
+			}
+			/*--- 300x250 ----*/
+			
+			/*--- 728x90 ----*/
+			#banner728x90{
+				position: absolute;
+				width: 728px;
+				height: 90px;
+				top: 0px;
+				left: 0px;
+			}
+			.frame_728x90{
+				position: absolute;
+				width: 728px;
+				height: 90px;
+				top: 0px;
+				left: 0px;
+			}
+			#frame1_728x90{
+				background: url('img/bg1.jpg') no-repeat;
+			}
+			#frame2_728x90{
+				background: url('img/bg2.jpg') no-repeat;
+				opacity: 0;
+			}
+			#remember_728x90{
+				bottom: 38px;
+				left: 140px;
+				opacity: 0;
+				
+			}
+			#whenyoufelt_728x90{
+				bottom: 34px;
+				left: 100px;
+				opacity: 0;
+			}
+			#every_inch_of_the_world_728x90{
+				bottom: 34px;
+				left: 70px;
+				opacity: 0;
+			}
+			#button_728x90{
+				bottom: 32px;
+				right: 20px;
+				opacity: 0;	
+			}
+			#legal_728x90{
+				bottom: 5px;
+				right: 8px;
+				opacity: 0;
+				display: none;
+			}
+			#legal_old_728x90{
+				bottom: 5px;
+				right: 25px;
+				opacity: 0;
+			}
+			#text_728x90{
+				top: 34px;/*22*/
+				left: 80px;
+				opacity: 0;
+			}
+			
+			#logo_728x90{
+				top: 5px;
+				right: 5px;
+			}
+			/*--- 728x90 ----*/
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+				<div id="banner300x250">
+					<div id="frame2_300x250" class="frame_300x250">
+						<img id="button_300x250" class="absolute" src="img_300x250/button.png" alt=""/>
+						<img id="text_300x250" class="absolute" src="img_300x250/text.png" alt=""/>
+						
+						<img id="logo_320x250" class="absolute" src="img_300x250/logo.png" alt=""/>
+						<div id="mask" class="absolute">&nbsp;</div>
+						<canvas id="canvas_mask" width="300" height="250" class="absolute" style="top: 0px; left: 0px;">
+						</canvas>
+					</div>
+				</div>
+				
+				<div id="banner728x90">
+					<div id="frame1_728x90" class="frame_728x90">
+						<img id="remember_728x90" class="absolute" src="img/remember.png" alt=""/>
+						<img id="whenyoufelt_728x90" class="absolute" src="img/whenyoufelt.png" alt=""/>
+						<img id="every_inch_of_the_world_728x90" class="absolute" src="img/every_inch_of_the_world.png" alt=""/>
+						
+						<canvas id="canvas" width="728" height="90" class="absolute" style="top: 0px; left: 0px;">
+							
+						</canvas>
+					</div>
+					<div id="frame2_728x90" class="frame_728x90">
+						<img id="button_728x90" class="absolute" src="img/button.png" alt=""/>
+						<img id="legal_old_728x90" class="absolute" src="img/legal_old.png" alt=""/>
+						<img id="legal_728x90" class="absolute" src="img/legal.png" alt=""/>
+						<img id="text_728x90" class="absolute" src="img/text.png" alt=""/>
+					</div>
+					<img id="logo_728x90" class="absolute" src="img/logo.png" alt=""/>
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="728x90.js"></script>
+		</div>
+	</body>
+</html>

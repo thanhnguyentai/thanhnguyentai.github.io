@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TPL</title>
+        
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="banner_887x169.js"></script>
+        
+        <style type="text/css">
+        	/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*--------------------------------*/
+			
+        	#banner{
+        		width:887px;
+        		height:169px;
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+				text-decoration: none;
+        		overflow:hidden;
+        	}
+        	img{
+        		position:absolute;
+        	}
+			.frame{
+				position:absolute;
+				width:887px;
+				height:169px;
+			}
+        	#logo{
+				top:10px;
+				right:6px;
+			}
+			#planet{
+				top:0px;
+				left:0px;
+				z-index:2;
+			}
+			#circle,#circledown{
+				top:60px;
+				left:0px;
+				display:none;
+			}
+			#circle{
+				z-index:4;
+			}
+			
+			/*---------------------------------------------*/
+			#text1{
+				left:295px;
+				top:20px;
+				display:none;
+			}
+			#facebook{
+				top:95px;
+				left:380px;
+				display:none;
+			}
+			#facebooklight_down,#facebooklight_up{
+				top:37px;	
+				left:379px;
+				display:none;
+			}
+			#twitter{
+				top:95px;
+				left:500px;
+				display:none;
+			}
+			#twitterlight_down,#twitterlight_up{
+				top:40px;
+				left:513px;
+				display:none;
+			}
+			
+			#twitterbig{
+				top:55px;
+				left:120px;
+				z-index:1;
+				opacity:0;
+			}
+			#facebookbig{
+				top:55px;
+				left:120px;
+				z-index:1;
+				opacity:0;
+			}
+			#winball{
+				top:55px;
+				left:120px;
+				z-index:5;
+				opacity:0;
+			}
+			
+			#text2,#text2_blur{
+				left:150px;
+				top:30px;
+			}
+			#text2_blur{
+				left:143px;
+				display:none;
+			}
+			#text3{
+				left:300px;
+				top:40px;
+			}
+			#win_frame{
+				top:169px;
+				left:0px;
+			}
+			
+			#winlight{
+				left:380px;
+				top:20px;
+				display:none;
+			}
+			#text4{
+				left:340px;
+				top:35px;
+				display:none;
+			}
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="https://www.theplayerslottery.com/">
+        	<img id="bg" src="img/banner_887x169_bg.jpg" alt=""/>
+			<div id="facebook_frame" class="frame">
+				<img id="facebooklight_down" src="img/banner_887x169_facebooklight_down.png" alt=""/>
+				<img id="facebook" src="img/banner_887x169_facebook.png" alt=""/>
+				<img id="facebooklight_up" src="img/banner_887x169_facebooklight_up.png" alt=""/>
+				
+				<img id="twitterlight_down" src="img/banner_887x169_twitterlight_down.png" alt=""/>
+				<img id="twitter" src="img/banner_887x169_twitter.png" alt=""/>
+				<img id="twitterlight_up" src="img/banner_887x169_twitterlight_up.png" alt=""/>
+			</div>
+			
+			
+			<img id="text1" src="img/banner_887x169_text1.png" alt=/>
+			<div id="winlight_frame" class="frame">
+				<img id="winlight" src="img/banner_887x169_winlight.png" alt=/>
+			</div>
+			<div id="win_frame" class="frame">
+				<img id="text3" src="img/banner_887x169_text3.png" alt=/>
+				<img id="text2_blur" src="img/banner_887x169_text2_blur.png" alt=/>
+				<img id="text2" src="img/banner_887x169_text2.png" alt=/>
+			</div>
+			
+			<img id="text4" src="img/banner_887x169_text4.png" alt=/>
+			
+			<img id="circledown" src="img/banner_887x169_circle_down.png" alt=""/>
+			<img id="planet" src="img/banner_887x169_planet.png" alt=""/>
+			<img id="circle" src="img/banner_887x169_circle_up.png" alt=""/>
+			
+			<img id="winball" src="img/banner_887x169_win.png" alt=""/>
+			<img id="twitterbig" src="img/banner_887x169_twitter.png" alt=""/>
+			<img id="facebookbig" src="img/banner_887x169_facebook.png" alt=""/>
+			<img id="logo" src="img/banner_887x169_logo.png" alt=""/>
+			
+        </a>
+    </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+		<script language="javascript" src="jquery-1.4.2.min.js"></script>
+		<script language="javascript" src="swipe.js"></script>
+		<script language="javascript" src="flux.min.js"></script>
+		<script language="javascript" src="mojiva_300x250.js"></script>
+		
+		<style>
+			body {
+				margin: 0;
+				-webkit-transform:translate3d(0,0,0);
+				-webkit-perspective: 1000;
+			}
+			#banner{
+				width:300px;
+				height:250px;
+				overflow:hidden;
+				position: absolute;
+				top:0;
+				left: 0;
+				z-index: 1;
+			}
+			
+			#fr1 {
+				position: absolute;
+				top: 7px;
+				width: 200px;
+				opacity: 0;
+			}
+			#fr2 {
+				position: absolute;
+				top: 50px;
+				width: 200px;
+				opacity: 0;
+			}
+			#fr3 {
+				position: absolute;
+				top: 16px;
+				opacity: 0;
+				font-size: 20px;
+			}
+			#fr4 {
+				position: absolute;
+				top: 50px;
+				left: 90px;
+				opacity: 0;
+			}
+			
+			#expanded {
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 768px;
+				height: 916px;
+				background: url('img/bg_expanded.png') no-repeat;
+				opacity: 0;
+				z-index: 0;
+				display:none;
+			}
+			#close_btn {
+				position: absolute;
+				top: 24px; 
+				right: 24px;
+				width: 29px;
+				height: 29px;
+			}
+			#expanded_fr1 {
+				position: absolute;
+				top: 0px;
+				left: 120px;
+				z-index: 1;
+			}
+			.expanded_link {
+				position: absolute;
+				top: 100px;
+				display: block;
+				width: 100%;
+				text-align: center;
+				z-index: 1;
+			}
+			.expanded_link a {
+				text-decoration: none;
+				width: 129px;
+				height: 128px;
+			}
+			.expanded_link a img {
+				width: 129px;
+				height: 128px;
+			}
+			.galery {
+				position: absolute;
+				top: 75px;
+				left: 0;
+				width: 768px;
+				height:784px;
+				overflow: hidden;
+				display: block;
+				text-align: center;
+				z-index: 0;
+			}
+			#expanded_galery {
+				width: 768px;
+				height: 784px;
+				-webkit-backface-visibility: hidden;
+				-webkit-perspective: 1000;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			#imgVideoOut{
+				width: 768px;
+				height: 784px;
+				position:absolute;
+				top:-3px;
+				left:0px;
+				opacity:0;
+			}
+			#expanded_galery img {
+				width: 768px;
+				height: 784px;
+			}
+			
+			#galery_arrow_left {
+				position: absolute;
+				top: 405px;
+				left: 0;
+				width: 55px;
+				height: 116px;
+				background: url('img/galery_arrow_left.png') no-repeat;
+				z-index:10;
+				-webkit-transform:translateZ(10px);
+				
+				display:none;
+			}
+			#galery_arrow_right {
+				position: absolute;
+				top: 405px;
+				right: -1px;
+				width: 55px;
+				height: 116px;
+				background: url('img/galery_arrow_right.png') no-repeat;
+				z-index:10;
+				-webkit-transform:translateZ(10px);
+			}
+			
+			#gallery{
+				-webkit-backface-visibility: hidden;
+				-webkit-perspective: 1000;
+			}
+			
+			#text1{
+				top:10px;
+				left:60px;
+				position:absolute;
+				opacity:0;
+			}
+			#text2{
+				top:28px;
+				left:74px;
+				position:absolute;
+				opacity:0;
+			}
+			#text3{
+				top:55px;
+				left:59px;
+				position:absolute;
+				opacity:0;
+			}
+			#text4{
+				top:15px;
+				left:10px;
+				position:absolute;
+				opacity:0;
+			}
+			#btViewVideo2{
+				position:absolute;
+				top:882px;
+				left:10px;
+				display:none;
+			}
+			
+			#container_button_text{
+				position:absolute;
+				top:190px;
+				left:0px;
+				width:768px;
+				height:230px;
+				z-index:1;
+				opacity:1;
+			}
+			
+			#bg1{
+				position:absolute;
+				top:-123px;
+				left:-176px;
+				-webkit-transform-origin: 50% 50%;
+			}
+			#bg2{
+				position:absolute;
+				top:0px;
+				left:0px;
+				opacity:0;
+			}
+			#border{
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			#btExpand{
+				top:220px;
+				left:210px;
+				position:absolute;
+				opacity:0;
+			}
+			#textFooter{
+				top:222px;
+				left:80px;
+				position:absolute;
+				opacity:0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<img id="bg1" src="img/bg1.png" alt=""/>
+			<img id="text1" src="img/text1.png" alt=""/>
+			<img id="text2" src="img/text2.png" alt=""/>
+			<img id="text3" src="img/text3.png" alt=""/>
+			
+			<img id="bg2" src="img/bg2.png" alt=""/>
+			
+			<img id="text4" src="img/text4.png" alt=""/>
+			<img id="fr4" src="img/expanded_fr2.png" alt=""/>
+			
+			<img id="btExpand" src="img/expand_button.png" alt=""/>
+			<img id="textFooter" src="img/text_footer.png" alt=""/>
+			<img id="border" src="img/border.png" alt=""/>
+		</div>
+		<div id="expanded">
+			<div id="close_btn"></div>
+			<div id="container_button_text">
+				<img id="expanded_fr1" src="img/expanded_text.png" alt=""/>
+				<div class="expanded_link">
+					<a id="btViewVideo" href="#">
+						<img src="img/expanded_link_video.png" alt=""/>
+					</a>
+					<a id="btViewGallery" href="#">
+						<img src="img/expanded_link_galery.png" alt=""/>
+					</a>
+				</div>
+			</div>
+			
+			<div id="gallery" class="galery">
+				<img id="imgVideoOut" src="img/car.jpg" alt=""/>
+				<div id="expanded_galery">
+					<img id="imgVideo" src="img/car.jpg" alt=""/>
+					<img id="img1" src="img/galery_img_8.jpg" alt=""/>
+					<img id="img2" src="img/galery_img_7.jpg" alt=""/>
+					<img id="img3" src="img/galery_img_6.jpg" alt=""/>
+					<img id="img4" src="img/galery_img_5.jpg" alt=""/>
+					<img id="img5" src="img/galery_img_4.jpg" alt=""/>
+					<img id="img6" src="img/galery_img_3.jpg" alt=""/>
+					<img id="img7" src="img/galery_img_2.jpg" alt=""/>
+					<img id="img8" src="img/galery_img_1.jpg" alt=""/>
+				</div>
+				<div id="galery_arrow_left"></div>
+				<div id="galery_arrow_right"></div>
+			</div>
+			
+			<img id="btViewVideo2" src="img/bt_watch.png" alt=""/>
+		</div>
+	</body>
+</html>

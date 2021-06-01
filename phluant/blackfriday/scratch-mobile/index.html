@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<link rel="stylesheet" href="fonts.css" media="all"/>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			.wrapper{
+				position: absolute; 
+				top: 0;
+				left: 50%;
+				margin-left: -160px;
+				width: 320px;
+				height: 50px;
+			}
+			#minimize{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 320px;
+				height: 50px;
+				background: #ed1d25;
+				opacity: 0;
+			}
+			#minilogo{
+				position: absolute;
+				top: 14px;
+				left: 17px;
+				width: 106px;
+				opacity: 0;
+			}
+			#expand{
+				position: absolute;
+				top: 21px;
+				right: 27px;
+				width: 140px;
+				height: 15px;
+				opacity: 0;
+				background: url('img/expand.png') no-repeat 0px 0px;
+			}
+			#nav{
+				position: absolute;
+				top: 21px;
+				right: 12px;
+				width: 17px;
+				height: 15px;
+				opacity: 0;
+				background: url('img/expand.png') no-repeat -140px 0px;
+			}
+			#full{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 320px;
+				height: 416px;
+				overflow: hidden;
+				background: #ed1d25;
+				opacity: 0;
+				display: none;
+			}
+			#close{
+				position: absolute;
+				top:0;
+				right:0;
+				width: 50px;
+				height: 50px;
+			}
+			#close .closeBt{
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			#ohfun{
+				position: absolute;
+				top: 20px;
+				left: 28px;
+			}
+			#text1{
+				position: absolute;
+				top: 80px;
+				left: 26px;
+			}
+			#text2{
+				position: absolute;
+				top: 80px;
+				left: 26px;
+				width: 214px;
+				opacity: 0;
+			}
+			#replay{
+				position: absolute;
+				top: 142px;
+				right: 7px;
+				opacity: 0;
+			}
+			#slide{
+				position: absolute;
+				top: 165px;
+				left: 0px;
+				width: 640px;
+				height: 187px;
+				overflow: hidden;
+				text-align: center;
+				z-index: 5;
+				background: #ed1d25;
+			}
+			.frame{
+				position: absolute;
+				top: 0;
+				width: 320px;
+				height: 187px;
+				overflow: hidden;
+			}
+			#scratch{
+				width: 267px;
+				height: 183px;
+				position: absolute;
+				
+				top: 0px;
+				left: 0px;
+			}
+			#frame1{
+				position: absolute;
+				top: 0;
+				left: 29px;
+				width: 267px;
+				height: 183px;
+				overflow: hidden;
+			}
+			#frame2{
+				position: absolute;
+				top: 0;
+				left: 0px;
+				width:  320px;
+				height: 187px;
+			}
+			#fulllogo{
+				position: absolute;
+				bottom: 21px;
+				left: 29px;
+				width: 113px;
+			}
+			#findmap{
+				position: absolute;
+				bottom: 24px;
+				right: 25px;
+				width: 78px;
+			}
+			#direction{
+				position: absolute;
+				right: 34px;
+				bottom: 24px;
+				opacity: 0;
+				display: none;
+				width: 91px;
+				height: 13px;
+			}
+			#direct_text{
+				width: 77px;
+				height: 13px;
+				background: url('img/direction.png') no-repeat 0px 0px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			
+			#direct_arrow{
+				width: 14px;
+				height: 13px;
+				background: url('img/direction.png') no-repeat -77px 0px;
+				position: absolute;
+				top: 0px;
+				left: 77px;
+			}
+			
+			.bigText{
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				font-size: 24px;
+				color: #ffffff;
+				width: 267px;
+				margin: 0 auto 3px;
+			}
+			.smallText{
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				font-size: 15px;
+				color: #ffffff;
+				width: 267px;
+				margin: 0 auto;
+			}
+			
+			.map-image{
+				display: inline-block;
+				position: relative;
+				top: 0px;
+				width: 46px;
+				float: left;
+			}
+			.address-text{
+				width: 200px;
+				font-size: 12px;
+				font-family: "SEGOE", Helvetica, Arial, sans-serif;
+				display: inline-block;
+				float: left;
+				position: relative;
+				margin: 0 0 0 5px;		
+				text-align: left;	
+				color: #ffffff;
+			}
+			.address-name{
+				float: left;
+				width: 200px;
+				text-align: left;
+			}
+			.address-location{
+				float: left;
+				width: 200px;
+				text-align: left;
+			}
+			.clear-both{
+				height: 2px;
+				clear: both;
+			}
+			#see_store{
+				position: absolute;
+				left: 0px;
+				top: 12px;
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				color: #ffffff;
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="minimize">
+				<img src="./img/mslogo1.png" id="minilogo"/>
+				<div id="expand">
+				</div>
+				<div id="nav">
+				</div>
+			</div>
+			<div id="full">
+				<div id="close">
+					<img src="./img/close.png" class="closeBt"/>
+				</div>
+				<img src="./img/text1.png" id="ohfun"/>
+				<div id="text1">
+					<div class="bigText">
+						Reveal the deal
+					</div>
+					<div class="smallText">
+						Scratch to see an amazing Black Friday<br/>
+						offer at Microsoft at [Mall Name]
+					</div>
+				</div>
+				<div id="text2">
+					<div class="bigText">
+						Ring in the season
+					</div>
+					<div class="smallText">
+						Save $100 on a qualified mobile phone<br/>
+						with a 2-year contract
+					</div>
+				</div>
+				<img src="./img/text3.png" id="replay" />
+				<div id="slide">
+					<div class="frame" style="left: 0;">
+						<div id="frame1">
+							<canvas id="scratch" width="267" height="183">
+							</canvas>
+						</div>
+					</div>
+					<div class="frame" style="left: 320px;">
+						<div id="frame2">
+						</div>
+					</div>
+				</div>
+				<img src="./img/mslogo.png" id="fulllogo"/>
+				<img src="./img/findmap.png" id="findmap"/>
+				
+				<div id="direction">
+					<div id="direct_text">
+					</div>
+					<div id="direct_arrow">
+					</div>
+					<div id="see_store">
+						See store for details
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+			</script>
+
+			<script type="text/javascript" src="main.js"></script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{z-index:10000;position:absolute;top:0px;left:0px; display:block; width:728px; height: 90px;}
+			#ph_container .absolute{position:absolute;}
+			
+			#ph_conBanner{z-index:0;position:absolute; visibility:visible; width:728px; height:90px;overflow:hidden; left:0px; top:0px;background:url('img/bg.jpg');}
+			
+			#apple1{
+				top: 40px;
+				left: 570px;
+				width: 22px;
+				display: none;
+			}
+			#apple2{
+				top: 40px;
+				left: 570px;
+				width: 20px;
+				display: none;
+			}
+			#kiwi{
+				top: 40px;
+				left: 570px;
+				width: 25px;
+				display: none;
+			}
+			#container_bottle{
+				width: 337px;
+				height: 271px;
+				left: 320px;
+				top: -91px;
+			}
+			#motion{
+				opacity: 0;
+				top: 50px;
+				left: -53px;
+			}
+			#bottle{
+				top: 90px;
+				left: 0x;
+			}
+			#text{
+				top: 50%;
+				margin-top: -10px;
+				left: 25px;
+			}
+			#end{
+				top: 0px;
+				left: 0px;
+				opacity: 0;
+				display: none;
+			}
+			#border{
+				top: 0px;
+				left: 0px;
+			}
+			
+			.cache{
+				position: absolute;
+				top: -100%;
+				left: -100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+				<img src="img/apple.png" class="cache" alt=""/>
+				<img src="img/apple4.png" class="cache" alt=""/>
+				<img src="img/banana.png" class="cache" alt=""/>
+				<img src="img/banana2.png" class="cache" alt=""/>
+				<img src="img/banana3.png" class="cache" alt=""/>
+				<img src="img/banana4.png" class="cache" alt=""/>
+				<img src="img/hue.png" class="cache" alt=""/>
+				<img src="img/kiwi2.png" class="cache" alt=""/>
+				<img src="img/mango.png" class="cache" alt=""/>
+				<img src="img/pineapple.png" class="cache" alt=""/>
+				<img src="img_300x250/bg.jpg" class="cache" alt=""/>
+				<img src="img_300x250/border.png" class="cache" alt=""/>
+				<img src="img_300x250/bottle.png" class="cache" alt=""/>
+				<img src="img_300x250/bottle1.png" class="cache" alt=""/>
+				<img src="img_300x250/end.png" class="cache" alt=""/>
+				<img src="img_300x250/right.png" class="cache" alt=""/>
+				<img src="img_300x250/weight.png" class="cache" alt=""/>
+				
+				<img id="apple1" src="img/apple3.png" class="absolute" alt=""/>
+				<img id="apple2" src="img/apple2.png" class="absolute" alt=""/>
+				<img id="kiwi" src="img/kiwi2.png" class="absolute" alt=""/>
+				
+				<div id="container_bottle" class="absolute">
+					<img id="motion" src="img/motion.png" class="absolute" alt=""/>
+					<img id="bottle" src="img/bottle.png" class="absolute" alt=""/>
+				</div>
+				
+				<img id="text" src="img/text.png" class="absolute" alt=""/>
+				<img id="end" src="img/end.png" class="absolute" alt=""/>
+				<img id="border" src="img/border.png" class="absolute" alt=""/>
+			</div>
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="728x90.js"></script>
+		</div>
+	</body>
+</html>

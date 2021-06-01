@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<title>	
+			 The Cosmopolitan Hotel of Las Vegas
+		</title>
+		<style>
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			img{
+				position:absolute;
+			}
+			
+			
+			/*----------------------------------------------*/
+			#banner{
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:320px;
+				height:416px;
+				overflow:hidden;
+				padding:0;
+				margin:0;
+				background:#000;
+			}
+			
+			#banner_content{	
+				position:absolute;
+				top:0px;
+				left:-320px;
+				width:1280px;
+				height:416px;
+				padding:0;
+				margin:0;
+				background:url('img/bg.jpg') no-repeat;
+			}
+			
+			.panel,.mask{
+				width:320px;
+				height:416px;
+				top:0px;
+				position:absolute;
+			}
+			
+			#panel1{
+				left:0px;
+				overflow:hidden;
+			}
+			#panel2{
+				left:320px;
+			}
+			#panel3{
+				left:640px;
+			}
+			#panel4{
+				left:960px;
+			}
+			
+			#panel2_logo{
+				top:30px;
+				left:50%;
+				margin-left:-127px;
+			}
+			#panel2_text{
+				bottom:20px;
+				left:50%;
+				margin-left:-150px;
+			}
+			#video{
+				position:absolute;
+				left:10px;
+				top:80px;
+			}
+			
+			#panel4_logo{
+				position:absolute;
+				top:50px;
+				left:50%;
+				margin-left:-131px;
+			}
+			
+			.img_container{
+				width:130px;
+				height:70px;
+				border-radius:2px 2px 2px 2px;
+				-webkit-border-radius:2px 2px 2px 2px;
+				
+				-webkit-box-shadow: 0px 0px 10px #fff;
+				box-shadow: 0px 0px 10px #fff;
+				position:relative;
+				margin:10px 20px;
+				background:#fff;
+				float:left;
+				padding:0;
+			}
+			
+			.img_container.left{
+				margin-right:10px;
+			}
+			.img_container.right{
+				margin-left:10px;
+			}
+			.img_gallery{
+				border:1px solid #000;
+				position:absolute;
+				top:0px;
+				left:0px;
+				
+				width:128px;
+				height:68px;
+			}
+			
+			#panel3_text{
+				position:relative;
+				margin:10px auto 10px;
+				display:block;
+			}
+			#big_img_container{
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:320px;
+				height:416px;
+				display:none;
+				z-index:10;
+				background:rgba(0,0,0,0.9);
+			}
+			#blur_layer{
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:320px;
+				height:416px;
+				z-index:0;
+			}
+			.big_img{
+				display:block;
+				margin:70px auto 0;
+				position:relative;
+				
+				display:none;
+			}
+			
+			#btClose{
+				position:absolute;
+				right:5px;
+				top:70px;
+			}
+			
+			
+			#panel1 img{
+				position:relative;
+			}
+			#panel1_content{
+				zoom:80%;
+			}
+		</style>
+		
+		<link href="web_source_files/default.css" rel="stylesheet" type="text/css">
+		
+		<script src="./web_source_files/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script language="javascript" src="jq.scroller.js"></script>
+		<script language="javascript" src="swipe.js"></script>
+		<script language="javascript" src="s_320x416.js"></script>
+		
+	</head>
+	
+	<body>
+		<div id="banner">
+			<div id="banner_content">
+				<div id="panel1" class="panel">
+					<div id="panel1_content">
+						<a id="link_outsite" style="position:absolute;top:0;left:0;z-index:1000;" href='http://m.cosmopolitanlasvegas.com/rooms-and-suites.aspx' target='_blank'></a>
+						<form name="aspnetForm" method="post" action="./web_source_files/web_source.htm" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUENTM4MQ9kFgJmD2QWAgIBEGRkFgQCAQ9kFgICAQ9kFgICAw8PFgIeC05hdmlnYXRlVXJsBRwvYm9vay1yb29tLmFzcHg/cm9vbXR5cGU9MDEwZGQCCQ9kFgICAQ9kFgJmD2QWBAICDw9kFgIeBWNsYXNzBQZhY3RpdmVkAgMPDxYCHwAFHC9ib29rLXJvb20uYXNweD9yb29tdHlwZT0wMTBkZBgDBR1jdGwwMCRwaF9NYWluJEdlbmVyaWNDb250ZW50Mg8UKwABZGQFH2N0bDAwJHBoX0Zvb3RlciRHZW5lcmljQ29udGVudDMPFCsAAWRkBR1jdGwwMCRwaF9IZXJvJEdlbmVyaWNDb250ZW50MQ8UKwABZGRkFda/y+cQe18alVcI9vfZibTP1A==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwL1hq2pCwL4g4asBQLzjKevAVVmUX9nkVW4geredXpG9PyDmXcm">
+</div>
+    
+    
+<header>
+        <column class="logo">
+        <a id="ctl00_ph_Header_ctl00_hypLogo" href="http://m.cosmopolitanlasvegas.com/"><img id="ctl00_ph_Header_ctl00_imgLogo" src="./web_source_files/logo.png" alt="" align="left" style="border-width:0px;"></a>
+        </column>
+        <column class="pge_feel"><a id="ctl00_ph_Header_ctl00_hypPageFeel" href="http://m.cosmopolitanlasvegas.com/book-room.aspx?roomtype=010"><img id="ctl00_ph_Header_ctl00_imgPagefeel" src="./web_source_files/page_feel.png" alt="" style="border-width:0px;"></a></column>   
+           
+</header>
+
+
+      
+        
+    
+    
+    <block class="banner_rooms_suites"></block>
+    
+    <div class="clearfix"> </div> <hgroup class="mrg0"> <h1 class="heading1">ROOMS &amp; SUITES</h1> <h4 class="heading2">Choose a room below:</h4> </hgroup> <nav class="roomSuites clearfix"> <ul class="home_margBtm"> <li><a href="http://m.cosmopolitanlasvegas.com/city-room.aspx">City Room<span>Room: 460 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/terrace-studio.aspx">Terrace Studio<span>Room: 620 sq. ft. Terrace: 110 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/terrace-studio-premium-view.aspx">Terrace Studio - Fountain View<span>Room: 620 sq. ft. Terrace: 110 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/terrace-one-bedroom.aspx">Terrace One Bedroom<span>Room: 610 sq. ft. Terrace: 110 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/terrace-one-bedroom-premium-view.aspx">Terrace One Bedroom - Fountain View<span>Room: 610 sq. ft. Terrace: 110 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/terrace-suite.aspx">Terrace Suite<span>Room: 910 sq. ft. Terrace: 160 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/wraparound-terrace-suite.aspx">Wraparound Terrace Suite<span>Room: 1200 sq. ft. Terrace: 480 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/lanai-suite.aspx">Lanai Suite<span>Room: 800 sq. ft. Terrace: 550 sq. ft.</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/bungalow.aspx">Bungalows<span>Room: Varies Terrace: Varies</span></a></li> <li><a href="http://m.cosmopolitanlasvegas.com/west-end-penthouses.aspx">West End Penthouses<span>Room: Varies Terrace: Varies</span></a></li> </ul> </nav>
+    
+    <div id="ctl00_ph_Footer_ctl00_pnlLinks">
+	
+    <block class="links clearfix">
+  <p><a id="ctl00_ph_Footer_ctl00_htpHome" href="http://m.cosmopolitanlasvegas.com/" target="_top">HOME</a><a id="ctl00_ph_Footer_ctl00_htpRoomnsuites" href="./web_source_files/web_source.htm" class="active" target="_top">ROOMS &amp; SUITES</a><a id="ctl00_ph_Footer_ctl00_htpBookARoom" href="http://m.cosmopolitanlasvegas.com/book-room.aspx?roomtype=010" target="_top">BOOK A ROOM</a></p>
+  <p class="sec"><a id="ctl00_ph_Footer_ctl00_htpRemoteCheckin" href="http://m.cosmopolitanlasvegas.com/mobile-check-in.aspx" target="_top">MOBILE CHECK-IN</a><a id="ctl00_ph_Footer_ctl00_htpResortLocation" href="http://m.cosmopolitanlasvegas.com/resort_location.aspx" target="_top">RESORT LOCATION</a><a id="ctl00_ph_Footer_ctl00_htpDining" href="http://m.cosmopolitanlasvegas.com/dining.aspx" target="_top">DINING</a></p>
+  <p><a id="ctl00_ph_Footer_ctl00_htpEventCalendar" href="http://m.cosmopolitanlasvegas.com/events-calendar.aspx" target="_top">EVENTS CALENDAR</a><a id="ctl00_ph_Footer_ctl00_htpSignIn" target="_top" href="javascript:__doPostBack('ctl00$ph_Footer$ctl00$htpSignIn','')">IDENTITY</a><a id="ctl00_ph_Footer_ctl00_htpSpecialOffers" href="http://m.cosmopolitanlasvegas.com/special-offers.aspx" target="_top">SPECIAL OFFERS</a></p>
+</block>
+
+</div>
+<footer class="clearfix"> <block class="icons"><span>Follow Us:</span><a href="http://www.facebook.com/TheCosmopolitan" target="_blank"><img alt="" src="./web_source_files/facebook_icon.png"></a><a href="http://twitter.com/Cosmopolitan_LV" target="_blank"><img alt="" src="./web_source_files/twitter_icon.png"></a><a href="http://www.youtube.com/user/TheCosmopolitanLV" target="_blank"><img alt="" src="./web_source_files/youTube_icon.png"></a><a href="http://www.flickr.com/photos/thecosmopolitan/" target="_blank"><img alt="" src="./web_source_files/flickr_icon.png"></a><a href="https://plus.google.com/u/0/102494893687591349543/posts" target="_blank"><img alt="" src="./web_source_files/Googleplus.png"></a><a href="https://foursquare.com/cosmopolitan_lv" target="_blank"><img alt="" src="./web_source_files/fourSquare_icon.png"></a></block>
+<ul>
+    <li>View: <a href="http://m.cosmopolitanlasvegas.com/" class="active">Mobile</a>
+    <a id="ctl00_ph_Footer_ctl00_lbDesktopLink" href="javascript:__doPostBack('ctl00$ph_Footer$ctl00$lbDesktopLink','')">Desktop</a></li>
+    <li>
+    <p><a id="ctl00_ph_Footer_ctl00_htpContactUS" href="http://m.cosmopolitanlasvegas.com/contact_us.aspx" target="_top">Contact Us</a><a id="ctl00_ph_Footer_ctl00_hypPrivatePolicy" href="http://m.cosmopolitanlasvegas.com/privacy_policy.aspx" target="_top">Privacy Policy</a><a id="ctl00_ph_Footer_ctl00_hypTersandCondition" href="http://m.cosmopolitanlasvegas.com/terms-and-conditions.aspx" target="_top">Terms &amp; Conditions</a></p>
+    </li>
+    <li>© Copyright 2012 THE COSMOPOLITAN of LAS VEGAS</li>
+</ul>
+</footer>
+<!-- Google Code for All Site Visitors Remarketing List --> <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1010940168;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "nxK5CMCMpwMQiPKG4gM";
+    var google_conversion_value = 0;
+    /* ]]> */
+</script> <script type="text/javascript" src="./web_source_files/conversion.js">
+</script><img height="1" width="1" border="0" src="./web_source_files/saved_resource"> <noscript> &lt;div style="display:inline;"&gt; &lt;img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/1010940168/?label=nxK5CMCMpwMQiPKG4gM&amp;amp;guid=ON&amp;amp;script=0"/&gt; &lt;/div&gt; </noscript>
+     </form>
+    
+
+<script src="./web_source_files/default.js" type="text/javascript"></script>
+<script src="./web_source_files/gallery.js" type="text/javascript"></script>
+
+
+    
+<img src="./web_source_files/mobgaImage.aspx">
+<script language="javascript" type="text/javascript" src="./web_source_files/i2a.js"></script>
+
+
+
+
+   
+    
+					</div>
+					<!--
+					<object width="320" height="416" type="text/html" data="http://m.cosmopolitanlasvegas.com/rooms-and-suites.aspx" >
+					</object>
+					<a class="mask" href="http://m.cosmopolitanlasvegas.com/rooms-and-suites.aspx" target="_blank">
+					</a>
+					-->
+				</div>
+				
+				<div id="panel2" class="panel">
+					<img id="panel2_logo" src="img/panel2_logo.png" alt=""/>
+					<video id="video" width="300" height="240" controls="controls" poster="img/preview.png">
+					  <source src="http://mdn2.phluantmobile.net/3/mobilevideo/10038/7526_cosmop_3457.mp4" type="video/mp4" />
+					</video>
+				
+					<img id="panel2_text" src="img/panel2_text.png" alt=""/>
+				</div>
+				
+				<div id="panel3" class="panel">
+					<img id="panel3_text" src="img/panel3_text.png"/>
+					<div id="img1" class="img_container left">
+						<img src="img/small_img1.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img2" class="img_container right">
+						<img src="img/small_img2.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img3" class="img_container left">
+						<img src="img/small_img3.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img4" class="img_container right">
+						<img src="img/small_img4.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img5" class="img_container left">
+						<img src="img/small_img5.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img6" class="img_container right">
+						<img src="img/small_img6.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img7" class="img_container left">
+						<img src="img/small_img7.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="img8" class="img_container right">
+						<img src="img/small_img8.jpg" alt="" class="img_gallery"/>
+					</div>
+					
+					<div id="big_img_container">
+						<div id="blur_layer">
+						</div>
+						
+						<img id="bigimg1" src="img/big_img1.jpg" alt="" class="big_img"/>
+						<img id="bigimg2" src="img/big_img2.jpg" alt="" class="big_img"/>
+						<img id="bigimg3" src="img/big_img3.jpg" alt="" class="big_img"/>
+						<img id="bigimg4" src="img/big_img4.jpg" alt="" class="big_img"/>
+						<img id="bigimg5" src="img/big_img5.jpg" alt="" class="big_img"/>
+						<img id="bigimg6" src="img/big_img6.jpg" alt="" class="big_img"/>
+						<img id="bigimg7" src="img/big_img7.jpg" alt="" class="big_img"/>
+						<img id="bigimg8" src="img/big_img8.jpg" alt="" class="big_img"/>
+						
+						<img id="btClose" src="img/close.png"/>
+					</div>
+				</div>
+				
+				<div id="panel4" class="panel">
+					<img id="panel4_logo" src="img/panel4_logo.png" alt="" usemap="#button"/>
+					
+					<map name="button">
+						<area shape="Rect" Coords="59,0,203,188" href="http://m.cosmopolitanlasvegas.com/" target="_blank"> </area>
+						<area shape="Rect" Coords="9,218,66,278" href="https://www.facebook.com/TheCosmopolitan" target="_blank"> </area>
+						<area shape="Rect" Coords="100,218,160,278" href="http://twitter.com/Cosmopolitan_LV"  target="_blank"> </area>
+						<area shape="Rect" Coords="192,218,252,278" href="https://m.google.com/app/contacts?unauth=1#:v=pc&g=-4009709820462985772"  target="_blank"> </area>
+					</map> 
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

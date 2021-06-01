@@ -1,0 +1,277 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TPL</title>
+
+        <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="banner_728x900.js"></script>
+
+        <style type="text/css">
+            /* fade in*/
+            @keyframes fadein
+            {
+                100% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            0% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-moz-keyframes fadein 
+            {
+                100% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            0% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-webkit-keyframes fadein 
+            {
+                100% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            0% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            /* fade out*/
+            @keyframes fadeout
+            {
+                0% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            100% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-moz-keyframes fadeout 
+            {
+                0% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            100% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            @-webkit-keyframes fadeout 
+            {
+                0% {
+                filter: alpha(opacity=100); 
+                -khtml-opacity: 1.0;      
+                -moz-opacity: 1.0;       
+                opacity: 1.0;
+            }
+
+            100% {
+                filter: alpha(opacity=0);
+                -khtml-opacity: 0.0;     
+                -moz-opacity: 0.0;       
+                opacity: 0.0;
+            }
+            }
+
+            /*--------------------------------*/
+            #banner{
+                width:728px;
+                height:900px;
+                position:absolute;
+                top:0px;
+                left:0px;
+                text-decoration: none;
+                overflow:hidden;
+            }
+            img{
+                position:absolute;
+            }
+            #bg{
+                z-index: -1;
+            }
+            #logo{
+                top: 750px;
+                left: 100px;
+				z-index:10;
+            }
+			#button{
+				left:178px;
+				top:610px;
+				z-index:10;
+			}
+           
+            #text_make{
+                opacity: 0;
+                top: 70px;
+                left: 103px;
+            }
+            #circle{
+                opacity: 0;
+                top: 538px;
+                left: 285px;
+				z-index:5;
+            }
+            #facebook{
+                top: 663px;
+                left: -54px;
+            }
+            #facebook_fly{
+                opacity: 0;
+                top: 611px;
+                left: 276px;
+            }
+            #gold{
+                display: none;
+                top: 50px;
+                left: 20px;
+				z-index:5;
+            }
+
+            #shine_gold{
+                display: none;
+                top: 50px;
+                left: 20px;
+				z-index:5;
+            }
+            #text_and{
+                display: none;
+                top: 70px;
+                left: 178px;
+            }
+
+            #twitter{
+                top: 688px;
+                left: 728px;
+
+            }
+            #twitter_fly{
+                opacity: 0;
+                top: 590px;
+                left: 413px;
+            }
+            #text_create{
+                display: none;
+                top: 70px;
+                left: 82px;
+            }
+            #shine_text_create{
+                opacity: 0;
+                top: 600px;
+                left: 107px;
+                z-index: 1;
+            }
+            #twitter_fly_back{
+                top: 401px;
+                left: 724px;
+            }
+            #facebook_fly_back{
+              top: 450px;
+              left: -361px;  
+			  z-index:5;
+            }
+			
+			#planet{
+                top: 200px;
+                left: 147px;
+				z-index:3;
+            }
+			#circlelight_down,#circlelight_up{
+				top:430px;
+				left:230px;
+				display:none;
+			}
+			#circlelight_down{
+				z-index:1;
+			}
+			#circlelight_up{
+				z-index:4;
+			}
+			
+			#twitter_rotate{
+				top:335px;
+				left:381px;
+				z-index:1;
+				opacity:0;
+			}
+			#facebook_rotate{
+				top:460px;
+				left:230px;
+				z-index:5;
+				opacity:0;
+			}
+			#winner_rotate{
+				top:447px;
+				left:430px;
+				z-index:5;
+				opacity:0;
+			}
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="https://www.theplayerslottery.com/">
+            <img id="bg" src="img/728x900_bg.jpg"/>
+            
+			<img id="circlelight_down" src="img/728x900_circlelight_down.png"/>
+			<img id="planet" src="img/728x900_planet.png"/>
+			<img id="circlelight_up" src="img/728x900_circlelight_up.png"/>
+			<img id="twitter_rotate" src="img/728x900_twitter.png"/>
+			<img id="facebook_rotate" src="img/728x900_facebook.png"/>
+			<img id="winner_rotate" src="img/728x900_winner.png"/>
+			
+            <img id="logo" src="img/728x900_logo.png"/>
+			<img id="button" src="img/728x900_button.png"/>
+			
+            <img id="circle" src="img/728x900_circle.png"/>
+            <img id="facebook" src="img/728x900_facebook.png"/>
+            <img id="facebook_fly" src="img/728x900_facebook_fly.png"/>
+            <img id="twitter" src="img/728x900_twitter.png"/>
+            <img id="twitter_fly" src="img/728x900_twitter_fly.png"/>
+			<img id="shine_gold" src="img/728x900_gold_shine.png"/>
+            <img id="gold" src="img/728x900_gold.png"/>
+            <img id="text_and" src="img/728x900_text_and.png"/>
+            <img id="text_make" src="img/728x900_text_make.png"/>
+            <img id="text_create" src="img/728x900_text_create.png"/>
+            <img id="twitter_fly_back" src="img/728x900_twitter_fly_back.png"/>
+            <img id="facebook_fly_back" src="img/728x900_facebook_fly_back.png"/>
+        </a>
+    </body>
+</html>

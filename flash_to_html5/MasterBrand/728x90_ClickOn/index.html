@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			FlashToHtml
+		</title>
+		<style type="text/css">
+			#container{
+				width: 728px;
+				height: 90px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -364px;
+				background: url('img/bg.png');
+				overflow : hidden;
+			}
+			
+			
+			#logo{
+				position : absolute;
+				width : 25px;
+				height : 25px;
+				top : 5px;
+				right : 5px;
+			}
+			
+			
+			#text-1 {
+				position: absolute;
+				top : 90px;
+				left: 5px;
+			}
+			
+			#text-2 {
+				position : absolute;
+				top : 78px;
+				left : 15px;
+			}
+			
+			
+			
+			#end-screen {
+				position : absolute;
+				opacity : 0;
+				top : 15px;
+				left : 10px;
+			}
+			
+			#logo-end {
+				position : absolute;
+				opactity : 0;
+				top : 15px;
+				right : 10px;
+				opacity : 0;
+			}
+			
+			#go-now{
+				position : absolute;
+				opacity : 0;
+				width : 100px;
+				height : 35px;	
+				top : 33px;
+				left : 353px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img id="logo" src="img/logo.png" />
+			
+
+			<img id="text-1" src="img/text-1.png">
+			<img id="text-2" src="img/text-2.png">
+			
+			<img id="end-screen" src="img/end-screen.png">
+			<img id="logo-end" src="img/logo-end.png">
+			<img id="go-now" src="img/go-now.png">
+							
+			
+							
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="728x90.js"></script>
+	</body>
+</html>

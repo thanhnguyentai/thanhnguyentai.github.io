@@ -1,0 +1,327 @@
+<html>
+	<head>
+		<script src="jquery-1.4.2.min.js" language="javascript"></script>
+		<script src="jquery.cross-slide.min.js" language="javascript"></script>
+		<script src="jquery.easing.1.3.js" language="javascript"></script>
+		<script src="s_230x498.js" language="javascript"></script>
+		<style type="text/css">
+			#slideshow{
+				width:230px;
+				height:498px;
+				position:absolute;
+				top:0px;
+				left:0px;
+				border:0;
+				margin:0;
+				padding:0;
+				overflow:hidden;
+				background-color:#ffffff;
+			}
+			
+			#slideshow img{
+				position:absolute;
+			}
+			
+			.frame{
+				position:absolute;
+				width:230px;
+				height:498px;
+				overflow:hidden;
+			}
+			
+			
+			#img_line,#frame1,#frame2,#frame3{
+				-webkit-transition:left 0.5s ease-in-out;
+				-moz-transition:left 0.5s ease-in-out;
+				-o-transition:left 0.5s ease-in-out;
+				-ms-transition:left 0.5s ease-in-out;	
+				transition:left 0.5s ease-in-out;
+			}
+			
+			
+			#frame1{
+				top:0px;
+				left:0px;
+			}
+			
+			#frame2{
+				left:230px;
+				top:0px;
+				width:230px;
+				height:498px;
+			}
+			
+			#frame3{
+				top:0px;
+				left:230px;
+				width:230px;
+				height:498px;
+				z-index:10;
+			}
+			
+			#frame4{
+				top:0px;
+				left:0px;
+				width:230px;
+				height:498px;
+			}
+			
+			#img1{
+				top:-287px;
+				left: -60px;
+				
+			}
+			
+			#img2{
+				left:75px;
+				top:290px;
+				display:none;
+				z-index:11;
+			}
+			
+			#img4{
+				display:none;
+				left:15px;
+				top:150px;
+				z-index:11;
+			}
+			
+			#img5{
+				position:absolute;
+				width:230px;
+				height:202px;
+				top:0px;
+				left:0px;
+				z-index:11;
+			}
+			
+			#img6{
+				position:absolute;
+				width:230px;
+				height:206px;
+				bottom:-1px;
+				left:0px;
+				z-index:11;
+			}
+			
+			#img7{
+				left:28px;
+				top:223px;
+				z-index:12;
+			}
+			
+			#img8{
+				left: 44px;
+				top:62px;
+			}
+			
+			#img9{
+				left: 46px;
+				top:169px;
+			}
+			
+			#img10{
+				left: 45px;
+				top:218px;
+			}
+			#img11{
+				left: 54px;
+				top:343px;
+			}
+			#img12{
+				left: 69px;
+				top:462px;
+			}
+			
+			
+			#img_line{
+				z-index:10;
+				filter: alpha(opacity=50);
+				-khtml-opacity: 0.5;     
+				-moz-opacity: 0.5;       
+				opacity: 0.5;
+				left:230px;
+				top:197px;
+			}
+			
+			/* zoom and move*/
+			@keyframes zoom_move
+			{
+				0% {
+					transform:scale(1) translate(0px,0px);
+				}
+				
+				100% {
+					transform:scale(0.6) translate(-370px,145px);
+				}
+			}
+
+			@-moz-keyframes zoom_move 
+			{
+				0% {
+					-moz-transform:scale(1) translate(0px,0px);
+				}
+				
+				100% {
+					-moz-transform:scale(0.6) translate(-370px,145px);
+				}
+			}
+
+			@-webkit-keyframes zoom_move 
+			{
+				0% {
+					-webkit-transform:scale(1) translate(0px,0px);
+				}
+				
+				100% {
+					-webkit-transform:scale(0.6) translate(-370px,145px);
+				}
+			}
+			
+			
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="slideshow">
+			<img style="display:none;"  id="img_bg" src="img_banner/230x498_bg.jpg" alt=""/>
+			
+			<div id="frame4" class="frame" style="display:none;">
+				<img id="img8" src="img_banner/230x498_play.png" alt=""/>	
+				<img id="img9" src="img_banner/230x498_headtext_4.png" alt=""/>	
+				<img id="img10" src="img_banner/230x498_headtext_5.png" alt=""/>	
+				<img id="img11" src="img_banner/230x498_logo.png" alt=""/>	
+				<img id="img12" src="img_banner/230x498_headtext_6.png" alt=""/>	
+			</div>
+			
+			<div id="frame1" class="frame">
+				<img style="display:none;" id="img1" src="img_banner/230x498_1.jpg" alt=""/>
+				<img id="img2" src="img_banner/230x498_headtext_1.png" alt=""/>	
+			</div>
+			
+			<div id="frame2" style="background:url('img_banner/230x498_2.jpg');" class="frame">
+				<img id="img4" src="img_banner/230x498_headtext_2.png" alt=""/>
+			</div>
+			
+			<div id="frame3" class="frame">
+				<!--
+				<div id="img5" style="background:url('img_banner/230x498_4.png');" >
+				</div>
+				-->
+				<img id="img5" src="img_banner/230x498_4.jpg" alt=""/>
+				
+				<img id="img7" src="img_banner/230x498_headtext_3.png" alt=""/>
+				
+				<img id="img6" src="img_banner/230x498_3.jpg" alt=""/>
+				<!--
+				<div id="img6" style="background:url('img_banner/230x498_3.png');" >
+				</div>
+				-->
+			</div>
+			
+			<img id="img_line" src="img_banner/230x498_line.png" alt=""/>
+		</div>
+	</body>
+</html>

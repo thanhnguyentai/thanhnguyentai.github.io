@@ -1,0 +1,26 @@
+
+.plate-container{
+	display: none;
+}
+
+/*-- frame 1 --*/
+.title1 {
+	display: none;
+}
+
+.plate1 {
+	display: none;
+}
+
+.title2 {
+	opacity: 1;
+}
+
+
+/*-- frame 5 --*/
+.plate5{
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}

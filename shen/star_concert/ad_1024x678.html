@@ -1,0 +1,404 @@
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script language="javascript" src="jquery-1.4.2.min.js"></script>
+	<script language="javascript" src="jquery.cross-slide.min.js"></script>
+	<script language="javascript" src="landscape.js"></script>
+	<style>
+		/* fade in*/
+		@keyframes fadein
+		{
+			100% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			0% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-moz-keyframes fadein 
+		{
+			100% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			0% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-webkit-keyframes fadein 
+		{
+			100% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			0% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+		
+		/* fade out*/
+		@keyframes fadeout
+		{
+			0% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			100% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-moz-keyframes fadeout 
+		{
+			0% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			100% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+
+		@-webkit-keyframes fadeout 
+		{
+			0% {
+				filter: alpha(opacity=100); 
+				-khtml-opacity: 1.0;      
+				-moz-opacity: 1.0;       
+				opacity: 1.0;
+			}
+			
+			100% {
+				filter: alpha(opacity=0);
+				-khtml-opacity: 0.0;     
+				-moz-opacity: 0.0;       
+				opacity: 0.0;
+			}
+		}
+		
+		/*-------------------------------------------------*/
+		body{
+			border:0;
+			margin:0;
+			padding:0;
+		}
+		#banner{
+			background-color:white;
+			width:1024px;
+			height:678px;
+			position:absolute;
+			overflow:hidden;
+			top:0;
+			left:0;
+		}
+		
+		img{
+			position:absolute;
+		}
+		
+		
+		.frame{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:1024px;
+			height:678px;
+			overflow:hidden;
+			display:block;
+		}
+		
+		#frame1{
+			z-index:2;
+		}
+		#frame2{
+			z-index:1;
+		}
+		
+		/*---- frame 1 -----*/
+		#logo{
+			left:280px;
+			top:110px;
+			opacity:0;
+		}
+		#startbutton{
+			left:370px;
+			top:510px;
+			display:none;
+		}
+		#len_blink{
+			top:20px;
+			left:395px;
+			opacity:0;
+		}
+		/*---- frame2 ----*/
+			#toptext{
+				top:40px;
+				left:17px;
+				display:none;
+			}
+			#bottomtext{
+				top:465px;
+				left:47px;
+				display:none;
+			}
+			#signupbutton{
+				left:810px;
+				top:615px;
+				display:block;
+				z-index:10;
+			}
+			#tabmore{
+				left:300px;
+				top:420px;
+				display:none;
+			}
+			#len1{
+				top:285px;
+				left:280px;
+			}
+			#len2{
+				top:340px;
+				left:600px;
+			}
+			#len3{
+				top:-70px;
+				left:290px;
+			}
+			#len4{
+				top:-10px;
+				left:500px;
+			}
+			#len5{
+				top:55px;
+				left:220px;
+			}
+			#len6{
+				top:70px;
+				left:180px;
+			}
+			#len7{
+				top:-10px;
+				left:500px;
+			}
+			#len8{
+				top:-55px;
+				left:580px;
+			}
+			#len9{
+				top:-35px;
+				left:15px;
+			}
+			.len{
+				opacity:0;
+			}
+			
+			.artist{
+				opacity:0;
+				top:0px;
+				leftt:0px;
+			}
+		
+		#tab_to_see{
+			display:none;
+			top:620px;
+			left:580px;
+		}
+		
+		#artist_detail,#artist_video{
+			width:640px;
+			height:500px;
+			overflow:hidden;
+			position:absolute;
+			top:89px;
+			left:192px;
+			border-radius:10px 10px 10px 10px;
+			-webkit-border-radius:10px 10px 10px 10px;
+			-moz-border-radius:10px 10px 10px 10px;
+			background-color:#cccccc;
+		}
+		#artist_video{
+			display:none;
+		}
+		
+		#artist_video_container{
+			width:600px;
+			height:420px;
+			position:absolute;
+			top:40px;
+			left:20px;
+		}
+		
+		#artist_close{
+			top:10px;
+			right:10px;
+		}
+		#artist_close_video{
+			top:10px;
+			right:10px;
+		}
+		
+		#mask{
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			background-color:rgba(0,0,0,0.7);
+			display:none;
+			z-index:10;
+		}
+		#artist_image{
+			position:absolute;
+			top:20px;
+			left:20px;
+			width:225px;
+			height:300px;
+		}
+		
+		#artist_image img{
+			position:relative;
+			float:left;
+		}
+		#tab_view{
+			margin-top:20px;
+		}
+		
+		#artist_information{
+			position:absolute;
+			top:20px;
+			left:270px;
+		}
+		
+		#top_top{
+			top:0;
+			left:0;
+			z-index:10;
+		}
+		#top_bottom{
+			bottom:0;
+			left:0;
+			z-index:10;
+		}
+		#badge{
+			top:100px;
+			left:930px;
+			z-index:3;
+		}
+		#badge2{
+			top:100px;
+			left:830px;
+			z-index:3;
+		}
+	</style>
+	<body>
+		<div id="banner">
+			<img src="img/landscape_bg0.jpg" alt=""/>
+			<div id="frame1" class="frame">
+				<img src="img/landscape_bg1.jpg" alt=""/>
+				<img id="logo" src="img/landscape_logo.png" alt=""/>
+				<img id="len_blink" src="img/landscape_lenflare.png" alt=""/>
+				<img id="startbutton" src="img/landscape_start.png" alt=""/>
+			</div>
+			<div id="frame2" class="frame">
+				<img id="len1" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len2" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len3" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len4" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len5" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len6" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len7" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len8" src="img/lens-flare.png" alt="" class="len"/>
+				<img id="len9" src="img/lens-flare.png" alt="" class="len"/>
+				
+				
+				<img id="artist5" src="img/artist5.png" alt="" class="artist"/>
+				<img id="artist4" src="img/artist4.png" alt="" class="artist"/>
+				<img id="artist3" src="img/artist3.png" alt="" class="artist"/>
+				<img id="artist2" src="img/artist2.png" alt="" class="artist"/>
+				<img id="artist1" src="img/artist1.png" alt="" class="artist"/>
+			
+				<img id="toptext" src="img/landscape_toptext.png" alt=""/>
+				
+				<img id="bottomtext" src="img/landscape_bottomtext.png" alt=""/>
+				<img id="tabmore" src="img/landscape_tab.png" alt="" usemap="#carousel"/>
+				<map name="carousel">
+					<area shape="Rect" Coords="0,0,40,36" href="javascript:previous();"> </area>
+					<area shape="Rect" Coords="391,0,429,36" href="javascript:next();"> </area>
+				</map> 
+			</div>
+			
+			<img id="top_top" src="img/landscape_frametop_top.png" alt="" usemap="#map"/>
+				<map name="map">
+					<area shape="Rect" Coords="914,17,953,32" href="overlayhttp://www.facebook.com/sharer/sharer.php?u=http://starevent.sg"> </area>
+					<area shape="Rect" Coords="957,18,1003,32" href="overlayhttp://twitter.com/intent/tweet?source=webclient&text=STAR%20Concert%20at%20Gardens%20by%20the%20Bay%20http://starevent.sg"> </area>
+				</map> 
+			<img id="top_bottom" src="img/landscape_frametop_bottom.png" alt=""/>
+			
+			<a href="safari://bit.ly/starconcert_stipad" target="blank">
+				<img id="signupbutton" src="img/landscape_signup.png" alt=""/>
+			</a>
+			
+			<a href="overlayhttp://starevent.sg/images/starevent.jpg">
+				<img id="badge" src="img/badge.png" alt=""/>
+			</a>
+			
+			<a href="safari://www.starevent.sg" target="blank">
+				<img id="badge2" src="img/badge2.png" alt=""/>
+			</a>
+			
+			<div id="mask">
+				<div id="artist_detail">
+					<img id="artist_close" src="img/close.png" alt=""/>
+					<div id="artist_image">
+						<img id="artist_landscape" src="img/artist1_image.jpg" alt=""/>
+						<img id="tab_view" src="img/tab_view.png" alt=""/>
+					</div>
+					<div id="artist_information">
+					</div>
+				</div>
+				<div id="artist_video">
+					<img id="artist_close_video" src="img/close.png" alt=""/>
+					<div id="artist_video_container">
+					</div>
+				</div>
+			</div>
+			
+			<audio id="sound" src="sound.wav" style="display:none"  preload="auto">
+			</audio>
+			<audio id="sound2" src="sound2.wav" style="display:none"  preload="auto">
+			</audio>
+		</div>
+	</body>
+</html>

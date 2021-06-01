@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		
+		<link rel="stylesheet" href="fonts/segoe-ui-semibold.css" media="all"/>
+		<link rel="stylesheet" href="fonts/segoe-ui.css" media="all"/>
+		
+		<link rel="stylesheet" href="flexslider.css" media="all"/>
+		
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			#banner{
+				position: absolute; 
+				top: 0;
+				left: 50%;
+				margin-left: -90px;
+				width: 180px;
+				height: 430px;
+				overflow: hidden;
+				
+				opacity: 0;
+				
+				background: #ed1d25;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#logo{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+			}
+			#text1{
+				position: absolute;
+				top: 74px;
+				left: 15px;
+				width: 250px;
+				color: #ffffff;
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+				font-size: 14px;
+			}
+			#text2{
+				position: absolute;
+				top: 74px;
+				left: 15px;
+				width: 250px;
+				color: #ffffff;
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+				font-size: 14px;
+				display: none;
+			}
+			#container_all{
+				width: 360px;
+				height: 220px;
+				position: absolute;
+				top: 125px;
+				left: 0px;
+			}
+			#slider_container{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 180px;
+				height: 220px;
+				background: transparent;
+				border: 0px;
+				margin: 0px;
+				padding: 0px;
+				
+				overflow: hidden;
+				
+				border-radius: 0px;
+				-webkit-border-radius: 0px;
+				-moz-border-radius: 0px;
+				-ms-border-radius: 0px;
+				
+				box-shadow: 0px 0px 0px #000000;
+				-webkit-box-shadow: 0px 0px 0px #000000;
+				-moz-box-shadow: 0px 0px 0px #000000;
+				-ms-box-shadow: 0px 0px 0px #000000;
+			}
+			#slider_container .slides li{
+				position: relative;
+				height: 220px;
+			}
+			#slider_container .slides img{
+				width: auto;
+			}
+			.surface{
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			.phone{
+				margin-left: 25px;
+			}
+			.surface-text{
+				position: absolute;
+				top: 120px;
+				left: 15px;
+				width: 140px;
+				color: #ffffff;
+			}
+			.phone-text{
+				position: absolute;
+				top: 140px;
+				left: 15px;
+				width: 160px;
+				color: #ffffff;
+			}
+			.xbox-text{
+				position: absolute;
+				top: 140px;
+				left: 15px;
+				width: 165px;
+				color: #ffffff;
+			}
+			.surface-text-header{
+				font-family: 'SegoeUISemibold', Arial, Helvetica, sans-serif;
+				font-size: 15px;
+			}
+			.surface-text-content{
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+				font-size: 14px;
+			}
+			#bingmap{
+				width: 180px;
+				height: 250px;
+				position: absolute;
+				top: 0px;
+				left: 180px;
+			}
+			
+			#mask_slide{
+				width: 180px;
+				height: 220px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#microsoft_logo{
+				position: absolute;
+				left: 15px;
+				bottom: 12px;
+			}
+			#findstore{
+				position: absolute;
+				left: 15px;
+				bottom: 60px;
+				width: 81px;
+				height: 13px;
+			}
+			#findstore_text{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 68px;
+				height: 13px;
+				background: url('img/find_store.png') no-repeat 0px 0px;
+			}
+			#findstore_arrow{
+				position: absolute;
+				top: 0px;
+				left: 68px;
+				width: 13px;
+				height: 13px;
+				background: url('img/find_store.png') no-repeat -68px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="banner">
+			<img id="logo" src="img/logo.png" />
+			<div id="text1">
+				Swipe to find the perfect<br/>
+				gift at Microsoft
+			</div>
+			<div id="text2">
+				Select a store below<br/>
+				to get directions
+			</div>
+			
+			<div id="container_all">
+				<div id="slider_container" class="flexslider" >
+					<ul class="slides">
+						<li>
+							<img class="surface" src="img/surface.png"/>
+							
+							<div class="surface-text">
+								<div class="surface-text-header">For the student</div>
+								<div class="surface-text-content">
+									Surface 2&mdash;Faster,<br/>
+									lighter, and outfitted<br/>
+									with Office 2013
+								</div>
+							</div>
+						</li>
+						<li>
+							<img class="phone" src="img/phone.png"/>
+							<div class="phone-text">
+								<div class="surface-text-header">For the shutterbug</div>
+								<div class="surface-text-content">
+									Nokia Lumia 1020&mdash;41<br/>
+									megapixels. Nothing<br/>
+									else comes close.
+								</div>
+							</div>
+						</li>
+						<li>
+							<img src="img/xbox.png"/>
+							<div class="xbox-text">
+								<div class="surface-text-header">For everyone</div>
+								<div class="surface-text-content">
+									Xbox One&mdash;The all-in-one<br/>
+									entertainment system
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="mask_slide">
+				</div>
+			
+				<div id="bingmap">
+				</div>
+			</div>
+			
+			<img id="microsoft_logo" src="img/microsoft_logo.png"/>
+			<div id="findstore">
+				<div id="findstore_text">
+				</div>
+				<div id="findstore_arrow">
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+			<script type="text/javascript" src="jquery.flexslider-min.js"></script>
+			
+			<script type="text/javascript" src="main.js"></script>
+		</div>
+	</body>
+</html>

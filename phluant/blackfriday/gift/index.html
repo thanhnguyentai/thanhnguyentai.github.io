@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#minimize{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				background: #ed1d25;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				opacity: 0;
+				
+				overflow: hidden;
+			}
+			#logo{
+				position: absolute;
+				top: 14px;
+				left: 16px;
+			}
+			#text_line1{
+				position: absolute;
+				width: 91px;
+				height: 16px;
+				background: url('img/text.png') no-repeat 0px 0px;
+				top: 12px;
+				left: 190px;
+				opacity: 0;
+			}
+			#text_line2{
+				position: absolute;
+				width: 23px;
+				height: 17px;
+				background: url('img/text.png') no-repeat 0px -16px;
+				top: 28px;
+				left: 190px;
+				opacity: 0;
+			}
+			#saving{
+				position: absolute;
+				width: 54px;
+				height: 17px;
+				background: url('img/text.png') no-repeat -23px -16px;
+				/*top: 28px;
+				left: 213px;*/
+				top: 70px;
+				left: 230px;
+				
+			}
+			#arrow{
+				position: absolute;
+				top: 30px;
+				left: 266px;
+				width: 15px;
+				height: 15px;
+				background: url('img/arrow.png') no-repeat;
+				opacity: 0;
+			}
+			#box_bottom,#box_bottom1{
+				position: absolute;
+				top: 15px;
+				right: 40px;
+			}
+			#box_top{
+				position: absolute;
+				top: -10px;
+				right: 40px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="minimize">
+			<img src="img/logo.png" alt="logo" id="logo"/>
+			
+			<img id="box_bottom1" src="img/box_bottom_1.png"/>
+			<div id="text_line1">
+			</div>
+			<div id="text_line2">
+			</div>
+			<div id="saving">
+			</div>
+			<div id="arrow">
+			</div>
+			
+			<img id="box_bottom" src="img/box_bottom_2.png"/>
+			<img id="box_top" src="img/box_top.png"/>
+		</div>
+		
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,970 @@
+/*-- fade out animation--*/
+@-webkit-keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    -webkit-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 0; 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    -moz-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 0; 
+    -moz-transform: translate(0,0);
+  }
+}
+@-o-keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    -o-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 0; 
+    -o-transform: translate(0,0);
+  }
+}
+@keyframes fadeOut {
+  0%   { 
+    opacity: 1; 
+    transform: translate(0,0);
+  }
+  100% { 
+    opacity: 0; 
+    transform: translate(0,0);
+  }
+}
+
+/*-- fade in animation--*/
+@-webkit-keyframes fadeIn {
+  0%   { 
+    opacity: 0; 
+    -webkit-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 1; 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes fadeIn {
+  0%   { 
+    opacity: 0; 
+    -moz-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 1; 
+    -moz-transform: translate(0,0);
+  }
+}
+@-o-keyframes fadeIn {
+  0%   { 
+    opacity: 0; 
+    -o-transform: translate(0,0);
+  }
+  100% { 
+    opacity: 1; 
+    -o-transform: translate(0,0);
+  }
+}
+@keyframes fadeIn {
+  0%   { 
+    opacity: 0; 
+    transform: translate(0,0);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translate(0,0);
+  }
+}
+
+/*-- slide out animation--*/
+@-webkit-keyframes slideOut {
+  0%   {
+    -webkit-transform: translate(0,0);
+  }
+  100% { 
+    -webkit-transform: translate(-320px,0);
+  }
+}
+@-moz-keyframes slideOut {
+  0%   {
+    -moz-transform: translate(0,0);
+  }
+  100% { 
+    -moz-transform: translate(-320px,0);
+  }
+}
+@-o-keyframes slideOut {
+  0%   {
+    -o-transform: translate(0,0);
+  }
+  100% { 
+    -o-transform: translate(-320px,0);
+  }
+}
+@keyframes slideOut {
+  0%   {
+    transform: translate(0,0);
+  }
+  100% { 
+    transform: translate(-320px,0);
+  }
+}
+
+/*-- slide in animation--*/
+@-webkit-keyframes slideIn {
+  0%   {
+    -webkit-transform: translate(320px,0);
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes slideIn {
+  0%   {
+    -moz-transform: translate(320px,0);
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+  }
+}
+@-o-keyframes slideIn {
+  0%   {
+    -o-transform: translate(320px,0);
+  }
+  100% { 
+    -o-transform: translate(0,0);
+  }
+}
+@keyframes slideIn {
+  0%   {
+    transform: translate(320px,0);
+  }
+  100% { 
+    transform: translate(0,0);
+  }
+}
+
+/*-- slide in back animation--*/
+@-webkit-keyframes slideInBack {
+  0%   {
+    -webkit-transform: translate(-320px,0);
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes slideInBack {
+  0%   {
+    -moz-transform: translate(-320px,0);
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+  }
+}
+@-o-keyframes slideInBack {
+  0%   {
+    -o-transform: translate(-320px,0);
+  }
+  100% { 
+    -o-transform: translate(0,0);
+  }
+}
+@keyframes slideInBack {
+  0%   {
+    transform: translate(-320px,0);
+  }
+  100% { 
+    transform: translate(0,0);
+  }
+}
+
+/*-- slide out back animation--*/
+@-webkit-keyframes slideOutBack {
+  0%   {
+    -webkit-transform: translate(320px,0);
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes slideOutBack {
+  0%   {
+    -moz-transform: translate(320px,0);
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+  }
+}
+@-o-keyframes slideOutBack {
+  0%   {
+    -o-transform: translate(320px,0);
+  }
+  100% { 
+    -o-transform: translate(0,0);
+  }
+}
+@keyframes slideOutBack {
+  0%   {
+    transform: translate(320px,0);
+  }
+  100% { 
+    transform: translate(0,0);
+  }
+}
+
+/*-- slide in and fade in animation--*/
+@-webkit-keyframes slideInFadeIn {
+  0%   {
+    -webkit-transform: translate(0,0);
+    opacity: 0;
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes slideInFadeIn {
+  0%   {
+    -moz-transform: translate(0,0);
+    opacity: 0;
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+    opacity: 1;
+  }
+}
+@-o-keyframes slideInFadeIn {
+  0%   {
+    -o-transform: translate(0,0);
+    opacity: 0;
+  }
+  100% { 
+    -o-transform: translate(0,0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFadeIn {
+  0%   {
+    transform: translate(0,0);
+    opacity: 0;
+  }
+  100% { 
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+/*-- slide in back skate animation--*/
+@-webkit-keyframes slideInSkateBack {
+  0%   {
+    -webkit-transform: translate(-355px,0);
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+  }
+}
+@-moz-keyframes slideInSkateBack {
+  0%   {
+    -moz-transform: translate(-355px,0);
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+  }
+}
+@-o-keyframes slideInSkateBack {
+  0%   {
+    -o-transform: translate(-355px,0);
+  }
+  100% { 
+    -o-transform: translate(0,0);
+  }
+}
+@keyframes slideInSkateBack {
+  0%   {
+    transform: translate(-355px,0);
+  }
+  100% { 
+    transform: translate(0,0);
+  }
+}
+
+/*-- slide out back skate animation--*/
+@-webkit-keyframes slideOutSkateBack {
+  0%   {
+    opacity: 0;
+    -webkit-transform: translate(355px,0);
+  }
+  100% { 
+    -webkit-transform: translate(0,0);
+    opacity: 1;
+  }
+}
+@-moz-keyframes slideOutSkateBack {
+  0%   {
+    opacity: 0;
+    -moz-transform: translate(355px,0);
+  }
+  100% { 
+    -moz-transform: translate(0,0);
+    opacity: 1;
+  }
+}
+@-o-keyframes slideOutSkateBack {
+  0%   {
+    -o-transform: translate(355px,0);
+    opacity: 0;
+  }
+  100% { 
+    -o-transform: translate(0,0);
+    opacity: 1;
+  }
+}
+@keyframes slideOutSkateBack {
+  0%   {
+    opacity: 0;
+    transform: translate(355px,0);
+  }
+  100% { 
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+
+/*-------------------------------------------*/
+.container{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 320px;
+  height: 50px;
+  display: block;
+}
+
+.banner-container{
+  background-color: #000;
+  overflow: hidden;
+}
+
+
+/*-- es ---*/
+.es-container{
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 1s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 1s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 1s forwards;
+  -o-animation: fadeIn 1s ease-in-out 1s forwards;
+  animation: fadeIn 1s ease-in-out 1s forwards;
+}
+.es-content{
+  background: url('../img/es_bg.jpg') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-animation: fadeOut 1s ease-in-out 5s forwards;
+  -moz-animation: fadeOut 1s ease-in-out 5s forwards;
+  -ms-animation: fadeOut 1s ease-in-out 5s forwards;
+  -o-animation: fadeOut 1s ease-in-out 5s forwards;
+  animation: fadeOut 1s ease-in-out 5s forwards;
+}
+.es-text{
+  position: absolute;
+  top: 8px;
+  left: 143px;
+  width: 126px;
+  height: 37px;
+  background: url('../img/es_text.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 2s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 2s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 2s forwards;
+  -o-animation: fadeIn 1s ease-in-out 2s forwards;
+  animation: fadeIn 1s ease-in-out 2s forwards;
+}
+.es-logo{
+  position: absolute;
+  top: 32px;
+  left: 149px;
+  width: 65px;
+  height: 12px;
+  background: url('../img/es_logo.png') no-repeat center center; 
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 2s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 2s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 2s forwards;
+  -o-animation: fadeIn 1s ease-in-out 2s forwards;
+  animation: fadeIn 1s ease-in-out 2s forwards;
+}
+.es-tap{
+  position: absolute;
+  bottom: 5px;
+  right: 4px;
+  width: 52px;
+  height: 12px;
+  background: url('../img/es_tap.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 3s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 3s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 3s forwards;
+  -o-animation: fadeIn 1s ease-in-out 3s forwards;
+  animation: fadeIn 1s ease-in-out 3s forwards;
+}
+.es-option{
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 31px;
+  height: 5px;
+  background: url('../img/es_option.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 3s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 3s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 3s forwards;
+  -o-animation: fadeIn 1s ease-in-out 3s forwards;
+  animation: fadeIn 1s ease-in-out 3s forwards;
+}
+
+/*-- is ---*/
+.is-container{
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: 1; 
+
+  -webkit-animation: fadeIn 1s ease-in-out 5s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 5s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 5s forwards;
+  -o-animation: fadeIn 1s ease-in-out 5s forwards;
+  animation: fadeIn 1s ease-in-out 5s forwards;
+}
+.is-content{
+  background: url('../img/is_bg.jpg') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  
+  -webkit-animation: fadeOut 1s ease-in-out 9s forwards;
+  -moz-animation: fadeOut 1s ease-in-out 9s forwards;
+  -ms-animation: fadeOut 1s ease-in-out 9s forwards;
+  -o-animation: fadeOut 1s ease-in-out 9s forwards;
+  animation: fadeOut 1s ease-in-out 9s forwards;
+}
+.is-text{
+  position: absolute;
+  top: 7px;
+  left: 119px;
+  width: 126px;
+  height: 37px;
+  background: url('../img/is_text.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 6s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 6s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 6s forwards;
+  -o-animation: fadeIn 1s ease-in-out 6s forwards;
+  animation: fadeIn 1s ease-in-out 6s forwards;
+}
+.is-logo{
+  position: absolute;
+  top: 10px;
+  right: 7px;
+  width: 54px;
+  height: 10px;
+  background: url('../img/is_logo.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 6s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 6s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 6s forwards;
+  -o-animation: fadeIn 1s ease-in-out 6s forwards;
+  animation: fadeIn 1s ease-in-out 6s forwards;
+}
+.is-tap{
+  position: absolute;
+  bottom: 9px;
+  right: 7px;  
+  width: 47px;
+  height: 11px;
+  background: url('../img/is_tap.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 7s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 7s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 7s forwards;
+  -o-animation: fadeIn 1s ease-in-out 7s forwards;
+  animation: fadeIn 1s ease-in-out 7s forwards;
+}
+.is-option{
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 41px;
+  height: 4px;
+  background: url('../img/is_option.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 7s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 7s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 7s forwards;
+  -o-animation: fadeIn 1s ease-in-out 7s forwards;
+  animation: fadeIn 1s ease-in-out 7s forwards;
+}
+
+/*--- awd ---*/
+.awd-container{
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: 2; 
+
+  -webkit-animation: fadeIn 1s ease-in-out 9s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 9s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 9s forwards;
+  -o-animation: fadeIn 1s ease-in-out 9s forwards;
+  animation: fadeIn 1s ease-in-out 9s forwards;
+}
+.awd-content{
+  background: url('../img/awd_bg.jpg') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-animation: fadeOut 1s ease-in-out 13s forwards;
+  -moz-animation: fadeOut 1s ease-in-out 13s forwards;
+  -ms-animation: fadeOut 1s ease-in-out 13s forwards;
+  -o-animation: fadeOut 1s ease-in-out 13s forwards;
+  animation: fadeOut 1s ease-in-out 13s forwards;
+}
+
+.awd-text{
+  position: absolute;
+  top: 7px;
+  left: 6px;
+  width: 107px;
+  height: 36px;
+  background: url('../img/awd_text.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 10s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 10s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 10s forwards;
+  -o-animation: fadeIn 1s ease-in-out 10s forwards;
+  animation: fadeIn 1s ease-in-out 10s forwards;
+}
+.awd-logo{
+  position: absolute;
+  top: 7px;
+  right: 4px;
+  width: 57px;
+  height: 10px;
+  background: url('../img/awd_logo.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 10s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 10s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 10s forwards;
+  -o-animation: fadeIn 1s ease-in-out 10s forwards;
+  animation: fadeIn 1s ease-in-out 10s forwards;
+}
+.awd-tap{
+  position: absolute;
+  bottom: 9px;
+  right: 3px;
+  width: 46px;
+  height: 10px;
+  background: url('../img/awd_tap.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 11s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 11s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 11s forwards;
+  -o-animation: fadeIn 1s ease-in-out 11s forwards;
+  animation: fadeIn 1s ease-in-out 11s forwards;
+}
+.awd-option{
+  position: absolute;
+  bottom: 2px;
+  right: 3px;
+  width: 25px;
+  height: 4px;
+  background: url('../img/awd_option.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 11s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 11s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 11s forwards;
+  -o-animation: fadeIn 1s ease-in-out 11s forwards;
+  animation: fadeIn 1s ease-in-out 11s forwards;
+}
+
+/*--- nx ---*/
+.nx-container{
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: 3;  
+
+  -webkit-animation: fadeIn 1s ease-in-out 13s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 13s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 13s forwards;
+  -o-animation: fadeIn 1s ease-in-out 13s forwards;
+  animation: fadeIn 1s ease-in-out 13s forwards;
+}
+
+.nx-content{
+  background: url('../img/nx_bg.jpg') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-animation: fadeOut 1s ease-in-out 17s forwards;
+  -moz-animation: fadeOut 1s ease-in-out 17s forwards;
+  -ms-animation: fadeOut 1s ease-in-out 17s forwards;
+  -o-animation: fadeOut 1s ease-in-out 17s forwards;
+  animation: fadeOut 1s ease-in-out 17s forwards;
+}
+.nx-text{
+  position: absolute;
+  top: 17px;
+  left: 114px;
+  width: 134px;
+  height: 20px;
+  background: url('../img/nx_text.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 14s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 14s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 14s forwards;
+  -o-animation: fadeIn 1s ease-in-out 14s forwards;
+  animation: fadeIn 1s ease-in-out 14s forwards;
+}
+.nx-logo{
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  width: 58px;
+  height: 10px;
+  background: url('../img/nx_logo.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 14s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 14s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 14s forwards;
+  -o-animation: fadeIn 1s ease-in-out 14s forwards;
+  animation: fadeIn 1s ease-in-out 14s forwards;
+}
+.nx-tap{
+  position: absolute;
+  bottom: 5px;
+  right: 4px;
+  width: 46px;
+  height: 10px;
+  background: url('../img/nx_tap.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 15s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 15s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 15s forwards;
+  -o-animation: fadeIn 1s ease-in-out 15s forwards;
+  animation: fadeIn 1s ease-in-out 15s forwards;
+}
+.nx-option{
+  position: absolute;
+  bottom: 1px;
+  left: 78px;
+  width: 30px;
+  height: 5px;
+  background: url('../img/nx_option.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  opacity: 0;
+
+  -webkit-animation: fadeIn 1s ease-in-out 15s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 15s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 15s forwards;
+  -o-animation: fadeIn 1s ease-in-out 15s forwards;
+  animation: fadeIn 1s ease-in-out 15s forwards;
+}
+/*--- rx ---*/
+.rx-container{
+  -webkit-transform: translate(320px,0);
+  -moz-transform: translate(320px,0);
+  -ms-transform: translate(320px,0);
+  -o-transform: translate(320px,0);
+  transform: translate(320px,0);
+
+  -webkit-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -moz-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -ms-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -o-animation: slideOutBack 0s ease-in-out 0s forwards;
+  animation: slideOutBack 0s ease-in-out 0s forwards;
+}
+.rx-content{
+  background: url('../img/rx_bg.jpg') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-transform: translate(-320px,0);
+  -moz-transform: translate(-320px,0);
+  -ms-transform: translate(-320px,0);
+  -o-transform: translate(-320px,0);
+  transform: translate(-320px,0);
+
+  -webkit-animation: fadeIn 1s ease-in-out 17s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 17s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 17s forwards;
+  -o-animation: fadeIn 1s ease-in-out 17s forwards;
+  animation: fadeIn 1s ease-in-out 17s forwards;
+}
+.rx-text-container{
+  -webkit-transform: translate(320px,0);
+  -moz-transform: translate(320px,0);
+  -ms-transform: translate(320px,0);
+  -o-transform: translate(320px,0);
+  transform: translate(320px,0);
+
+  -webkit-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -moz-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -ms-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -o-animation: slideOutBack 0s ease-in-out 0s forwards;
+  animation: slideOutBack 0s ease-in-out 0s forwards;
+}
+.rx-text{
+  position: absolute;
+  top: 8px;
+  left: 172px;
+  width: 72px;
+  height: 33px;
+  background: url('../img/rx_text.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-transform: translate(-320px,0);
+  -moz-transform: translate(-320px,0);
+  -ms-transform: translate(-320px,0);
+  -o-transform: translate(-320px,0);
+  transform: translate(-320px,0);
+
+  -webkit-animation: fadeIn 1s ease-in-out 18s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 18s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 18s forwards;
+  -o-animation: fadeIn 1s ease-in-out 18s forwards;
+  animation: fadeIn 1s ease-in-out 18s forwards;
+}
+.rx-logo-container{
+  -webkit-transform: translate(320px,0);
+  -moz-transform: translate(320px,0);
+  -ms-transform: translate(320px,0);
+  -o-transform: translate(320px,0);
+  transform: translate(320px,0);
+
+  -webkit-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -moz-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -ms-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -o-animation: slideOutBack 0s ease-in-out 0s forwards;
+  animation: slideOutBack 0s ease-in-out 0s forwards;
+}
+.rx-logo{
+  position: absolute;
+  top: 11px;
+  right: 8px;
+  width: 54px;
+  height: 10px;
+  background: url('../img/rx_logo.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-transform: translate(-320px,0);
+  -moz-transform: translate(-320px,0);
+  -ms-transform: translate(-320px,0);
+  -o-transform: translate(-320px,0);
+  transform: translate(-320px,0);
+
+  -webkit-animation: fadeIn 1s ease-in-out 18s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 18s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 18s forwards;
+  -o-animation: fadeIn 1s ease-in-out 18s forwards;
+  animation: fadeIn 1s ease-in-out 18s forwards;
+}
+.rx-tap-container{
+  -webkit-transform: translate(320px,0);
+  -moz-transform: translate(320px,0);
+  -ms-transform: translate(320px,0);
+  -o-transform: translate(320px,0);
+  transform: translate(320px,0);
+
+  -webkit-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -moz-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -ms-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -o-animation: slideOutBack 0s ease-in-out 0s forwards;
+  animation: slideOutBack 0s ease-in-out 0s forwards;
+}
+.rx-tap{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 49px;
+  height: 11px;
+  background: url('../img/rx_tap.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-transform: translate(-320px,0);
+  -moz-transform: translate(-320px,0);
+  -ms-transform: translate(-320px,0);
+  -o-transform: translate(-320px,0);
+  transform: translate(-320px,0);
+
+  -webkit-animation: fadeIn 1s ease-in-out 19s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 19s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 19s forwards;
+  -o-animation: fadeIn 1s ease-in-out 19s forwards;
+  animation: fadeIn 1s ease-in-out 19s forwards;
+}
+.rx-option-container{
+  -webkit-transform: translate(320px,0);
+  -moz-transform: translate(320px,0);
+  -ms-transform: translate(320px,0);
+  -o-transform: translate(320px,0);
+  transform: translate(320px,0);
+
+  -webkit-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -moz-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -ms-animation: slideOutBack 0s ease-in-out 0s forwards;
+  -o-animation: slideOutBack 0s ease-in-out 0s forwards;
+  animation: slideOutBack 0s ease-in-out 0s forwards;
+}
+.rx-option{
+  position: absolute;
+  bottom: 2px;
+  left: 33px;
+  width: 26px;
+  height: 4px;
+  background: url('../img/rx_option.png') no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
+  -webkit-transform: translate(-320px,0);
+  -moz-transform: translate(-320px,0);
+  -ms-transform: translate(-320px,0);
+  -o-transform: translate(-320px,0);
+  transform: translate(-320px,0);
+
+  -webkit-animation: fadeIn 1s ease-in-out 19s forwards;
+  -moz-animation: fadeIn 1s ease-in-out 19s forwards;
+  -ms-animation: fadeIn 1s ease-in-out 19s forwards;
+  -o-animation: fadeIn 1s ease-in-out 19s forwards;
+  animation: fadeIn 1s ease-in-out 19s forwards;
+}

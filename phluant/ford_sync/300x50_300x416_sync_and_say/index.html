@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{
+				width: 300px;
+				/*height: 50px;*/
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#ph_conBanner{
+				width: 300px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				overflow: hidden;
+				background: url('img/bg.png') no-repeat center center;
+				opacity: 1;
+				z-index: 100;
+				/*display: none;*/
+			}
+			#main_expand {				
+				width: 300px;
+				height: 416px;
+				top: 0px;
+				left: 0px;
+				opacity: 1;
+				display: none;
+				background: white;
+				overflow: hidden;
+			}
+
+			#top-expand{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				height: 15px;
+				width: 300px;
+				background: #3e3e3e;
+			}
+
+			#btn-x {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				z-index: 101;
+				width: 30px;
+				height: 30px;
+				background: url('img/x.png') no-repeat 90% 5%;
+			}
+			#video {
+				position: absolute;
+				left: 0px;
+				width: 134px;
+				height: 40px;
+				top : 16px;				
+			}
+			.select {
+				background: #277b8f;
+			}
+			.none-select {
+				background: #3cb6d3;
+			}
+			#link {
+				position: absolute;
+				right: 0px;
+				top: 16px;
+				width : 165px;
+				height: 40px;
+				
+			}
+
+			.camera-icon {
+				position: absolute;
+				top: 15px;
+				left: 35px;
+			}
+			.applink-icon{
+				position: absolute;
+				top: 15px;
+				left: 35px;
+			}
+
+			.text {
+				position: absolute;
+				top: 12px;
+				left: 60px;
+			}
+
+			.link-text {
+				top: 15px;
+				left: 65px;
+			}
+
+			#main-video {
+				position: absolute;
+				top: 56px;
+			}
+
+			#bottom-img-1, #bottom-img-2{
+				position: absolute;
+				bottom: 0px;
+			}
+			#bottom-img-1{
+				width: 300px;
+				height: 192px;
+			}
+			#bottom-img-2{
+				display: none;
+			}
+			#car {
+				position: absolute;
+				top: 227px;
+				left: 18px;
+			}
+
+			#more-infor {
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				width: 82px;
+				height: 35px;
+			}
+
+			#right-text {
+				position: absolute;
+				bottom: 140px;
+				right: 10px;
+			}
+
+			#learn-more {
+				position: absolute;
+				right: 15px;
+				bottom: 90px;
+			}
+
+			#left-text {
+				position: absolute;
+				left: 12px;
+				bottom: 138px;
+			}
+
+			#link-detail {
+				position: absolute;
+				width: 300px;
+				height: 310px;
+				background: #e5e5e5;
+				top: 56px;
+				display: none;
+			}
+
+			#top-text {
+				position: absolute;
+				left: 50%;
+				margin-left: -115px;
+				top: 10px;
+			}
+
+
+			#black-line {
+				position: absolute;
+				width: 270px;
+				height: 2px;
+				background: #1f1f1f;
+				top: 110px;
+				left: 50%;
+				margin-left: -140px;
+			}
+			#applink_detail_title {
+				position: absolute;
+				top: 130px;
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight: bold;
+				left: 10px;
+			}
+
+			#applink_detail_content {
+				top: 160px;
+				font-size: 12px;
+				font-family: Arial, Helvetica, sans-serif;
+				left: 10px;
+				width: 280px;
+			}
+			#border{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				border: 1px solid #9f9f9f;
+				width: 298px;
+				height: 414px;
+			}
+			.absolute{
+				position: absolute;
+			}
+			.applink-logo{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				-webkit-transform: translateX(-50%) translateY(-50%);
+				-moz-transform: translateX(-50%) translateY(-50%);
+				-ms-transform: translateX(-50%) translateY(-50%);
+			}
+			.active-logo{
+				background: #ffffff;
+				border-radius: 3px;
+				-ms-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				-moz-binding: 3px;
+			}
+			
+			
+			#disclame{
+				width: 300px;
+				height: 192px;
+				background-color: #1f1f1f;
+				bottom: 0px;
+				left: 0px; 
+				opacity: 0;
+				display: none;
+			}
+			#bt_close_disclame{
+				width: 30px;
+				height: 30px;
+				background: url('img/bt_close_disclame.png') no-repeat center center;
+				top: 0px;
+				right: 0px;
+			}
+			#disclame_text{
+				top: 50%;
+				left: 50%;
+				margin-top: -60px;
+				margin-left: -119px;
+				position: absolute;
+				width: 238px;
+				font-size: 11px;
+				color: #fff;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			.img-icon {
+				position: absolute;
+				width: 42px;
+				height: 42px;
+				overflow: hidden;
+				top : 3px;
+				left: 3px;
+			/*	display: none;*/
+			}
+
+			.active{
+				background: white;
+			}
+
+			#parent-1 {
+				position: absolute;
+				width: 48px;
+				height: 48px;
+				top: 46px;
+				left: 10px;
+				border-radius: 9px;
+			}
+
+			#parent-2 {
+				position: absolute;
+				width: 48px;
+				height: 48px;
+				top: 46px;
+				left: 70px;
+				border-radius: 9px;
+			}
+
+			#parent-3 {
+				position: absolute;
+				width: 48px;
+				height: 48px;
+				top: 46px;
+				left: 129px;
+				border-radius: 9px;
+			}
+
+			#parent-4 {
+				position: absolute;
+				width: 48px;
+				height: 48px;
+				top: 46px;
+				left: 188px;
+				border-radius: 9px;
+			}
+
+			#parent-5 {
+				position: absolute;
+				width: 48px;
+				height: 48px;
+				top: 46px;
+				left: 245px;
+				border-radius: 9px;
+			}
+
+			#center-text {
+				position: absolute;
+				top: 20px;
+				left: 50%;
+				margin-left: -86px;
+			}
+			#car_1{
+				top: 95px;
+				left: 10px;
+				display: none;
+				width: 180px;
+			}
+			#car_2{
+				top: 100px;
+				left: 10px;
+				display: none;
+				width: 180px;
+			}
+			#car_3{
+				top: 95px;
+				left: 10px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+
+			</div>
+			<div id="main_expand">
+				<div id="bottom-img-1">
+					<img style="position: absolute; top: 0px; left: 0px;" src="img/bottom-img.jpg"/>
+					
+					<img id="car_1" class="absolute" src="img/focus.png" alt=""/>
+					<img id="car_2" class="absolute" src="img/escape.png" alt=""/>
+					<img id="car_3" class="absolute" src="img/fusion.png" alt=""/>
+				</div>
+				<img src="img/bottom-img-2.jpg" alt="" id="bottom-img-2"/>
+				<div id="border">
+					
+				</div>
+				<div id="top-expand">
+					<div id="btn-x">
+					</div>
+				</div>
+				<div id="video" class="select">
+					<img src="img/camera-icon.png" class="camera-icon">
+					<img src="img/text-video.png" class="text">
+				</div>
+				<div id="link" class="none-select">
+					<img src="img/link-icon.png" class="applink-icon">
+					<img src="img/text-link.png" class="text link-text">
+				</div>
+				
+				<div id="video-detail">
+					<video id="main-video" width="300" height="168"  controls>
+					  <source src="video.mp4" type="video/mp4">
+					  <source src="video.webm" type="video/webm">
+					</video>
+				</div>
+				<div id="link-detail">
+					<img src="img/center-text.png" alt="" id="center-text">
+
+					<div id="parent-1" class="active">
+						<img id="icon-1" class="img-icon" src="img/icon-1.png"/>
+					</div>
+					<div id="parent-2" >
+						<img id="icon-2" class="img-icon" src="img/icon-2.png"/>
+					</div>
+					<div id="parent-3" >
+						<img id="icon-3" class="img-icon" src="img/icon-3.png"/>
+					</div>
+					<div id="parent-4" >
+						<img id="icon-4" class="img-icon" src="img/icon-4.png"/>
+					</div>
+					<div id="parent-5" >
+						<img id="icon-5" class="img-icon" src="img/icon-5.png"/>
+					</div>
+					<span id="black-line"> </span>
+
+					<div id="applink_detail_title" class="absolute">WSJ Live for SYNC AppLink</div>
+					<div id="applink_detail_content" class="absolute">
+						WSJ Live, available for iPhone&reg; devices, is an interactive radio and video news app from The Wall Street Journal that gives you live news on demand, with the latest in markets, technology and lifestyle.
+					</div>
+				</div>
+				
+				<div id="more-infor"> </div>
+				
+				<div id="disclame" class="absolute">
+					<div id="bt_close_disclame" class="absolute">
+					</div>
+					<div id="disclame_text">
+						SYNC AppLink is available on select vehicles.
+						Don't drive while distracted. Even with voice commands, 
+						only use phones/other devices when safe. 
+						Not all features are compatible with all phones.<br/><br/> 
+						
+						You must have a Bluetooth&reg;-enabled phone paired to your SYNC system. 
+						The Bluetooth word mark is a trademark of the Bluetooth SIG, Inc.
+					</div>
+				</div>
+			</div> 
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="300x50_300x416.js"></script>
+		</div>
+	</body>
+</html>

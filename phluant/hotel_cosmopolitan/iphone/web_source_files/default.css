@@ -1,0 +1,1525 @@
+@charset "utf-8";
+/* CSS Document */
+  @media all and (orientation:portrait) {
+}
+ @media all and (orientation:landscape) {
+}
+/*reset css*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	-webkit-text-size-adjust:none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, block {
+	display:block;
+}
+nav ul {
+	list-style:none;
+}
+blockquote, q {
+	quotes:none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content:'';
+	content:none;
+}
+a {
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	text-decoration:none
+}
+ins {
+	background-color:#ff9;
+	color:#000;
+	text-decoration:none;
+}
+mark {
+	background-color:#ff9;
+	color:#000;
+	font-style:italic;
+	font-weight:bold;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+hr {
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #ccc;
+	margin:1em 0;
+	padding:0;
+}
+input, select {
+	vertical-align:middle;
+}
+select, input, textarea, button {
+	font:99% sans-serif;
+}
+pre, code, kbd, samp {
+	font-family: monospace, sans-serif;
+}
+body, select, input, textarea {
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+html {
+	overflow-y:scroll;
+}
+a:hover, a:active {
+	outline: none;
+}
+a, a:active, a:visited {
+	outline:0
+}
+a:hover {
+}
+ul, ol {
+	margin-left: 1.8em;
+}
+ol {
+	list-style-type: decimal;
+}
+nav ul, nav li {
+	margin: 0;
+}
+small {
+	font-size: 85%;
+}
+strong, th {
+	font-weight: bold;
+}
+td, td img {
+	vertical-align: top;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+pre {
+	padding: 15px;
+	white-space: pre;
+	word-wrap: break-word;
+	white-space: pre-line;
+}
+textarea {
+	overflow: auto;
+}
+.ie6 legend, .ie7 legend {
+	margin-left: -7px;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+	vertical-align: bottom;
+}
+.ie7 input[type="checkbox"] {
+	vertical-align: baseline;
+}
+.ie6 input {
+	vertical-align: text-bottom;
+}
+input[type=button], input[type=submit], button {
+	cursor: pointer;
+}
+input[type=text]{cursor:auto;}
+
+ /* webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+	margin: 0;
+}
+input:invalid, textarea:invalid {
+border-radius: 1px;
+-moz-box-shadow: 0px 0px 5px red;
+-webkit-box-shadow: 0px 0px 5px red;
+box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid {
+background-color: #f0dddd;
+}
+::-moz-selection {
+background: #FF5E99;
+color:#fff;
+text-shadow: none;
+}
+::selection {
+background:#FF5E99;
+color:#fff;
+text-shadow: none;
+}
+a:link {
+	-webkit-tap-highlight-color: #FF5E99;
+}
+button {
+	width: auto;
+	overflow: visible;
+}
+.ie7 img {
+	-ms-interpolation-mode: bicubic;
+}
+.ir {
+	display: block;
+	text-indent: -999em;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+}
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.visuallyhidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+.invisible {
+	visibility: hidden;
+}
+/* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */ 
+.clearfix:before, .clearfix:after {
+	content:" ";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+	clear:both
+}
+/* Site Code */
+#panel1_content {
+/* Global Styles */
+	background:#000000 url(content-bg.png) left top repeat;
+	font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color:#fff
+}
+/* add any selectors here that use din-pro" */
+.roomSuites a, section.roomdetails_main ul li a {
+	font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", Helvetica Neue, Arial, Helvetica, sans-serif;
+}
+/*Hero Image*/  
+block.hero_img {
+	display:block;
+	width:100%;
+	height:252px;
+	float:left;
+	position:relative;
+	z-index:1;
+}
+block.hero_img1 {
+	background:url(/images/Mobile/large/home_banner1.jpg) 50% 0 no-repeat;
+}
+block.hero_img2 {
+	background:url(/images/Mobile/large/home_banner2.jpg) 50% 0 no-repeat;
+}
+block.hero_img3 {
+	background:url(/images/Mobile/large/home_banner3.jpg) 50% 0 no-repeat;
+}
+block.hero_img4 {
+	background:url(/images/Mobile/large/home_banner4.jpg) 50% 0 no-repeat;
+}
+block.hero_img5 {
+	background:url(/images/Mobile/large/home_banner5.jpg) 50% 0 no-repeat;
+}
+block.hero_img_internet_connect {
+	/*background:url(/images/Mobile/internet-connect.jpg) 50% 0 no-repeat;*/
+}
+block.hero_img_internet_connect_large {
+	/*background:url(/images/Mobile/large/internet-connect.jpg) 50% 0 no-repeat;*/
+}
+/*Hero Image*/  
+block.hero_img_small {
+	display:block;
+	width:100%;
+	height:135px;
+	float:left;
+	position:relative;
+	z-index:1;
+	
+}
+block.hero_img1_small{
+	background:url(/images/Mobile/small/home_banner1.jpg) 50% 0 no-repeat;
+	}
+block.hero_img2_small {
+	background:url(/images/Mobile/small/home_banner2.jpg) 50% 0 no-repeat;
+}
+block.hero_img3_small {
+	background:url(/images/Mobile/small/home_banner3.jpg) 50% 0 no-repeat;
+}
+block.hero_img4_small {
+	background:url(/images/Mobile/small/home_banner4.jpg) 50% 0 no-repeat;
+}
+block.hero_img5_small {
+	background:url(/images/Mobile/small/home_banner5.jpg) 50% 0 no-repeat;
+}
+
+/*Header*/
+header {
+	display:block;
+	position:relative;
+	background: -webkit-gradient(radial, 50% 90%, 0, 50% 90%, 150, to(rgba(255, 255, 255, 0)), from(rgba(255, 255, 255, 0.3)));
+	-webkit-box-shadow: inset 0 -3px 5px 0 rgba(0, 0, 0, 0.4);
+	float:left;
+	width:100%
+}
+column.logo {
+	margin:14px 0 14px 19px;
+	display:block;
+	float:left;/*background: -webkit-gradient(radial,right top, left top,color-stop(0.02, rgb(0,0,0)), color-stop(0.51, rgb(255,255,255)),color-stop(1, rgb(0,0,0)),);*/
+}
+column.pge_feel {
+	position:absolute;
+	right:0;
+	z-index:2
+}
+header first:child {
+margin:14px 0 14px 20px
+}
+header last:child {
+text-align:right
+}
+/*Nav*/
+nav, .resort_events block.event ul {
+	margin-bottom:20px;
+	float:left;
+	width:100%;
+	border-top:1px solid #722786;
+}
+nav ul {
+	background:rgba(0, 0, 0, 0.1)
+}
+nav ul.home_margBtm{margin-bottom:12px;}
+nav ul li, .resort_events block.event ul li {
+	border-bottom:1px solid #722786;
+	background: transparent url(arrow.jpg) no-repeat 93% center;
+	display:block;
+}
+nav ul li a {
+	padding:10px 10% 10px 18px;
+	color:#fff;
+	display:block;
+	font-size:20px;
+	font-weight:normal
+}
+nav.mrgBtm {
+	margin-bottom:0px;
+}
+/*Footer*/
+footer {
+	color:#898989;
+	text-align:center;
+	font-size:12px;
+	display:block;
+	width:100%;
+	margin-bottom:20px;
+}
+footer ul {
+	margin:0;
+	padding:0
+}
+footer ul li {
+	display:block;
+}
+footer ul li a {
+	color:#803c93;
+}
+footer ul li:first-child {
+	display:block;
+	margin:21px 0 21px 0;
+	color:#fff
+}
+footer ul li:first-child a.active {
+	color:#813A92;
+}
+footer ul li:first-child a {
+	color:#fff;
+}
+footer ul li:first-child a:last-child:before {
+	content:"|";
+	padding:0 5px;
+}
+footer ul li { font-size:11px}
+footer ul li a {
+	color:#8a8889; font-size:11px
+}
+footer ul li a.active, block.links p a.active {
+	color:#813a92;
+}
+footer ul li a.active, block.links p a.active:after {
+	content:"|";
+	color:#fff;
+}
+footer ul li a.active, block.links p a:last-child:after {
+	content:""
+}
+footer ul li p a:first-child:after, footer ul li p a:last-child:before {
+	content:"|";
+	padding:0 4px;
+}
+footer ul li:first-child {
+	font-weight:bold
+}
+footer ul li p a.active{color:#813A92; font-weight:bold}
+footer ul li p a.active:after,footer ul li p a.active:before{color:#8A8889; font-weight:normal}
+footer li:last-child{font-weight:bold}
+/*Contact Us*/
+.contact_us{font-family: HelveticaNeue, Arial, Helvetica, sans-serif;}
+
+.contact_us h3 {
+	margin-bottom:7px;
+
+}
+.contact_us h2 {
+	margin:30px 0 9px 0;
+		font-weight:bold
+}
+hgroup {
+	margin-bottom:12px;
+}
+.contact_us {
+	margin-bottom:31px;
+}
+hgroup h2.mrgTop {
+	margin-top:-4px;
+}
+hgroup:child {
+margin-bottom:12px;
+}
+.contact_us h1 {
+	margin-bottom:15px;
+}
+hgroup h1,#ctl00_ph_Main_ctl00_WzFullAccountActivation h1 {
+	font-size:22px;
+	color:#fff;
+	font-weight:normal;
+}
+section h2,section h3,section h4,section h5,section h6,.contact_us h2,.contact_us h3,.contact_us h4,.contact_us h5,.contact_us h6,section.resort_event_detail ul#JoinIdentity h1,.myProf ul li h1,.myProf div.CommEdit h1{font-family: HelveticaNeue, Arial, Helvetica, sans-serif;}
+article {
+	width:98%;
+	float:left;
+	margin:10px 0 20px 20px
+}
+hgroup h2 {
+	color:#a642be;
+	font-size:16px;
+	font-weight:normal;
+	margin:30px 0 7px 0;
+}
+hgroup h3, room_details hgroup h3 {
+	font-size:14px;
+	text-decoration:underline;
+	color:#fff;
+	font-weight:normal;
+	margin-bottom:13px
+}
+hgroup a {
+	color:#fff;
+}
+hgroup h3.fax {
+	text-decoration:none;
+}
+block.links {
+	text-align:center;
+}
+block.links p {
+	margin-bottom:1px;
+	margin:0;
+	line-height:12px
+}
+block.links p a {
+	color:#fff;
+	font-size:11px
+}
+block.links p:first-child a:after,block.links p:last-child a:after {
+	content:"|";
+	padding:0 3px;
+}
+block.links p:first-child a:last-child:after {
+	content:"|";
+	padding:0 3px;
+}
+block.links p:last-child a:first-child:after {
+	content:"|";
+	padding:0 3px;
+}
+/*event calendar new */
+section.resort_events {margin-left:0px}
+/*event calendar new */
+section.account_summary hgroup{margin:0 0 12px 0 !important}
+section.resort_events hgroup,section.myProf hgroup {margin:0 0 0 19px}
+
+section.resort_events block.event h3{margin-left:19px;}
+
+section, section.terms_cond {
+	margin:0px 0 20px 19px;
+	position:relative;
+	padding-top:6px
+}
+section.roomdetails_main {
+	margin:0px 0 20px 19px;
+	position:relative;
+	padding-top:3px
+}
+/*Terms and Conditions */
+
+section hgroup h1.margBtom {
+	margin-bottom:21px;
+}
+section.terms_cond {
+/*padding-left:15px;*/
+}
+section.terms_cond h2.heading_privacy {
+	font-size:14px;
+	color:#fff
+}
+section.terms_cond h2, section.terms_cond p, section.terms_cond ul li, section.terms_cond a {
+	font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+	color:#959595;
+	font-size:12px
+}
+section.terms_cond h2 {
+	padding-bottom:14px;
+	padding-right:27px;
+}
+section.terms_cond p {
+	padding-bottom:14px;
+	padding-right:24px;
+	word-wrap:break-word;
+}
+section.terms_cond h2.head, section.terms_cond p.inf {
+	padding-bottom:0
+}
+section.terms_cond ul {
+	padding:10px 24px 20px 0;
+}
+section.terms_cond ul li {
+	color:#959595;
+}
+section.terms_cond a {
+	color:#fff;
+}
+/*room-details*/
+block.hero_img_roomdetails {
+	display:block;
+	width:100%;
+	height:252px;
+	float:left;
+	position:relative;
+	z-index:1;
+
+}
+block.hero_img_roomdetails_small {
+	display:block;
+	width:100%;
+	height:135px;
+	float:left;
+	position:relative;
+	z-index:1;
+
+}
+block.hero_img_roomdetails a ,block.hero_img_roomdetails_small a {
+	position:absolute;
+	bottom:-3px;
+	right:8%
+}
+section.roomdetails_main ul {
+	margin:0;
+	padding:0;
+}
+section.roomdetails_main hgroup {
+	margin-bottom:18px;
+	line-height:140%
+}
+section.roomdetails_main ul li {
+	display:block
+}
+section.roomdetails_main ul li a {
+	padding:6px 15px 6px 4px;
+	color:#fff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.3, #cf62e8), color-stop(1, #78278b));
+	float:left;
+	display:block;
+	margin-right:10px;
+	width:67px;
+	font-size:12px
+}
+section.roomdetails_main ul li a.active {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #606060), color-stop(0, #3b3b3b));
+}
+section .room_details {
+	color:#c2c2c2;
+	font-size:12px;
+	padding:6px 15px 18px 5px;
+	width:88%;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #606060), color-stop(0, #3b3b3b));
+	margin-top:15px;
+}
+section.roomdetails_main ul {
+}
+section .room_details ul {
+	width:278px;
+}
+section .room_details ul li {
+	color:#fff;
+	margin:0;
+	padding:0;
+	padding:0 0 3px 8px;
+	background: url(/images/Mobile/disc.png) 0 4px no-repeat;
+}
+section .room_details ul li.include {
+	background:none;
+	padding:0 0 2px 0;
+	font-size:13px;
+}
+section .room_details > p {
+	margin-bottom:20px;
+	font-size:14px;
+	font-weight:bold
+}
+section .room_details > div{
+	margin-bottom:10px;
+	color:#ffffff;
+}
+section .drpDwn {
+	padding:32px 0 5px 0;
+	width:280px;
+	color:#fff;
+	text-align:left;
+	font-size:14px;
+	margin:0 auto;
+}
+section .drpDwn select {
+	color:#000;
+	margin:8px 0 5px 0;
+	font-size:13px;
+	width:280px;
+	text-align:left;
+	height: 30px;
+	-webkit-border-radius: 5px;
+	background-color: white;
+	-webkit-appearance: none;
+	background-image: url(/images/Mobile/select-handle.png), -webkit-gradient(linear, left bottom, left top, color-stop(0, #cfcfcf), color-stop(1, #fefefe));
+	background-repeat: no-repeat;
+	background-position: right 1px;
+	text-indent:8px;
+	-webkit-box-shadow:inset 0 0 2px #292829, 0px 0px 2px #292829;
+	border:none
+}
+.book_room block.Sel{padding:0 0 0 10px ; margin:0px;!important}
+/*Privacy Policy */
+block.toTop {
+	text-align:center;
+}
+block.toTop p {
+	margin:0 0 25px 0;
+	padding-top:3px
+}
+block.toTop p a {
+	color:#fff;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+/*Rooms and Suites */
+hgroup.mrg0 {
+	margin:5px 0 6px 0;
+}
+hgroup h1.heading1 {
+	padding:0 20px;
+	line-height:14px;
+	margin:9px 0 0 0;
+}
+hgroup h4.heading2 {
+	padding:0 20px;
+	color:#fff;
+	font-weight:bold;
+	margin-top:2px; 
+	font-size:14px
+}
+.heading {
+	color:#a642be;
+	font-size:17px;
+	font-weight:bold
+}
+nav {
+	margin-bottom:17px;
+	float:left;
+	width:100%;
+	border-top:1px solid #722786;
+}
+nav.roomSuites ul {
+	background:rgba(0, 0, 0, 0.1)
+}
+nav.roomSuites ul li {
+	border-bottom:1px solid #722786;
+	background: transparent url(arrow.jpg) no-repeat 95% center;
+	display:block;
+}
+nav.roomSuites ul li a {
+	padding:5px 10% 0 20px;
+	color:#fff;
+	display:block;
+	font-size:14px;
+	font-weight:normal
+}
+/*special offers padding */
+nav.roomSuites ul li span.pdLft_spclOffrs{padding-left:20px; !important}
+nav.roomSuites ul li span {
+	padding:0 0 5px 0;
+	color:#959595;
+	display:block;
+	font-size:12px;
+	font-weight:normal
+}
+
+nav.roomSuites ul.special_offers_text li a {
+	padding:5px 10% 5px 20px;
+
+}
+/*special offers padding */
+
+
+
+block.banner_rooms_suites {
+	display:block;
+	width:100%;
+	height:252px;
+	float:left;
+	background:url(banner_rooms_suites.jpg) 50% 0 no-repeat;
+	position:relative;
+	z-index:1;
+
+}
+.terrace_suites {
+	background:url(/images/Mobile/large/Terrace_Suite.jpg) 50% 0 no-repeat;
+}
+.wraparound_terrace_suites {
+	background:url(/images/Mobile/large/wraparound_terrace.jpg) 50% 0 no-repeat;
+}
+.terrace_one_bedroom_prem_view_suites {
+	background:url(/images/Mobile/large/terrace_one_bedroom_prem_view.jpg) 50% 0 no-repeat;
+}
+.terrace_one_bedroom_suites {
+	background:url(/images/Mobile/large/terrace_one_bedroom.jpg) 50% 0 no-repeat;
+}
+
+.terrace_one_bedroom_plus {
+	background:url(/images/Mobile/large/terrace_one_bedroom_plus.jpg) 50% 0 no-repeat;
+}
+.city_view_suites {
+	background:url(/images/Mobile/large/city_view.jpg) 50% 0 no-repeat;
+}
+.terrace_studio_pv_suites {
+	background:url(/images/Mobile/large/terrace_studio_pv.jpg) 50% 0 no-repeat;
+}
+.terrace_studio_suites {
+	background:url(/images/Mobile/large/terrace_studio.jpg) 50% 0 no-repeat;
+}
+.lanai_suite {
+	background:url(/images/Mobile/large/Lanai_suite.jpg) 50% 0 no-repeat;
+}
+.terrace-studio-qq{background:url(/images/Mobile/large/terrace-studio-01.jpg) 50% 0 no-repeat;}
+.west-end-penthouses_large{background:url(/images/Mobile/large/west-end-penthouses-01.jpg) 50% 0 no-repeat;}
+.bungalows_large{background:url(/images/Mobile/large/bungalow-01.jpg) 50% 0 no-repeat;}
+.resort_location {
+	background:url(/images/Mobile/resort_location.jpg) 50% 0 no-repeat;
+}
+.resort_location_large {
+	background:url(/images/Mobile/large/resort_location_large.jpg) 50% 0 no-repeat;
+}
+/*Small Images */
+block.banner_rooms_suites_small {
+	display:block;
+	width:100%;
+	height:135px;
+	float:left;
+	background:url(banner_rooms_suites.jpg) 50% 0 no-repeat;
+	position:relative;
+	z-index:1;
+
+}
+.terrace_suites_small {
+	background:url(/images/Mobile/small/Terrace_Suite.jpg) 50% 0 no-repeat;
+}
+.wraparound_terrace_suites_small {
+	background:url(/images/Mobile/small/wraparound_terrace.jpg) 50% 0 no-repeat;
+}
+.terrace_one_bedroom_prem_view_suites_small {
+	background:url(/images/Mobile/small/terrace_one_bedroom_prem_view.jpg) 50% 0 no-repeat;
+}
+.terrace_one_bedroom_suites_small {
+	background:url(/images/Mobile/small/terrace_one_bedroom.jpg) 50% 0 no-repeat;
+}
+
+.terrace_one_bedroom_plus_small {
+	background:url(/images/Mobile/small/terrace_one_bedroom_plus.jpg) 50% 0 no-repeat;
+}
+.city_view_suites_small {
+	background:url(/images/Mobile/small/city_view.jpg) 50% 0 no-repeat;
+}
+.terrace_studio_pv_suites_small {
+	background:url(/images/Mobile/small/terrace_studio_pv.jpg) 50% 0 no-repeat;
+	
+}
+
+
+.terrace_studio_suites_small{background:url(/images/Mobile/small/terrace_studio.jpg) 50% 0 no-repeat;}
+
+.lanai_suite_small {
+	background:url(/images/Mobile/small/Lanai_suite.jpg) 50% 0 no-repeat;
+}
+.terrace-studio-qq_small{background:url(/images/Mobile/small/terrace-studio-01.jpg) 50% 0 no-repeat;}
+.west-end-penthouses_small{background:url(/images/Mobile/small/west-end-penthouses-01.jpg) 50% 0 no-repeat;}
+.bungalows_small{background:url(/images/Mobile/small/bungalow-01.jpg) 50% 0 no-repeat;}
+/*Book a Room */
+#dep_month, #arr_month {
+	padding:0 44px 0 20px
+}
+column.back_btn {
+	margin:14px 0 0 24px;
+	display:block;
+}
+section.book_room ul,section.signin_identity ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+section.book_room ul li,section.signin_identity ul li {
+	color:#fff;
+	margin:0 0 12px 0
+}
+section.book_room hgroup,section.signin_identity hgroup,#ctl00_ph_Main_ctl00_WzFullAccountActivation h1,.success_msg {
+	margin-left:23px;
+	margin-bottom:8px;
+}
+section.book_room ul li select,section.signin_identity ul li select,section.myProf select {
+	color:#000;
+	height:30px;
+	padding:0 40px 0 10px;
+	border:0;
+	margin:1px 9px 0 0;
+	-webkit-border-radius: 5px;
+	background:url(/images/Mobile/select-handle.png) no-repeat 100% 1px, -webkit-gradient(linear, left bottom, left top, color-stop(0, #cfcfcf), color-stop(1, #fefefe));
+	-webkit-appearance: none;
+	-webkit-box-shadow:inset 0 0 2px #292829, 0px 0px 2px #292829;
+	font-size:13px
+}
+section.book_room ul li input[type='text'],section.signin_identity ul li input[type='text'],section.signin_identity ul li input[type='password'],  section.myProf input[type='text']{
+	border:none;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow:inset 0 0 2px #363636, 0 0 2px #292829;
+	background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #cfcfcf), color-stop(1, #fefefe));
+	padding:5px;
+	width:136px;
+	font-size:13px
+}
+section.book_room ul li h4, section.book_room ul li p,section.signin_identity ul li h4, section.signin_identity ul li p  {
+	margin-bottom:9px;
+	font-weight:normal;
+	padding-left:15px;
+}
+section.book_room ul li h4,section.signin_identity ul li h4  {
+	background:-webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1)));
+	padding:2px 0 4px 0;
+	text-indent:15px;
+	font-size:14px;
+	font-weight:bold;
+	margin-right:15px;
+}
+section.signin_identity ul li h4, .login_status_bar{clear:left;}
+section.book_room ul li h4.margLeft,section.signin_identity ul li h4.margLeft  {
+	margin-left:10px;
+}
+
+section.signin_identity ul li h4.Answer{padding-left:15px; text-indent:0;}
+section.book_room ul li p {
+	font-size:12px;
+}
+
+block.inp{width:100%; text-align:center;}
+section.book_room block input[type='submit'],section.resort_event_detail block input[type="submit"],section.resort_event_detail block input[type='submit'],section.book_room block input#reserv,.signin_identity block input[type="submit"],.account_summary .inp input[type="submit"]  {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.3, #cf62e8), color-stop(1, #78278b));
+	border:none;
+	text-align:center;
+	padding:10px 0;
+	font-size:17px;
+	color:#fff;
+	font-weight:bold;
+	margin-top:10px;
+	margin:0 auto;
+	width:84%
+	
+
+}
+section.resort_event_detail block.inp input[type="submit"]{margin-top:20px;}
+section.book_room,section.signin_identity{
+	position:relative;
+	padding-top:11px;
+	margin:0 0 18px 0;
+}
+section.book_room ul li p.indent,section.signin_identity ul li p.indent {
+	margin-left:10px;
+}
+section.book_room ul li p.show_info {
+	text-indent:10px
+}
+.validationBG{
+	background:#b30f68 url(/images/Mobile/error.png) 25px 50% no-repeat;
+	padding:12px 0 12px 68px;
+	float:left;
+	width:100%;
+	line-height:15px;
+	font-weight:bold
+}
+
+.validationBG,p.ShwErr_signin .MaRgIdentity{margin-bottom:20px !important}
+.validationBGActivation{
+	background:#b30f68 url(/images/Mobile/error.png) 25px 50% no-repeat;
+	padding:12px 26.5% 12px 68px;
+	line-height:15px;
+	font-weight:bold;
+	float:left;
+	width:68%
+	
+	
+}
+section.book_room ul li p.error
+{
+	background:#b30f68;
+	padding:7px 0;
+	float:left;
+	width:100%;
+	line-height:15px;
+	font-weight:bold
+}
+	
+section.book_room ul li p.error img,section.signin_identity ul li p.error img {
+	vertical-align:middle;
+	padding:0 0 0 15px;
+	float:left;
+	margin:0 4px 0 0;
+}
+section.book_room ul li p.error span {
+	font-size:20px;
+	vertical-align:middle;
+	position:relative;
+	bottom:0;
+	float:left;
+	margin-right:3px;
+}
+section.book_room ul li p.error column {
+	float:left;
+	width:70%;
+	margin-top:5px
+}
+.dspNone {
+	display:none;
+}
+/*Resort Location */
+.mrgBotm {
+	padding-bottom:0px !important;
+}
+#margResLoc .text{color:#fff; font-size:15px !important}
+#margResLoc {
+	margin:0 0 17px 20px;
+	padding-top:3px
+}
+ @media all and (orientation:portrait) {
+section.book_room block input[type='submit'],section.resort_event_detail block input[type='submit'],section.book_room block input#reserv,section.book_room block input[type="submit"],section.signin_identity block input[type="submit"],#about_identity_text,section.account_summary .inp input[type="submit"]  {
+width:84%
+}
+}
+ @media all and (orientation:landscape) {
+section.book_room block input[type='submit'],section.resort_event_detail block input[type='submit'],section.book_room block input#reserv,section.book_room block input[type="submit"],section.signin_identity block input[type="submit"],#about_identity_text,section.account_summary .inp input[type="submit"] {
+width:91%
+}
+}
+
+ @media all and (orientation:portrait) {
+block.resort_event_detail_text, block.book_a_dining_text {
+width:84%;
+display:block
+}
+}
+@media all and (orientation:landscape) {
+block.resort_event_detail_text, block.book_a_dining_text {
+width:91%;
+display:block
+}
+}
+
+
+
+
+/* book a room footer */
+.PadTop{padding-top:25px;}
+
+/* footer */
+block.links {
+	margin-top:25px
+}
+footer .padTp {
+	padding-top:10px;
+!Important
+}
+block.icons {
+	display:block;
+	margin:25px 0;
+}
+block.icons span {
+	color:#fff;
+	vertical-align:8px;
+	font-weight:bold;
+	display:block;
+	padding:0 10% 10px 18px;
+	text-align:left
+	
+}
+block.icons img {
+	margin-left:12px;
+}
+
+block.links p.sec a:after {
+	content:"|";
+	padding:0 3px;
+}
+block.links p.sec a:last-child:after,block.links p:last-child a:last-child:after {
+	content:"";
+}
+
+
+/*book a dining */
+block.dining_heroImg {
+	background:url(/images/Mobile/restaurants/dining_heroImage.jpg) 50% 0 no-repeat;
+}
+
+block.dining_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/dining_heroImage.jpg) 50% 0 no-repeat;
+}
+
+/* special offers */
+block.SpecialOffers_heroImg {
+	background:url(/images/Mobile/special_offers/specialOffers_heroImage.jpg) 50% 0 no-repeat;
+}
+block.SpecialOffers_heroImg_large {
+	background:url(/images/Mobile/special_offers/large/specialOffers_heroImage.jpg) 50% 0 no-repeat;
+}
+
+
+/* resort events */
+.resort_events {
+	color:#fff;
+}
+.resort_events h3 {
+	font-size:18px;
+	padding:6px 0 0 0;
+	text-decoration:none;
+	font-weight:bold;
+	margin-bottom:10px
+}
+.resort_events h3.sub_heading{font-size:14px; padding:0;}
+.resort_events ul {
+	margin:0 0 0 0
+}
+.resort_events ul li {
+	list-style:none;
+	margin-bottom:8px;
+	
+}
+.resort_events block.event ul li{padding:10px 0 10px 12px;margin-bottom:0;!important}
+
+.resort_events ul li column:first-child {
+	color:#a642be;
+	width:35%;
+	float:left;
+	display:block;
+	font-weight:bold;
+	display:block;
+	font-size:12px;
+
+}
+.resort_events ul li column:last-child {
+float:left; width:55%;
+	display:block;
+	font-size:12px;
+	color:#959595
+}
+.resort_events ul li column:last-child a, .resort_events ul li column:last-child span:first-child{
+
+	color:#fff;
+	font-size:14px;
+}
+
+
+/*new event calendar */
+ul#event_calender li column:first-child .span_date_format1{width:70px; display:block;}
+ul#event_calender li column:first-child .span_date_format2{width:86px; display:block;}
+ul#event_calender li column:first-child .span_date_format3{width:104px; display:block;}
+
+.resort_events block.event ul#event_calender li a{ display:block}
+
+/*identity Signin */
+section.signin_identity ul li.marBtm_sign_head {
+	margin-bottom:0;
+!important
+}
+section.signin_identity ul li p.show_info {
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:2px
+}
+section.signin_identity block input[type='submit'] {
+	margin-bottom:10px
+}
+section.signin_identity block.inp, .about_identity div.inp, .account_summary div.inp  {
+	padding-bottom:18px;
+	border-bottom:1px solid #722685
+}
+.account_summary div.inp {border:none !important}
+
+section.signin_identity block.inp p {
+	text-align:center;
+	font-size:12px;
+	line-height:150%
+	
+}
+
+section.signin_identity block.inp p.frgt_passwrd {
+margin-bottom:25px;
+	
+}
+section.signin_identity block.inp p span {
+	color:#813a92;
+	padding:16px 0 0 0;
+	display:block;
+	font-weight:bold
+}
+section.signin_identity block.inp p a {
+	color:#fff;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:underline
+}
+/*resort events_detail*/
+section.resort_event_detail {
+	margin:0 0 20px 0;
+}
+section.resort_event_detail h1, section.resort_event_detail ul {
+	margin:0 0 0 19px;
+}
+section#special_offer_detail h1, section#special_offer_detail ul {
+	margin:0;
+}
+section.resort_event_detail ul h1 {
+	margin-left:0;
+}
+section.resort_event_detail ul {
+	list-style:none;
+}
+section.resort_event_detail ul li {
+	color:#fff;
+}
+section.resort_event_detail ul li h1 {
+	font-size:18px;
+	margin-bottom:10px
+}
+section.resort_event_detail ul li h1.clrWhite{ color:#fff}
+section.resort_event_detail ul li p {
+	margin-bottom:2px;
+	font-size:14px
+}
+section.resort_event_detail ul li p span {
+	color:#a642be;
+	font-size:16px;
+	font-weight:bold
+}
+section.resort_event_detail ul li p span.ClrWhite{color:#fff;font-size:14px;
+	font-weight:normal}
+block.resort_event_detail_text {
+	color:#c2c2c2;
+	font-size:14px;
+	padding-top:10px;
+	margin:22px auto 0 auto;
+	font-weight:bold;
+	text-align:left;
+	padding-right:5px; width:84%
+	
+}
+block.book_a_dining_text,.resort_event_detail_text {
+	color:#c2c2c2;
+	font-size:14px;
+	padding:6px 15px 18px 5px;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.3, #606060), color-stop(0.8, #3b3b3b));
+	margin:15px auto 28px auto;
+	font-weight:bold;
+	text-align:left;
+	padding-right:5px;
+	width:84%
+	
+}
+block.resort_event_detail_text p, block.resort_event_detail_text ul, block.resort_book_adining_text p, block.resort_book_adining_text ul {
+	margin-bottom:16px; list-style:none
+}
+block.resort_event_detail_text ul {
+    margin-left:0;list-style:none
+}
+
+block.resort_event_detail_text ul li {
+                color:#c2c2c2;
+                padding:0 0 3px 8px;
+                background: url(/images/Mobile/disc.png) 0 4px no-repeat;
+}
+
+section.resort_event_detail p.pls_call {
+	font-size:14px;
+	color:#fff;
+	padding-top:25px;
+	line-height:180%
+}
+section.resort_event_detail block.drpDwn {
+	padding-top:28px;
+}
+.back_to_cal {
+	padding-top:20px
+}
+.back_to_cal a {
+	color:#fff;
+	font-size:12px;
+	text-decoration:underline
+}
+/*book a dining */
+block.dining_scarpetta_heroImg {
+	background:url(/images/Mobile/restaurants/scarpetta_heroImage.jpg) 50% 0 no-repeat;
+}
+block.dining_OverlookGrill_heroImg {
+	background:url(/images/Mobile/restaurants/overlook_heroImage.jpg) 50% 0 no-repeat;
+}
+block.dining_WickedSpoonBuffet_heroImg {
+	background:url(/images/Mobile/restaurants/WickedSpoonBuffet_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_VaBeneCaffe_heroImg {
+	background:url(/images/Mobile/restaurants/VaBeneCaffe_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_TheHenry_heroImg {
+	background:url(/images/Mobile/restaurants/TheHenry_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_stk_heroImg {
+	background:url(/images/Mobile/restaurants/stk_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_jaleo_heroImg {
+	background:url(/images/Mobile/restaurants/jaleo_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_holsteins_heroImg {
+	background:url(/images/Mobile/restaurants/holsteins_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_EstiatorioMilos_heroImg {
+	background:url(/images/Mobile/restaurants/EstiatorioMilos_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_docg_heroImg {
+	background:url(/images/Mobile/restaurants/docg_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_CommeCa_heroImg {
+	background:url(/images/Mobile/restaurants/CommeCa_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_ChinaPoblano_heroImg {
+	background:url(/images/Mobile/restaurants/ChinaPoblano_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_blueRibbon_heroImg {
+	background:url(/images/Mobile/restaurants/blueRibbon_heroImg.jpg) 50% 0 no-repeat;
+}
+.margLeft_book_a_dining {
+	margin-left:23px;
+	text-indent:2px !important
+}
+.book_a_dining_text strong {
+	color:#fff;
+}
+/* dining large images */
+block.dining_scarpetta_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/scarpetta_heroImage.jpg) 50% 0 no-repeat;
+}
+block.dining_OverlookGrill_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/overlook_heroImage.jpg) 50% 0 no-repeat;
+}
+block.dining_WickedSpoonBuffet_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/WickedSpoonBuffet_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_VaBeneCaffe_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/VaBeneCaffe_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_TheHenry_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/TheHenry_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_stk_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/stk_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_jaleo_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/jaleo_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_holsteins_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/holsteins_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_EstiatorioMilos_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/EstiatorioMilos_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_docg_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/docg_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_CommeCa_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/CommeCa_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_ChinaPoblano_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/ChinaPoblano_heroImg.jpg) 50% 0 no-repeat;
+}
+block.dining_blueRibbon_heroImg_large {
+	background:url(/images/Mobile/restaurants/large/blueRibbon_heroImg.jpg) 50% 0 no-repeat;
+}
+
+
+
+/*about identity*/
+block#about_identity_text {
+                color:#c2c2c2;
+                font-size:14px;
+                padding-top:10px;
+                margin:12px auto 0 auto;
+                font-weight:normal;
+                text-align:left
+}
+
+block#about_identity_text li,block#about_identity_text h4{font-size:12px;color:#fff;}
+block#about_identity_text li{margin-bottom:10px;}
+
+/*account summary*/
+section.account_summary ul{width:auto !important}
+section.account_summary ul li h1{margin-bottom:0;}
+.resort_events block.accnt_summ  ul{border:none;}
+.resort_events block.accnt_summ  ul li{margin-bottom:8px; border:none; background:none; padding:0}
+.resort_events block.accnt_summ ul li column:first-child{width:auto; position:relative; right:0}
+.resort_events block.accnt_summ ul li column:first-child a, .text_underline{text-decoration:underline}
+section.event accnt_summ
+/*forgot password */
+section.forgot_password ul li p.show_info{margin-bottom:5px;}
+
+/*event pagination*/
+.pagination{text-align:center; font-size:15px}
+.pagination a,.clrFFF{color:#fff; }
+.pagination span{color:#813A92;}
+
+/*signin identity*/
+section.book_room ul li, section.signin_identity ul li {
+	color:#fff;
+	margin:0 0 12px 0
+}
+
+section.signin_identity ul li input[type='text'],section.signin_identity ul li input[type='password'] {
+	width:196px;
+}
+
+#ctl00_ph_Main_ctl00_LoginView1_Login1{width:100%;}
+section.signin_identity ul li h4{font-size:14px; font-weight:bold}
+section.signin_identity block.inp input{margin:10px 0 28px 0; width:84%}
+.account_summary .inp input[type='submit']{margin:10px 0 12px 0;}
+section.signin_identity block.inp a:first-child {
+
+
+}
+
+section.signin_identity block.inp a.PadBtm{padding-bottom:0px;}
+section.signin_identity ul li p.error column,.validationBG ,.validationBGActivation{
+    font-size: 12px; margin-top:5px; text-transform:uppercase;  padding:10px 0 10px 71px !impotant
+}
+section.signin_identity ul li p.show_info {padding-left:25px;}
+ section.signin_identity ul li p.ShwErr_signin, section.myProf p.ShwErr_signin {
+
+	padding-left:0;
+}
+section.myProf p.ShwErr_signin {color:#fff;}
+
+.ValdidationClass{color:#fff !important}
+
+
+.ShwErr_signin .ValMargBtm{margin-bottom:9px !important}
+/* about idetity new */
+
+
+
+/*memberhip activation*/
+section.signin_identity ul li p.margTP {
+    margin: 28px 0 35px 10px !important;
+}
+.success_msg {color:#fff; font-size:14px}
+.success_msg h2.all_set {color:#813A92; font-size:16px}
+.success_msg p{margin-bottom:15px}
+
+section.signin_identity column.membershipAct,section.signin_identity span.membershipAct,section.success table.SucsMsg .membershipAct,.success table.SucsMsg .membershipAct h3,section p.ShwErr_signin .membershipAct{text-transform:none;}
+.success table.SucsMsg h3,section.success table.SucsMsg h3{ font-family:Helvetica Neue, Arial, Helvetica, sans-serif;}
+section.signin_identity column.membershipAct a,section.signin_identity span.membershipAct a,.membershipAct a,section.success table.SucsMsg .membershipAct a,.success table.SucsMsg .membershipAct a,.success table.SucsMsg .membershipAct h3 a,section p.ShwErr_signin .membershipAct a,section p.ShwErr_signin .Info_msg a{color:#fff; text-decoration:underline; font-weight:bold}
+
+
+/* my profile */
+section.myProf {margin-left:0px}
+.myProf dl{margin-bottom:25px; color:#fff}
+.myProf dl dt,.myProf ul li h1{font-size:18px; color:#fff; font-weight:bold}
+.myProf ul li span a{font-size:11px;}
+section.myProf p{padding:0 ;}
+.myProf dl.edit p{margin-bottom:4px;}
+.myProf dl.edit dd label{width:40%; display:block; float:left; position:relative; top:4px}
+section.myProf ul li{color:#fff}
+.myProf dl  dd p label{ font-size:16px;!important}
+.myProf dl dd p span a{color:#fff; font-size:14px;}
+.myProf dl  dd p span,myProf ul li label{color:#fff; font-size:14px;}
+.myProf ul{margin:0; padding:0; list-style:none}
+.myProf ul li h1{ float:left;}
+.myProf ul li span a{font-size:11px;}
+.myProf ul li{margin-bottom:6px;}
+.myProf ul li {color:#fff; font-size:14px}
+section.myProf dl dd p label {color:#a642be; font-weight:bold}
+.myProf ul li span a:first-child:after{color:#fff; content:"|"; padding:0 0 0 5px}
+.myProf ul li input[type="checkbox"],.myProf table#ctl00_ph_Main_ctl00_cboEmailPref input[type="checkbox"],.myProf table#ctl00_ph_Main_ctl00_cboEditEmailPref input[type="checkbox"]{margin:0 5px 0 0}
+section.myProf ul li{font-size:14px;}
+
+.myProf ul li label,.myProf table#ctl00_ph_Main_ctl00_cboEmailPref label,.myProf table#ctl00_ph_Main_ctl00_cboEditEmailPref label{font-size:14px; cursor:auto; font-weight:bold;}
+.myProf ul li span,.myProf table#ctl00_ph_Main_ctl00_cboEmailPref span,.myProf table#ctl00_ph_Main_ctl00_cboEditEmailPref span{font-weight:bold; font-size:16px}
+.myProf ul li span,ul.mob_commPreferences li h3 span{color:#a642be;}
+.myProf table#ctl00_ph_Main_ctl00_cboEmailPref span,.myProf table#ctl00_ph_Main_ctl00_cboEditEmailPref label{color:#fff;}
+section.myProf ul{padding-bottom:5px;}
+ul.mob_commPreferences li h3 span{font-size: 16px;
+    font-weight: bold;}
+
+input[type=checkbox] {
+   display: inline-block;
+   font-size: 15px;
+   line-height: 1em;
+   margin: 0 0.25em 0 0;
+   padding: 0;
+    width: 14px;
+   height: 13px;
+   -webkit-border-radius:2px 2px 2px 2px;
+
+   vertical-align:middle;
+    -webkit-appearance: none;
+      background: #fff;
+	  border:none
+
+ }
+input[type=checkbox]:checked{
+ 
+   -moz-appearance: none;
+    -webkit-appearance: none;
+	   background: #fff;
+	   background:url(/images/Mobile/checkBoxBG.png) center center no-repeat;
+	   border:none;
+	      width: 14px;
+   height: 15px;
+ }
+ 
+ .myProf dl  dd span.edit_personal a{font-size:12px; text-decoration:underline; padding:5px 0 20px; font-weight:bold; display:block}
+ 
+ a#ctl00_ph_Main_ctl00_lnkCommunicationPreferences:after{content:''; padding:0}
+  a#ctl00_ph_Main_ctl00_lnkCommunicationPreferences{text-decoration:underline; float:left; font-size:12px; padding:2px 0 0px; display:block}
+  
+  section.myProf dl,section.myProf ul{padding-left:19px;}
+  section.myProf table#ctl00_ph_Main_ctl00_cboEmailPref,section.myProf table#ctl00_ph_Main_ctl00_cboEditEmailPref{margin-left:19px;}
+
+
+
+
+
+section.signin_identity column.membershipAct,section.signin_identity span.membershipAct,section span.membershipAct{text-transform:none;}
+
+
+span.membershipAct a,section span.membershipAct a{color:#fff; text-decoration:underline; font-weight:bold}
+
+.validationBGActivation column{width:80%; float:left; margin-left:5px; text-transform:none}
+
+div.Mob_emailPreferences{ padding:0 0 0 19px}
+  div.Mob_emailPreferences p span{font-size: 14px;
+    font-weight: normal; color:#fff; display:block; padding:0 0 2px 0}
+ul.mob_commPreferences li span{color:#fff;font-size: 14px; font-weight: normal}
+ul.mob_EmailPreferences li{margin-bottom:0px!important}
+  section.myProf ul.mob_commPreferences li.BtmMarg{margin-bottom:0 !important}
+  
+  /*my profile */
+  section.myProf ul{padding-bottom:5px;}
+  /* section.myProf ul.MobEditPreferences{padding-bottom:5px;}*/
+   section.myProf ul{padding-top:10px;}
+     /*    section.myProf ul.mob_commPreferences{padding-top:0px;}*/
+
+.myProf div.CommEdit h1{font-family: HelveticaNeue, Arial, Helvetica, sans-serif; margin-left:19px; font-size:16px; color:#fff; float:left}
+.myProf div.CommEdit span{float:right; margin-right:20px;}
+.myProf div.CommEdit span a{text-decoration:underline;}
+.myProf div.CommEdit span {color:#fff}
+h3.LoggedInmsg{font-family:Helvetica Neue, Arial, Helvetica, sans-serif; font-size:16px; color:#fff; font-weight:bold; margin-left:19px;}
+
+table#ctl00_ph_Main_ctl00_LoginView1_Login1 section.signin_identity{margin-bottom:0px;}
+
+block.resort_event_detail_text p a{color:#FFFFFF;
+font-weight:normal;
+text-decoration:underline;}
+
+div#ctl00_ph_Main_ctl00_EditCommunicationPreferences ul.ContacT_Pref li{margin-bottom:3px;}
+section.resort_event_detail ul li p u.clrFFF{color:#fff;}
+div.ViewAccntSummary{padding:0 0 0 19px; margin-top:10px; }
+div.ViewAccntSummary a{font-weight:bold; color:#fff; text-decoration:underline; font-size:14px}
+.Wdth{width:100%;}
+
+span#ctl00_ph_Main_ctl00_cboEditEmailPref{ margin-left:19px; display:block; }
+
+nav.roomSuites ul.special_offers_text li a span.packagetitle{color:#fff; font-size:14px;}
+nav.roomSuites ul.special_offers_text li a span.packagesubtitle{padding-bottom:0px;}
+
+.validationBGActivation2{
+	background:#b30f68 url(/images/Mobile/error.png) 25px 50% no-repeat;
+	padding:12px 26.5% 12px 68px;
+	display:block;
+	line-height:15px;
+	font-weight:bold;
+	font-size:12px
+
+}
+.validationBGActivation2 column{width:80%; float:left; margin-left:5px; text-transform:none}
+section.myProf div#ctl00_ph_Main_ctl00_EditCommunicationPreferences ul label{position:relative; top:1px;}
+section.signin_identity block.brdNone{
+      border:none
+}
+a{-webkit-tap-highlight-color:#FF0080;
+}
+
+.sign_in{background-color:#953993; color:#fff; padding:0; margin-top:10px; margin-left:0}
+.loged_in{float:left; font-size:11px; padding:7px; display:inline-block;}
+.sign_out{float:right; font-size:11px; padding:7px 12px 7px 7px;}
+.sign_out a{color:#fff; text-decoration:underline;}
+
+
+/*mobile internet connect */
+nav.internet-connect img{vertical-align: middle;margin-right: 10px;}
+                         

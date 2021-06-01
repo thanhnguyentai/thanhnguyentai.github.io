@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TPL</title>
+
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="banner_250x250.js"></script>
+
+        <style type="text/css">
+        	/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100);
+					-khtml-opacity: 1.0;
+					-moz-opacity: 1.0;
+					opacity: 1.0;
+				}
+
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;
+					-moz-opacity: 0.0;
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100);
+					-khtml-opacity: 1.0;
+					-moz-opacity: 1.0;
+					opacity: 1.0;
+				}
+
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;
+					-moz-opacity: 0.0;
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100);
+					-khtml-opacity: 1.0;
+					-moz-opacity: 1.0;
+					opacity: 1.0;
+				}
+
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;
+					-moz-opacity: 0.0;
+					opacity: 0.0;
+				}
+			}
+
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100);
+					-khtml-opacity: 1.0;
+					-moz-opacity: 1.0;
+					opacity: 1.0;
+				}
+
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;
+					-moz-opacity: 0.0;
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100);
+					-khtml-opacity: 1.0;
+					-moz-opacity: 1.0;
+					opacity: 1.0;
+				}
+
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;
+					-moz-opacity: 0.0;
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100);
+					-khtml-opacity: 1.0;
+					-moz-opacity: 1.0;
+					opacity: 1.0;
+				}
+
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;
+					-moz-opacity: 0.0;
+					opacity: 0.0;
+				}
+			}
+
+			/*--------------------------------*/
+
+        	#banner{
+        		width:250px;
+        		height:250px;
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+        		overflow:hidden;
+                        text-decoration: none;
+        	}
+        	img{
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+        	}
+
+                #logo1{
+                    left:5px;
+                    top:210px;
+                }
+                #beam1{
+                    left:212px;
+                    top:0px;
+                    display:none;
+                }
+                #light1{
+                    left:-6px;
+                    top:5px;
+                    display:none;
+                }
+                #text1{
+                    left:5px;
+                    top:50px;
+                    display:none;
+                }
+
+                #beam2{
+                    left:0px;
+                    top:0px;
+                    display:none;
+                }
+                #light2{
+                    left:7px;
+                    top:10px;
+                    display:none;
+                }
+                #ticket1{
+                    left:15px;
+                    top:25px;
+                    display:none;
+                }
+                #ticket2{
+                    left:87px;
+                    top:80px;
+                    display:none;
+                }
+                #text2{
+                    left:15px;
+                    top:70px;
+                    display:none;
+                }
+                #frame_ticket{
+                    width:250px;
+                    height:250px;
+                    position:absolute;
+                    top:0px;
+                    left:0px;
+                }
+
+                #frame_logo{
+                    width:250px;
+                    height:250px;
+                    position:absolute;
+                    top:-250px;
+                    left:0px;
+                }
+                #logo2{
+                    left:18px;
+                    top:75px;
+                }
+                #container_slide{
+                    width:110px;
+                    height:67px;
+                    overflow:hidden;
+                    position:absolute;
+                    top:142px;
+                    left:65px;
+                }
+                #slide{
+                    top:0px;
+                    left:-50px
+                }
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="https://www.theplayerslottery.com/">
+            <img src="img/banner_250x250_bg.jpg" alt=""/>
+            <img id="logo1" src="img/banner_250x250_logo1.png" alt=""/>
+
+            <img id="beam1" src="img/banner_250x250_beam1.png" alt=""/>
+            <img id="light1" src="img/banner_250x250_light1.png" alt=""/>
+            <img id="text1" src="img/banner_250x250_text1.png" alt=""/>
+
+            <img id="beam2" src="img/banner_250x250_beam2.png" alt=""/>
+            <img id="light2" src="img/banner_250x250_light2.png" alt=""/>
+
+            <div id="frame_ticket">
+                <img id="ticket2" src="img/banner_250x250_ticket2.png" alt=""/>
+                <img id="ticket1" src="img/banner_250x250_ticket1.png" alt=""/>
+            </div>
+
+            <img id="text2" src="img/banner_250x250_text2.png" alt=""/>
+
+            <div id="frame_logo">
+                <img id="logo2" src="img/banner_250x250_logo2.png" alt=""/>
+                <div id="container_slide">
+                    <img id="slide" src="img/banner_250x250_slide.png" alt=""/>
+                </div>
+            </div>
+        </a>
+    </body>
+</html>

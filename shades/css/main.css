@@ -1,0 +1,221 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+a{
+	border: 0px;
+	text-decoration: none;
+}
+a img{
+	border: 0px;
+}
+.hide{
+	display: none;
+}
+.clear{
+	height: 1px;
+	clear: both;
+}
+.transparent{
+	opacity: 0;
+}
+.container{
+	width: 705px;
+	margin: 0 auto;
+	position: relative;
+}
+.background{
+	position: relative;
+	z-index: 0;
+}
+.menu-top{
+	position: absolute;
+	top: 25px;
+	left: 0px;
+	width: 427px;
+	height: 12px;
+	background: url('../img/menu_top_text.png') no-repeat;
+}
+.menu-top a{
+	text-decoration: none;
+	color: #754113;
+	font-family: 'Conv_EUROSTI1', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	float: left;
+	display: block;
+	position: absolute;	
+	top: -2px;
+	height: 17px;
+}
+.menu-top a:hover{
+	background: rgba(117, 65, 19, 0.5);
+	border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	-ms-border-radius: 2px 2px 2px 2px;
+}
+.product-link{
+	width: 51px;
+	left: -1px;
+}
+.product-selector-link{
+	height: 13px;
+	width: 92px;
+	left: 54px;
+}
+.brand-story-link{
+	width: 66px;
+	left: 150px;
+}
+.ingredient-link{
+	width: 66px;
+	left: 220px;
+}
+.press-link{
+	width: 32px;
+	left: 290px;
+}
+.review-link{
+	width: 45px;
+	left: 326px;
+}
+.company-link{
+	width: 55px;
+	left: 375px;
+}
+.menu-top span{
+	color: #754113;
+	font-family: 'Conv_EUROSTI1', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	float: left;
+	display: block;
+	padding: 0 2px;
+}
+.button-register{
+	position: absolute;
+	top: 49px;
+	left: 191px;
+}
+.button-link-signin{
+	position: absolute;
+	top: 56px;
+	left: 273px;
+	width: 28px;
+	height: 13px;
+}
+.link-signin-border{
+	position: absolute;
+	width: 28px;
+	height: 1px;
+	left: 0px;
+	bottom: 1px;
+}
+.button-link-signin:hover .link-signin-border{
+	background: #7f5b2a;
+}
+.link-register-border{
+	position: absolute;
+	width: 35px;
+	height: 1px;
+	left: 0px;
+	bottom: 1px;
+}
+.button-link-register{
+	position: absolute;
+	top: 56px;
+	left: 311px;
+	width: 35px;
+	height: 13px;
+}
+.button-link-register:hover .link-register-border{
+	background: #7f5b2a;
+}
+.logo{
+	position: absolute;
+	top: 230px;
+	left: 39px;
+}
+.small-text{
+	position: absolute;
+	left: 600px;
+	top: 235px;
+	font-size: 8.5px;
+	width: 90px;
+}
+.button-shop{
+	position: absolute;
+	top: 413px;
+	left: 338px;
+	cursor: pointer;
+}
+.shopnow-link{
+	position: absolute;
+	top: 413px;
+	left: 340px;
+	width: 170px;
+	height: 23px;
+}
+.border-shoplink{
+	position: absolute;
+	top: 17px;
+	left: 50%;
+	margin-left: -22px;
+	width: 44px;
+	height: 1px;
+}
+.shopnow-link:hover .border-shoplink{
+	background: #7f5b2a;
+}
+
+.white-small-text{
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.black-small-text{
+	color: #231f20;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.bottom-text-big{
+	position: absolute;
+	right: 0px;
+	top: 450px;
+}
+.bottom-text{
+	color: #8b5e3e;
+	font-family: 'Conv_EUROSTI1', Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	float: left;
+	margin: 20px 0 0 103px;
+	background: url('../img/bottom_text.png') no-repeat;
+	width: 604px;
+	height: 13px;
+}
+
+.image-position1{
+	position: absolute;
+	top: 60px;
+	left: 11px;
+}
+.image-position2{
+	position: absolute;
+	top: 94px;
+	left: 201px;
+}
+.image-position3{
+	position: absolute;
+	top: 126px;
+	left: 368px;
+	z-index: 5;
+}
+.image-position4{
+	position: absolute;
+	top: 91px;
+	left: 540px;
+	z-index: 5;
+}
+.image-position5{
+	position: absolute;
+	top: 11px;
+	left: 458px;
+	z-index: 1;
+}

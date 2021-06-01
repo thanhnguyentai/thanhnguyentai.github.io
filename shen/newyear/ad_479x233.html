@@ -1,0 +1,328 @@
+<html>
+	<head>
+		<script src="jquery-1.4.2.min.js" language="javascript"></script>
+		<script src="jquery.cross-slide.min.js" language="javascript"></script>
+		<script src="jquery.easing.1.3.js" language="javascript"></script>
+		<script src="s_479x233.js" language="javascript"></script>
+		<style type="text/css">
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*------------------------------------*/
+			#container,#background,.frame{
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:479px;
+				height:233px;
+				overflow:hidden;
+			}
+			
+			#background{
+				background:url('img_banner/479x233_bg.jpg');
+			}
+			
+			img{
+				position:absolute;
+			}
+			
+			/*------- frame1 -----------*/
+			#frame1_text1{
+				top:55px;
+				left:48px;
+			}
+			
+			#frame1_text2{
+				top:55px;
+				left:147px;
+			}
+			
+			#frame1_text3{
+				top:55px;
+				left:246px;
+			}
+			
+			#frame1_text4{
+				top:55px;
+				left:342px;
+			}
+			
+			#frame1_text5{
+				top:160px;
+				left:66px;
+				display:none;
+			}
+			
+			#frame1_text6{
+				top:160px;
+				left:172px;
+				display:none;
+			}
+			
+			#frame1_text7{
+				top:160px;
+				left:264px;
+				display:none;
+			}
+			
+			#frame1_text8{
+				top:160px;
+				left:377px;
+				display:none;
+			}
+			/*--------------------------*/
+			
+			/*------- frame2 -----------*/
+			#frame2{
+				display:none;
+			}
+			#frame2_text1{
+				top:55px;
+				left:49px;
+			}
+			#frame2_text2{
+				top:55px;
+				left:142px;
+			}
+			#frame2_text3{
+				top:55px;
+				left:244px;
+			}
+			#frame2_text4{
+				top:55px;
+				left:348px;
+			}
+			#frame2_text5{
+				display:none;
+				top:167px;
+				left:50px;
+			}
+			#frame2_text6{
+				display:none;
+				top:160px;
+				left:150px;
+			}
+			#frame2_text7{
+				display:none;
+				top:160px;
+				left:275px;
+			}
+			#frame2_text8{
+				display:none;
+				top:160px;
+				left:368px;
+			}
+			/*--------------------------*/
+			
+			/*------- frame3 -----------*/
+			#frame3{
+				display:none;
+			}
+			#frame3_text1{
+				top:55px;
+				left:35px;
+			}
+			#frame3_text2{
+				top:55px;
+				left:143px;
+			}
+			#frame3_text3{
+				top:55px;
+				left:246px;
+			}
+			#frame3_text4{
+				top:55px;
+				left:345px;
+			}
+			#frame3_text5{
+				top:160px;
+				display:none;
+				left:37px;
+			}
+			#frame3_text6{
+				top:160px;
+				display:none;
+				left:145px;
+			}
+			#frame3_text7{
+				top:160px;
+				display:none;
+				left:253px;
+			}
+			#frame3_text8{
+				top:160px;
+				display:none;
+				left:360px;
+			}
+			/*--------------------------*/			
+			
+			/*------- frame5 -----------*/
+			#frame5{
+				display:none;
+			}
+			
+			#frame5_sayall{
+				left:57px;
+				top:59px;
+			}
+			
+			#frame5_tabhere{
+				left:167px;
+				top:125px;
+				display:none;
+			}
+			
+			#frame5_logo{
+				left:187px;
+				top:174px;
+			}
+			/*--------------------------*/
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="background">
+			</div>
+			
+			<div id="frame1" class="frame">
+				<img id="frame1_text1" src="img_banner/479x233_text1_1.png"/>
+				<img id="frame1_text2" src="img_banner/479x233_text1_2.png"/>
+				<img id="frame1_text3" src="img_banner/479x233_text1_3.png"/>
+				<img id="frame1_text4" src="img_banner/479x233_text1_4.png"/>
+				<img id="frame1_text5" src="img_banner/479x233_text1_5.png"/>
+				<img id="frame1_text6" src="img_banner/479x233_text1_6.png"/>
+				<img id="frame1_text7" src="img_banner/479x233_text1_7.png"/>
+				<img id="frame1_text8" src="img_banner/479x233_text1_8.png"/>
+			</div>
+			
+			<div id="frame2" class="frame">
+				<img id="frame2_text1" src="img_banner/479x233_text2_1.png"/>
+				<img id="frame2_text2" src="img_banner/479x233_text2_2.png"/>
+				<img id="frame2_text3" src="img_banner/479x233_text2_3.png"/>
+				<img id="frame2_text4" src="img_banner/479x233_text2_4.png"/>
+				<img id="frame2_text5" src="img_banner/479x233_text2_5.png"/>
+				<img id="frame2_text6" src="img_banner/479x233_text2_6.png"/>
+				<img id="frame2_text7" src="img_banner/479x233_text2_7.png"/>
+				<img id="frame2_text8" src="img_banner/479x233_text2_8.png"/>
+			</div>
+			
+			<div id="frame3" class="frame">
+				<img id="frame3_text1" src="img_banner/479x233_text3_1.png"/>
+				<img id="frame3_text2" src="img_banner/479x233_text3_2.png"/>
+				<img id="frame3_text3" src="img_banner/479x233_text3_3.png"/>
+				<img id="frame3_text4" src="img_banner/479x233_text3_4.png"/>
+				<img id="frame3_text5" src="img_banner/479x233_text3_5.png"/>
+				<img id="frame3_text6" src="img_banner/479x233_text3_6.png"/>
+				<img id="frame3_text7" src="img_banner/479x233_text3_7.png"/>
+				<img id="frame3_text8" src="img_banner/479x233_text3_8.png"/>
+			</div>
+			
+			<div id="frame5" class="frame">
+				<img id="frame5_sayall" src="img_banner/479x233_sayall.png"/>
+				<img id="frame5_tabhere" src="img_banner/479x233_tabhere.png"/>
+				<img id="frame5_logo" src="img_banner/479x233_logo.png"/>
+			</div>
+		</div>
+	</body>
+</html>

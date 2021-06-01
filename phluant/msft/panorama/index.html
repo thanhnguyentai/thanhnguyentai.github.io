@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<link rel="stylesheet" href="segoe-ui-semibold.css" media="all"/>
+		<link rel="stylesheet" href="semilight.css" media="all"/>
+		<link rel="stylesheet" href="segoe-ui.css" media="all"/>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#minimize{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				background: #ed1d25;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				opacity: 0;
+			}
+			#logo{
+				position: absolute;
+				width: 106px;
+				top: 14px;
+				left: 16px;
+				opacity: 0;
+			}
+			#banner_text1{
+				position: absolute;
+				top: 10px;
+				left: 180px;
+				width: 112px;
+				height: 17px;
+				background: url('img/m_discover.png') no-repeat 0px 0px;
+				opacity: 0;
+			}
+			#banner_text2{
+				position: absolute;
+				top: 27px;
+				left: 180px;
+				width: 95px;
+				height: 17px;
+				background: url('img/m_discover.png') no-repeat 0px -17px;
+				opacity: 0;
+			}
+			#banner_arrow{
+				position: absolute;
+				top: 27px;
+				left: 275px;
+				width: 17px;
+				height: 17px;
+				background: url('img/m_discover.png') no-repeat -95px -17px;
+				opacity: 0;
+			}
+			
+			#full{
+				height: 416px;
+				margin: 0;
+				padding: 0;
+				display: none;
+				opacity: 0;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				overflow-x: auto;
+				overflow-y: hidden;
+				
+				-webkit-overflow-scrolling: touch;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#full::-webkit-scrollbar {
+				height: 4px;
+			}
+			#full::-webkit-scrollbar-thumb {
+				border-color: black;
+				border-radius: 1px;
+				-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1.0);
+				background: #ffffff;
+			}
+			#full::-webkit-scrollbar-track {
+				height: 1px;
+				-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1.0);
+				border-radius: 0px;
+				background: #d0e1f2;
+			}
+			#full_image{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 1600px;
+				height: 416px;
+				font-family: 'SEGOE', Arial, Helvetica, sans-serif;
+				color: #FFF;
+				background: url('img/full.jpg') no-repeat;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+	
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#f_logo1{
+				position: absolute;
+				top: 17px;
+				left: 30px;
+			}
+			#f_logo2{
+				position: absolute;
+				top: 17px;
+				right: 29px;
+			}
+			#text1{
+				position: absolute;
+				top: 58px;
+				left: 29px;
+			}
+			#swipe_text{
+				position: absolute;
+				top: 53px;
+				left: 120px;
+				width: 160px;
+				height: 100px;
+				font-size: 21px;
+			}
+			span{
+				display: block;
+			}
+			.regular{
+				font-family: 'SegoeUINormal', Arial, Helvetica, sans-serif;
+			}
+			.semilight{
+				font-family: 'SEMILIGHT', Arial, Helvetica, sans-serif;
+			}
+			.semibold{
+				font-family: 'SegoeUISemibold', Arial, Helvetica, sans-serif;
+			}
+			#surf_text{
+				position: absolute;
+				top: 315px;
+				left: 29px;
+				width: 170px;
+				height: 40px;
+				font-size: 20px;
+				font-family: 'SegoeUISemibold', Arial, Helvetica, sans-serif;
+			}
+			#nokia_text{
+				position: absolute;
+				top: 56px;
+				left: 716px;
+			}
+			#x_box{
+				position: absolute;
+				right: 27px;
+				top: 188px;
+				width: 170px;
+			}
+			#find{
+				position: absolute;
+				top: 56px;
+				right: 15px;
+				width: 120px;
+				height: 30px;
+			}
+			#bt_close{
+				background: url('img/close.png') no-repeat 100% 0px;
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+			.scrollBar{
+				height: 2px !important;
+			}
+		
+		</style>
+		
+	</head>
+	<body>
+		<div id="minimize">
+			<img src="img/m_mslogo.png" alt="logo" id="logo"/>
+			<div id="banner_text1">
+			</div>
+			<div id="banner_text2">
+			</div>
+			<div id="banner_arrow">
+			</div>
+		</div>
+		<div id="full">
+			<div id="full_image">
+				<img src="img/text1.png" id="text1"/>
+				<div id="swipe_text">
+					<span style="margin-top: 1px">Swipe to find the</span>
+					<span>perfect gift at</span>
+					<span>Microsoft at</span>
+					<span class="regular" style="margin-top: 3px">[Mall Name]</span>
+				</div>
+				<div id="surf_text">
+					<span class="regular" style="word-spacing: 2px">For the student</span>
+					<span class="regular" style="font-size: 18px; margin-top: -2px">Surface 2 </span>
+					<span class="regular" style="font-size: 14px; margin-left: -2px">Faster, lighter, and outfitted </span>
+					<span class="regular" style="font-size: 14px; margin-left: -1px">with Office 2013</span>
+				</div>
+				<div id="nokia_text">
+					<span class="semibold" style="word-spacing: 0px;margin-top: -3px;font-size: 21px;">For the shutterbug</span>
+					<span class="regular" style="font-size: 18px;word-spacing: 0px;margin-top: -4px;">Nokia Lumia 1020</span>
+					<span class="regular" style="font-size: 14px;">41 megapixels. Nothing else</span>
+					<span class="regular" style="font-size: 14px; word-spacing: 0px;">comes close.</span>
+				</div>
+				<div id="x_box">
+					<span class="semibold" style="font-size: 20px;word-spacing: 0px;">
+						For everyone
+					</span>
+					<span class="regular" style="font-size: 19px;margin-left: -2px;margin-top: -2px;">Xbox One</span>
+					<span class="regular" style="font-size: 14px;margin-left: -1px;">The all-in-one</span>
+					<span class="regular" style="font-size: 14px;margin-left: -1px;">entertainment system</span>
+				</div>
+				<div id="find">
+					<img src="./img/text2.png"/>
+				</div>
+				<img src="img/mslogo1.png" alt="mslogo" id="f_logo1"/>
+				<img src="img/mslogo.png" alt="mslogo" id="f_logo2"/>
+				<div id="bt_close">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" src="main.js"></script>
+		
+	</body>
+</html>
+

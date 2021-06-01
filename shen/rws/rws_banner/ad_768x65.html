@@ -1,0 +1,166 @@
+<html>
+	<head>
+		<script src="jquery-1.4.2.min.js" language="javascript"></script>
+		<script src="jquery.cross-slide.min.js" language="javascript"></script>
+		<script src="jquery.easing.1.3.js" language="javascript"></script>
+		<script type="text/javascript" src="s_768x65.js"></script>
+
+		<style type="text/css">
+			#slideshow{
+				width:768px;
+				height:65px;
+				position:absolute;
+				top:0px;
+				left:0px;
+				border:0;
+				margin:0;
+				padding:0;
+				overflow:hidden;
+				background-color:#ffffff;
+			}
+			
+			#slideshow img{
+				position:absolute;
+			}
+			
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			
+			/*-----------------------*/
+			#bg{
+				top:0px;
+				left:0px;
+			}
+			
+			#text1{
+				left:250px;
+				top:5px;
+			}
+
+			#text2{
+				left:470px;
+				top:0px;
+				opacity:0;
+			}
+			
+			#button{
+				left:590px;
+				top:13px;
+				opacity:0;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="slideshow">
+			<img id="bg" src="img_banner/768x65_bg.png"/>
+			<img id="text1" src="img_banner/768x65_firsttext.png"/>
+			
+			<img id="text2" src="img_banner/768x65_lasttext.png"/>
+			
+			<img id="button" src="img_banner/768x65_button.png"/>
+		</div>
+	</body>
+</html>

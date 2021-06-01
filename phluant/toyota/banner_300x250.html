@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Toyota</title>
+        
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="banner_300x250.js"></script>
+        
+        <style type="text/css">
+        	/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/*--------------------------------*/
+			
+        	#banner{
+        		width:300px;
+        		height:250px;
+        		position:absolute;
+        		top:0px;
+        		left:0px;
+        		overflow:hidden;
+				text-decoration: none;
+        	}
+        	img{
+        		position:absolute;
+        	}
+			
+			#mask{
+				width:300px;
+				height:250px;
+				position:absolute;
+				top:0px;
+				left:0px;
+				background-color:#000;
+			}
+			#hesay{
+				left:88px;
+				top:20px;
+				display:none;
+			}
+			#hehand{
+				top:5px;
+				left:300px;
+			}
+			#shesay{
+				top:20px;
+				left:76px;
+				display:none;
+			}
+			#shehand{
+				top:60px;
+				left:-300px;
+			}
+			
+			#allsay{
+				top:20px;
+				left:60px;
+				display:none;
+			}
+			#entune{
+				left:38px;
+				top:-120px;/*destination:65*/
+			}
+			#smallhand{
+				top:200px;
+				left:0px;
+				opacity:0;
+			}
+			
+			#car{
+				left:0px;
+				top:105px;
+				opacity:0;
+			}
+			#lasttext{
+				top:20px;
+				left:20px;
+				display:none;
+			}
+			#circle{
+				left:18px;
+				top:55px;
+				display:none;
+			}
+			
+			#containericon1{
+				position:absolute;
+				top:55px;
+				left:217px;
+				opacity:0;
+			}
+			#backicon1{
+				width:27px;
+				height:26px;
+				background:url('img/banner300x250_icon1_bg.png');
+				position:absolute;
+			}
+			#icon1{
+			}
+			#containericon2{
+				top:55px;
+				left:253px;
+				position:absolute;
+				opacity:0;
+			}
+			#icon2{
+			}
+			#backicon2{
+				background:url('img/banner300x250_icon2_bg.png');
+				position:absolute;
+				width:26px;
+				height:24px;
+			}
+			#button{
+				left:20px;
+				top:220px;
+				display:none;
+			}
+			#option{
+				left:125px;
+				top:222px;
+				display:none;
+			}
+        </style>
+    </head>
+    <body>
+        <a id="banner" href="#">
+			<img src="img/banner300x250_bg.jpg" alt=""/>
+			<img id='hesay' src="img/banner300x250_textleft.png" alt=""/>
+			<img id='hehand' src="img/banner300x250_lefthand.png" alt=""/>
+			
+			<img id='shesay' src="img/banner300x250_textright.png" alt=""/>
+			<img id='shehand' src="img/banner300x250_righthand.png" alt=""/>
+			
+			<div id='containericon1'>
+				<img id="icon1" src="img/banner300x250_icon1.png" alt=""/>
+				<div id="backicon1">
+				</div>
+			</div>
+			<div id='containericon2'>
+				<img id="icon2" src="img/banner300x250_icon2.png" alt=""/>
+				<div id="backicon2">
+				</div>
+			</div>
+			
+			<img id="option" src='img/banner300x250_option.png' alt=''/>
+			<img id="button" src='img/banner300x250_button.png' alt=''/>
+			<img id="circle" src="img/banner300x250_circle.png" alt=""/>
+			<img id="lasttext" src="img/banner300x250_lasttext.png" alt=""/>
+			<img id="car" src="img/banner300x250_car.png" alt=""/>
+			
+			<img id="allsay" src="img/banner300x250_textstraight.png" alt=""/>
+			<img id="entune" src="img/banner300x250_entune.png" alt=""/>
+			<img id="smallhand" src="img/banner300x250_smallhand.png" alt=""/>
+			<img src="img/banner300x250_logo.png" alt=""/>
+        </a>
+    </body>
+</html>

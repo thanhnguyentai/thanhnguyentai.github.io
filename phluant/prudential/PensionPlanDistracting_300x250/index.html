@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		
+		<link rel="stylesheet" href="fonts/trade-gothic-bold.css"/>
+		<style type="text/css">
+			#banner{
+				width: 300px;
+				height: 250px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -150px;
+				opacity: 0;
+				
+				background: #002246;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+				overflow: hidden;
+			}
+			
+			#text_header{
+				background: url('img/header_text.png') no-repeat center center;
+				background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-ms-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+
+				position: absolute;
+				top: 8px;
+				left: 8px;
+				width: 169px;
+				height: 11px;
+				opacity: 0;
+			}
+
+			#text_footer{
+				background: url('img/number.png') no-repeat center center;
+				background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-ms-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+
+				position: absolute;
+				bottom: 5px;
+				left: 8px;
+				width: 70px;
+				height: 7px;
+				opacity: 0;
+			}
+			#logo{
+				background: url('img/logo.png') no-repeat center center;
+				background-size: 100% 100%;
+				-moz-background-size: 100% 100%;
+				-ms-background-size: 100% 100%;
+				-webkit-background-size: 100% 100%;
+
+				position: absolute;
+				bottom: 5px;
+				right: 5px;
+				width: 111px;
+				height: 33px;	
+				opacity: 0;
+			}
+
+			#frame1_text1, #frame1_text2, #frame1_text3, #frame1_text4, #frame1_text5, #frame2_text1,#frame2_text2, #frame2_text3{
+				font-family: 'Trade Gothic Bold', Arial, serif;
+				font-size: 26px;
+				text-transform: uppercase;
+				position: absolute;
+				left: 8px;
+				opacity: 0;
+			}
+			#frame1_text1{
+				top: 25px;
+				color: #fff;
+			}
+			#frame1_text2{
+				top: 40px;
+				color: #fed201;
+			}
+			#frame1_text3{
+				top: 65px;
+				color: #fed201;
+			}
+			#frame1_text4{
+				top: 90px;
+				color: #fed201;
+			}
+			#frame1_text5{
+				top: 115px;
+				color: #fed201;
+			}
+			#frame2_text1{
+				top: 15px;
+				color: #fff;
+			}
+			#frame2_text2{
+				top: 40px;
+				color: #fed201;
+			}
+			#frame2_text3{
+				top: 65px;
+				color: #fed201;
+			}
+			#button{
+				position: absolute;
+				top: 140px;
+				left: -140px;
+				font-family: 'Trade Gothic Bold', Arial, serif;
+				color: #000;
+				font-size: 16px;
+				text-indent: 10px;
+				width: 125px;
+				height: 27px;
+				background: url('img/bt.png') no-repeat center center;
+				line-height: 27px;
+			}
+			
+			#arrow_bg{
+				width: 17px;
+				height: 17px;
+				background-color: #1d2443;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				border-radius: 100%;
+				-webkit-border-radius: 100%;
+				-moz-border-radius: 100%;
+				-ms-border-radius: 100%;
+			}
+			#arrow{
+				width: 17px;
+				height: 17px;
+				background: url('img/arrow.png') no-repeat center center;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+			}
+
+			#canvas{
+				width: 300px;
+				height: 250px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				background: #002246;
+			}
+
+			#border-top{
+				width: 300px;
+				height: 1px;
+				background: rgba(0,0,0,0.7);
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1000;
+			}
+			#border-right{
+				width: 1px;
+				height: 250px;
+				background: rgba(0,0,0,0.7);
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				z-index: 1000;
+			}
+			#border-bottom{
+				width: 300px;
+				height: 1px;
+				background: rgba(0,0,0,0.7);
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				z-index: 1000;
+			}
+			#border-left{
+				width: 1px;
+				height: 250px;
+				background: rgba(0,0,0,0.7);
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="banner">
+			<canvas id="canvas" width="300" height="250">
+			</canvas>
+			
+			<div id="text_header">
+			</div>
+			<div id="text_footer">
+			</div>
+			<div id="logo">
+			</div>
+
+			<div id="frame1_text1">
+				Is your pension plan
+			</div>
+			<div id="frame1_text2">
+				Distracting
+			</div>
+			<div id="frame1_text3">
+				from your
+			</div>
+			<div id="frame1_text4">
+				business
+			</div>
+			<div id="frame1_text5">
+				plan?
+			</div>
+
+			<div id="frame2_text1">
+				Pension de-risking
+			</div>
+			<div id="frame2_text2">
+				can help you focus
+			</div>
+			<div id="frame2_text3">
+				on your business.
+			</div>
+			<div id="button">
+				Find out how
+				<div id="arrow_bg">
+				</div>
+				<div id="arrow">
+				</div>
+			</div>
+
+
+			<div id="border-top"></div>
+			<div id="border-right"></div>
+			<div id="border-bottom"></div>
+			<div id="border-left"></div>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="AnimationBase.js"></script>
+		<script type="text/javascript" src="AnimationBuilt.js"></script>		
+		<script type="text/javascript" src="main.js"></script>		
+	</body>
+</html>

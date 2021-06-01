@@ -1,0 +1,415 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script language="javascript" src="jquery-1.4.2.min.js"></script>
+		<script language="javascript" src="jquery.cross-slide.min.js"></script>
+		<script language="javascript" src="portrait.js"></script>
+		
+		<style>
+			/* fade in*/
+			@keyframes fadein
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadein 
+			{
+				100% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				0% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			/* fade out*/
+			@keyframes fadeout
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-moz-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+
+			@-webkit-keyframes fadeout 
+			{
+				0% {
+					filter: alpha(opacity=100); 
+					-khtml-opacity: 1.0;      
+					-moz-opacity: 1.0;       
+					opacity: 1.0;
+				}
+				
+				100% {
+					filter: alpha(opacity=0);
+					-khtml-opacity: 0.0;     
+					-moz-opacity: 0.0;       
+					opacity: 0.0;
+				}
+			}
+			
+			
+			#banner,.frame {				
+				width:768px;
+				height:935px;
+				position:absolute;
+				overflow:hidden;
+				top:0;
+				left:0;
+				border:0;
+				background-color:#ffffff;
+			}
+			
+			#banner  img{
+				position:absolute;
+			}
+			
+			#big_img{
+				top:0px;
+				left:0px;
+				display:none;
+			}
+			
+			#text_img{
+				bottom:0px;
+				left:0px;
+			}
+			#big_button{
+				top:620px;
+				left:505px;
+				display:none;
+			}
+			#bag{
+				top:624px;
+				left:508px;
+				display:none;
+			}
+			#shorttext{
+				top:655px;
+				left:611px;
+				display:none;
+			}
+			
+			#bt1_1,#bt1{
+				top:850px;
+				left:500px;
+				display:none;
+			}
+			#bt2,#bt2_1{
+				top:850px;
+				left:630px;
+				display:none;
+			}
+			
+			#frame2,#frame3,#frame4{
+				display:none;
+				background: #fff;
+			}
+			
+			#frame2_header{
+				top:0px;
+				left:0px;
+				display:none;
+			}
+			#frame2_car{
+				top:83px;
+				left:388px;
+				display:none;
+			}
+			#frame2_elephant{
+				top:125px;
+				left:33px;
+				display:none;
+			}
+			#frame2_dino{
+				top:15px;
+				left:589px;
+				display:none;
+			}
+			#frame2_giraffe{
+				top:125px;
+				left:203px;
+				display:none;
+			}
+			#frame2_lion{
+				top:263px;
+				left:257px;
+				display:none;
+			}
+			#frame2_red_bag{
+				top:90px;
+				left:383px;
+				display:none;
+			}
+			#frame2_flower_bag{
+				top:225px;
+				left:377px;
+				display:none;
+			}
+			#frame2_blown_bag{
+				top:311px;
+				left:238px;
+				display:none;
+			}
+			#frame2_middle{
+				top:442px;
+				left:0px;
+				display:none;
+			}
+			#frame2_text{
+				top:583px;
+				left:0px;
+				display:none;
+			}
+			#frame2_appstore{
+				top:761px;
+				left:55px;
+				display:none;
+			}
+			#frame2_footer,#frame3_footer,#frame4_footer{
+				bottom:0px;
+				left:0px;
+			}
+			#bt_back_joy,#bt_back_home,#bt_back_personal{
+				left:40px;
+				bottom:20px;
+			}
+			
+			/* frame 3*/
+			
+			#frame3_bg{
+				top:0px;
+				left:0px;
+				display:none;
+			}
+			
+			#frame3_toy{
+				top:2px;
+				left:32px;
+				display:none;
+			}
+			#frame3_dragon{
+				top:280px;
+				left:210px;
+				display:none;
+			}
+			#frame3_flame{
+				top:115px;
+				left:250px;
+				display:none;
+			}
+			#frame3_logo{
+				top:23px;
+				left:12px;
+				display:none;
+			}
+			#frame3_text1{
+				left:0px;
+				top:440px;
+			}
+			#frame3_text2{
+				left:0px;
+				top:579px;
+			}
+			
+			/* frame4 -----*/
+	
+			#frame4_bg{
+				top:0px;
+				left:0px;
+				display:none;
+			}
+			
+			#frame4_logo{
+				left:10px;
+				top:35px;
+				display:none;
+			}
+			#frame4_shark{
+				top:290px;
+				left:30px;
+				display:none;
+			}
+			
+			#frame4_leg{
+				top:0px;
+				left:275px;
+				display:none;
+			}
+			#frame4_text1{
+				top:430px;
+				left:0px;
+			}
+			#frame4_text2{
+				top:550px;
+				left:0px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="banner">
+			<div id="frame1" class="frame">
+				<img id="big_img" src="img/big_img.png" alt=""/>
+				<div id="btFrame">
+					<img id="big_button" src="img/car.png" alt=""/>
+					<img id="bag" src="img/bag.png" alt=""/>
+					<img id="shorttext" src="img/shorttext.png" alt=""/>
+				</div>
+				
+				<div id="btPersonal">
+					<img id="bt1_1" src="img/bt1_1.png" alt=""/>
+					<img id="bt1" src="img/bt1.png" alt=""/>
+				</div>
+				
+				<div id="btHome">
+					<img id="bt2_1" src="img/bt2_1.png" alt=""/>
+					<img id="bt2" src="img/bt2.png" alt=""/>
+				</div>
+				
+				<img id="text_img" src="img/text.png" alt="" usemap="#button"/>
+					
+				<map name="button">
+					<area shape="Rect" Coords="20,191,220,217" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+					<area shape="Rect" Coords="16,243,150,304" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+				</map> 
+			</div>
+			
+			<div id="frame2" class="frame">
+				<img class="frame_img" id="frame2_header" src="img/frame2_bg.png" alt=""/>
+				<img class="frame_img" id="frame2_car" src="img/frame2_car.png" alt=""/>
+				<img class="frame_img" id="frame2_elephant" src="img/frame2_elephant.png" alt=""/>
+				<img class="frame_img" id="frame2_dino" src="img/frame2_dino.png" alt=""/>
+				<img class="frame_img" id="frame2_giraffe" src="img/frame2_giraffe.png" alt=""/>
+				<img class="frame_img" id="frame2_lion" src="img/frame2_lion.png" alt=""/>
+				<img class="frame_img" id="frame2_red_bag" src="img/frame2_red_bag.png" alt=""/>
+				<img class="frame_img" id="frame2_flower_bag" src="img/frame2_flower_bag.png" alt=""/>
+				<img class="frame_img" id="frame2_blown_bag" src="img/frame2_blown_bag.png" alt=""/>
+				
+				<img class="frame_img" id="frame2_middle" src="img/frame2_middle.png" alt=""/>
+				<img class="frame_img" id="frame2_text" src="img/frame2_text.png" alt="" usemap="#buttonlink"/>
+				<map name="buttonlink">
+					<area shape="Rect" Coords="50,149,285,167" href="http://www.tenetinsurance.com" target="_blank"> </area>
+				</map>
+				
+				<a href="http://itunes.apple.com/sg/app/traveljoy-application-tenet/id387911376?mt=8" target="_blank">
+					<img class="frame_img" id="frame2_appstore" src="img/frame2_appstore.png" alt=""/>
+				</a>
+				<img id="frame2_footer" src="img/frame2_footer.png" alt="" usemap="#button2"/>
+				<map name="button2">
+					<area shape="Rect" Coords="127,14,339,67" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+					<area shape="Rect" Coords="612,0,742,63" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+				</map> 
+				
+				<img id="bt_back_joy" src="img/bt_back.png" alt=""/>
+			</div>
+			
+			<div id="frame3" class="frame">
+				<img class="frame3_img" id="frame3_bg" src="img/frame3_bg.png" alt=""/>
+				<img class="frame3_img" id="frame3_toy" src="img/frame3_toy.png" alt=""/>
+				<img class="frame3_img" id="frame3_flame" src="img/frame3_flame.png" alt=""/>
+				<img class="frame3_img" id="frame3_dragon" src="img/frame3_dragon.png" alt=""/>
+				<img class="frame3_img" id="frame3_logo" src="img/frame3_logo.png" alt=""/>
+				
+				<img id="frame3_text1" src="img/frame3_text1.png" alt=""/>
+				<img id="frame3_text2" src="img/frame3_text2.png" alt="" usemap="#button6"/>
+				<map name="button6">
+					<area shape="Rect" Coords="390,137,590,157" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+					<area shape="Rect" Coords="533,198,712,219" href="http://www.tenetinsurance.com/announcement/HOMEBLISS_GENERAL_TERMS_AND_CONDITIONS.pdf " target="_blank"> </area>
+				</map> 
+				
+				<img id="frame3_footer" src="img/frame2_footer.png" alt="" usemap="#button3"/>
+				<map name="button3">
+					<area shape="Rect" Coords="127,14,339,67" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+					<area shape="Rect" Coords="612,0,742,63" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+				</map> 
+				
+				<img id="bt_back_home" src="img/bt_back.png" alt=""/>
+			</div>
+			
+			<div id="frame4" class="frame">
+				<img class="frame4_img" id="frame4_bg" src="img/frame4_bg.png" alt=""/>
+				<img class="frame4_img" id="frame4_shark" src="img/frame4_shark.png" alt=""/>
+				<img class="frame4_img" id="frame4_leg" src="img/frame4_leg.png" alt=""/>
+				<img class="frame4_img" id="frame4_logo" src="img/frame4_logo.png" alt=""/>
+				
+				<img id="frame4_text1" src="img/frame4_text1.png" alt=""/>
+				<img id="frame4_text2" src="img/frame4_text2.png" alt="" usemap="#button5"/>
+				<map name="button5">
+					<area shape="Rect" Coords="43,269,246,288" href="http://www.tenetinsurance.com/PersonalIns/index.aspx" target="_blank"> </area>
+					<area shape="Rect" Coords="404,269,606,288" href="http://www.tenetinsurance.com/PersonalIns/index.aspx" target="_blank"> </area>
+				</map> 
+				
+				<img id="frame4_footer" src="img/frame2_footer.png" alt="" usemap="#button4"/>
+				<map name="button4">
+					<area shape="Rect" Coords="127,14,339,67" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+					<area shape="Rect" Coords="612,0,742,63" href="http://www.tenetinsurance.com/" target="_blank"> </area>
+				</map> 
+				
+				<img id="bt_back_personal" src="img/bt_back.png" alt=""/>
+			</div>
+		</div>
+	</body>
+</html>

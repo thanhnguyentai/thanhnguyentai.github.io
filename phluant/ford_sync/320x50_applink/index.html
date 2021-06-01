@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -160px;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#ph_conBanner{
+				width: 320px;
+				height: 50px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				overflow: hidden;
+				background: url('img/320x50_bg.jpg') no-repeat center center;
+				opacity: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+			</div>
+			<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+			<script type="text/javascript" src="320x50.js"></script>
+		</div>
+	</body>
+</html>

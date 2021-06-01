@@ -1,0 +1,604 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#loading{
+				position: fixed;
+				top:0;
+				left: 50%;
+				margin-left: -160px;
+				width:320px;
+				height: 416px;
+				text-align: center;
+				background: #000;
+				opacity: 0.5;
+				display: none;
+				z-index: 10;
+			}
+			.loadingimg{
+				margin-top: 160px;
+			}
+			
+			#container{
+				position: absolute;
+				width: 320px;
+				height: 50px;
+				left: 50%;
+				margin-left: -160px;
+				text-align: center;
+				font-family: 'Droid Sans', sans-serif;
+				
+				/* STOP THE ANIMATION FLICKERING IN WEBKIT */
+				-webkit-perspective: 1000;
+				-webkit-backface-visibility: hidden;
+				-webkit-transform:translate3d(0,0,0);
+
+				/* MAKE INVISIBLE/TRANSPARENT TAP HIGHLIGHT COLOR */
+				-webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			#minimize{
+				position: absolute;
+				width: 320px;
+				height: 50px;
+				top: 0px;
+				left: 0px;
+				opacity: 0;
+			}
+			#minimize img{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			#page1{
+				opacity: 0;
+			}
+			.content{
+				position: relative;
+				width: 320px;
+				height: 416px;
+				margin: 0 auto;
+			}
+			#tophalf{
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+			#bottomhalf{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+			}
+			.button1{
+				position: absolute;
+				top: 7px;
+				left: 39px;
+				z-index: 3;
+			}
+			.button2{
+				position: absolute;
+				top: 7px;
+				left: 120px;
+				z-index: 3;
+			}
+			.button3{
+				position: absolute;
+				top: 7px;
+				left: 199px;
+				z-index: 3;
+			}
+			.button4{
+				position: absolute;
+				top: 7px;
+				left: 276px;
+				z-index: 3;
+			}
+			.buttontext1{
+				position: absolute;
+				top: 19px;
+				left: 5px;
+				z-index: 3;
+			}
+			.buttontext2{
+				position: absolute;
+				top: 19px;
+				left: 85px;
+				z-index: 3;
+			}
+			.buttontext3{
+				position: absolute;
+				top: 19px;
+				left: 165px;
+				z-index: 3;
+			}
+			.buttontext4{
+				position: absolute;
+				top: 19px;
+				left: 246px;
+				z-index: 3;
+			}
+			
+			#broughttoyou{
+				position: absolute;
+				top: 116px;
+				left: 29px;
+				z-index: 3;
+			}
+			
+			#redbanner{
+				position: absolute;
+				top: 114px;
+				left: 0px;
+				z-index: 3;
+				opacity: 0.5;
+			}
+			#yourneighbor{
+				position: absolute;
+				top: 138px;
+				left: 15px;
+				z-index: 3;
+			}
+			#proudtobehere{
+				position: absolute;
+				top: 296px;
+				left: 29px;
+				z-index: 3;
+			}
+			
+			#logo{
+				position: absolute;
+				bottom: 0px;
+				left: 170px;
+				z-index: 3;
+			}
+			
+			#page2{
+				background: url('img/bg2.jpg');
+			}
+			
+			.bg2{
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0px;
+			}
+			
+			.mapcontent{
+				position: absolute;
+				top: 41px;
+				left: 15px;
+				width: 90%;
+				height: 318px;
+				font-family: 'Droid Sans', sans-serif;
+				z-index: 1;
+				webkit-overflow-scrolling: touch;
+				overflow-y: auto;
+				overflow-x: visible;
+			}
+			.mapcontent .newscontent{
+				position: absolute;
+				width: 85%;
+				height: 295px;
+				left: 10%;
+				top: 22px;
+				-webkit-overflow-scrolling: touch;
+				overflow-y: auto;
+				overflow-x: visible;
+				z-index: 2;
+			}
+			#new .newscontent::-webkit-scrollbar{
+				width: 2px;
+			}
+			#new .newscontent::-webkit-scrollbar-thumb{
+				border-color: black;
+				border-radius: 1px;
+				-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1.0);
+			}
+			.newscontent .article{
+				float: left;
+				width: 100%;
+				height: auto;
+				margin: 3px 0px;
+				text-align: left;
+			}
+			.article >a{
+				color: #000;
+			}
+			.article >a:hover{
+				color: rgb(145, 145, 145);
+			}
+			.article .title{
+				float: left;
+				width: 100%;
+				font-size: 12px !important;
+				font-weight: bold;
+			}
+			.article .summarry{
+				font-size: 12px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+				float: left;
+			}
+			
+			.mapcontent .map{
+				position: absolute;
+				top: 50px;
+				left: 11%;
+				width: 77%;
+				height: 206px;
+				z-index: 3;
+				border: 2px solid #000;
+			}
+			.mapcontent .cityname{
+				position: absolute;
+				top: 265px;
+				left: 30px;
+				width: 220px;
+				height: 20px;
+				z-index: 3;
+				font-size: 15px;
+				text-align: left;
+			}
+			.mapcontent .line{
+				position: absolute;
+				top: 515px;
+				left: 89px;
+			}
+			.mapcontent .currDay{
+				position: absolute;
+				width: 70%;
+				height: 90px;
+				top: 40px;
+				font-family: 'Droid Sans', sans-serif;
+				left: 15%;
+				text-align: center;
+			}
+			.mapcontent .title{
+				font-size: 15px;
+				font-weight: bold;
+			}
+			.mapcontent .info{
+				width: 80%;
+				height: 75px;
+				margin-left: 10%;
+				margin-top: 5px;
+			}
+			.mapcontent .weatherlogo{
+				float: left;
+				width: 40px;
+			}
+			.mapcontent .more-info{
+				float: left;
+				margin-left: 10px;
+				font-size: 13px;
+				width: 110px;
+				text-align: left;
+				color: #959291;
+			}
+			.mapcontent .item{
+				float: left;
+				display: block;
+				width: 100%;
+			}
+			.mapcontent .dayNext{
+				position: absolute;
+				left: 15px;
+				top: 170px;
+				width: 270px;
+				height: 70px;
+			}
+			
+			.dayNext .dayItem{
+				float: left;
+				width: 50px;
+				height: 130px;
+				text-align: center;
+				margin: 0px 8px;
+			}
+			.dayNext .dayTitle{
+				float: left;
+				font-size: 13px;
+				font-family: 'Droid Sans', sans-serif;
+				width: 100%;
+				margin: 0 auto;
+			}
+			.dayNext .weatherlogo{
+				float: none;
+				width: 30px;
+				margin-top: 5px;
+			}
+			.dayNext .item{
+				float: left;
+				display: block;
+				width: 100%;
+				margin-top: 7px;
+				font-size: 11px;
+			}
+			#findastation{
+				position: absolute;
+				top: 14px;
+				left: 102px;
+				z-index: 3;
+			}
+			#morningnew{
+				position: absolute;
+				top: 14px;
+				left: 101px;
+				z-index: 3;
+			}
+			#morningtraffic{
+				position: absolute;
+				top: 14px;
+				left: 93px;
+				z-index: 3;
+			}
+			#morningweather{
+				position: absolute;
+				top: 14px;
+				left: 88px;
+				z-index: 3;
+			}
+			#page2Logo{
+				position: absolute;
+				top: 1px;
+				right: 17px;
+				z-index: 3;
+			}
+			.footer{
+				position: absolute;
+				bottom:0;
+				left:0;
+				z-index: 2;
+				width: 100%;
+				height: 65px;
+				background: url('img/footer2.png');
+			}
+			
+			.footer .page2button1{
+				position: absolute;
+				left: 39px;
+				top: 21px;
+			}
+			.footer .page2button2{
+				position: absolute;
+				left: 120px;
+				top: 21px;
+			}
+			.footer .page2button3{
+				position: absolute;
+				left: 199px;
+				top: 21px;
+			}
+			.footer .page2button4{
+				position: absolute;
+				bottom: 5px;
+				right: 5px;
+			}
+			
+			.footer .page2buttontext1{
+				position: absolute;
+				top: 33px;
+				left: 5px;
+			}
+			.footer .page2buttontext2{
+				position: absolute;
+				top: 33px;
+				left: 85px;
+			}
+			.footer .page2buttontext3{
+				position: absolute;
+				top: 33px;
+				left: 165px;
+			}
+			.footer .page2buttontext4{
+				position: absolute;
+				top: 33px;
+				left: 246px
+			}
+
+			#map_station{
+				width: 240px;
+				height: 180px;
+				top: 20px;
+				left: 25px;
+				position: absolute;
+			}		
+			
+			#list_station_title{
+				font-size: 13px;
+				border-bottom: 1px solid #000;
+				padding-bottom: 5px;
+			}
+			#list_station{
+				position: absolute;
+				top: 30px;
+				height: 75px;
+				overflow-x: visible;
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch;
+			}
+			.station-item{
+				float: left;
+				position: relative;
+				margin-bottom: 5px;
+			}
+			.station-item-distance{
+				float: left;
+				width: 50px;
+				font-size: 11px;
+			}
+			.station-item-detail{
+				width: 150px;
+				float: left;
+				text-align: left;
+				font-size: 13px;
+			}
+			.station-item-name{
+				color: #ff0000;	
+			}
+			.station-item-arrow{
+				position: absolute;
+				top: 0px;
+				right: -20px;
+			}
+			.station-item-infor{
+				
+			}
+			#mapinfo{
+				position: absolute;
+				top: 210px;
+				width: 230px;
+				left: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="loading"><img class="loadingimg" src="img/loading.gif"></div>
+			<div id="minimize">
+				<img src="img/minimize.gif" />
+			</div>
+			<div id="page1" class="content" style="display: none">
+				<img src="img/tophalf.png" id="tophalf" />
+				<img src="img/bottomhalf.png" id="bottomhalf"/>
+				<div id="button1">
+					<img src="img/bt1text.png" class="buttontext1"/>
+					<img src="img/button1.png"  class="button1"/>
+				</div>
+				<div id="button2">
+					<img src="img/bt2text.png" class="buttontext2"/>
+					<img src="img/button2.png" class="button2"/>
+				</div>
+				<div id="button3">
+					<img src="img/bt3text.png" class="buttontext3"/>
+					<img src="img/button3.png" class="button3"/>
+				</div>
+				<div id="button4">
+					<img src="img/bt4text.png" class="buttontext4"/>
+					<img src="img/button4.png" class="button4"/>
+				</div>				
+				
+				<img src="img/broughtoyou.png" id="broughttoyou"/>
+				
+				<img src="img/redbanner.png" id="redbanner"/>
+				<img src="img/yourneighbor.png" id="yourneighbor"/>
+				
+				<img src="img/proudtobehere.png" id="proudtobehere"/>
+				
+				<img src="img/logo.png" id="logo"/>
+			</div>
+
+			<!-- page2 -->
+			<div id="page2" class="content" style="display: none">
+				<!-- <img src="img/5.jpg"/> -->
+
+				<img src="img/bg2.png" class="bg2" style="display: block"/>	
+				<img src="img/findastation.png" id="findastation" style="display: none;"/>
+				<img src="img/morningnew.png" id="morningnew" style="display: none"/>
+				<img src="img/morningweather.png" id="morningweather" style="display: none"/>
+				<img src="img/morningtraffic.png" id="morningtraffic" style="display: none"/>
+				
+				<img src="img/logo2.png" id="page2Logo">
+
+				<div class="mapcontent" id="station" style="display: none">
+					<div id="map_station"> </div>
+					<div id="mapinfo">
+						<div id="list_station_title">Found 5 stations within 25 mi.</div>
+						<div id="list_station">
+							<div class="station-item">
+								<div class="station-item-distance">1.3 mi.</div>
+								<div class="station-item-detail">
+									<div class="station-item-name">
+										RUDY'S COUNTRY STORE
+									</div>
+									<div class="station-item-infor">
+										10623 WEST OVER HILLS SAN ANTONIO, TX 78251<br/>
+										1 (210) 520-5239
+									</div>
+								</div>
+								<img class="station-item-arrow" src="img/arrow.png"/>
+							</div>
+							
+							<div class="station-item">
+								<div class="station-item-distance">1.3 mi.</div>
+								<div class="station-item-detail">
+									<div class="station-item-name">
+										RUDY'S COUNTRY STORE
+									</div>
+									<div class="station-item-infor">
+										10623 WEST OVER HILLS SAN ANTONIO, TX 78251<br/>
+										1 (210) 520-5239
+									</div>
+								</div>
+								<img class="station-item-arrow" src="img/arrow.png"/>
+							</div>
+							
+							<div class="station-item">
+								<div class="station-item-distance">1.3 mi.</div>
+								<div class="station-item-detail">
+									<div class="station-item-name">
+										RUDY'S COUNTRY STORE
+									</div>
+									<div class="station-item-infor">
+										10623 WEST OVER HILLS SAN ANTONIO, TX 78251<br/>
+										1 (210) 520-5239
+									</div>
+								</div>
+								<img class="station-item-arrow" src="img/arrow.png"/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mapcontent" id="news" style="display: none">
+					
+				</div>
+
+				<div class="mapcontent" id="weather" style="display: none">					
+				</div>
+
+				<div class="mapcontent"style="display: none" id="traffic" >
+					<div class="map" id="currentraffic"></div>
+					<div class="cityname" id="cityname"></div>
+				</div>
+
+				<!-- footer -->
+				<div class="footer">
+					<div id="page2button1">
+						<img src="img/footertext1.png" class="page2buttontext1"/>
+						<img src="img/button1.png" class="page2button1"/>
+					</div>
+					
+					<div id="page2button2">
+						<img src="img/button2.png" class="page2button2"/>
+						<img src="img/footertext2.png" class="page2buttontext2"/>
+					</div>
+					
+					<div id="page2button3">
+						<img src="img/button3.png" class="page2button3"/>
+						<img src="img/footertext3.png" class="page2buttontext3"/>
+					</div>
+
+					<div id="page2button4">
+						<img src="img/button4.png" class="page2button4"/>
+						<img src="img/footertext4.png" class="page2buttontext4"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="xml2json.js"></script>
+		<script type="text/javascript" src="jquery.xdomainajax.js"></script>
+		<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+		<script type="text/javascript" src="index.js"></script>
+		<script type="text/javascript" src="animation.js"></script>
+	</body>
+</html>

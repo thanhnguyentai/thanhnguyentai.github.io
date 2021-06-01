@@ -1,0 +1,63 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>
+			Phluant Mobile
+		</title>
+		<style type="text/css">
+			#ph_container{z-index:10000;position:relative; display:block; margin:auto; width:320px; height: 50px;}
+			#ph_container .absolute{position:absolute;}
+			#ph_conBanner{z-index:0;position:absolute; display:block; visibility:visible; width:320px; height:50px;overflow:hidden; left:0px; top:0px;background-image:url(img/banner_bg.png);}
+			#banner_logo{display:none;opacity:0;top:6px;left:10px;background:url('img/logo.png');width:139px;height:36px;}
+			#banner_text{display:none;opacity:0;top:6px;right:11px;background:url('img/banner_text.png');width:129px;height:37px;}
+			
+			#ph_conExpand{z-index:10000;position:absolute;display:none;opacity:0; width:320px; height:416px; left:0px; top:0px; overflow:hidden;background-image:url(img/expand_bg.png);}
+			#expand_logo{top:25px;left:91px;background:url('img/logo.png');width:139px;height:36px;display:none;opacity:0;}
+			#clickTag1{display:none;opacity:0;z-index:1;left:0px;bottom:0px;background:url('img/expand_menu_1.png');width:160px;height:44px;cursor:pointer;}
+			#clickTag2{opacity:0;z-index:1;left:0px;bottom:0px;background:url('img/expand_menu_2.png');width:160px;height:44px;cursor:pointer;}
+			#car{left:0px;top:0px;background:url('img/expand_car.png');width:320px;height:416px;display:none;opacity:0;}
+			#expand_text{opacity:0;left:15px;top:252px;background:url('img/expand_text.png');width:252px;height:92px;}
+			#play_video{display:none;opacity:0;background:url('img/expand_btplay.png');width:74px;height:75px;left:123px;top:176px;z-index:20;cursor:pointer;}
+			#expand_close{width:50px;height:50px;top:0px;right:0px;background:url('img/close.png');cursor:pointer;}
+			#videoContainer{width:320px;height:480px;display:none;opacity:0;background:#000;z-index:30;pointer-events:none;}
+			#html5-video-close-button{width:50px;height:50px;top:0px;right:0px;background:url('img/close.png');cursor:pointer;}
+			#video{left:0px;top:88px;}
+			#video_banner{display:none;top:-9px;right:0px;opacity:0;}
+		</style>
+	</head>
+	<body>
+		<div id="ph_container">
+			<div id="ph_conBanner">
+				<div id="banner_logo" class="absolute"></div>
+				<canvas id="video_banner" width="90px" height="68px" class="absolute"></canvas>
+				<div id="banner_text" class="absolute"></div>
+			</div>
+			<div id="ph_conExpand">
+				<div id="car" class="absolute"></div>
+				<div id="expand_logo" class="absolute"></div>
+				<div id="clickTag2" class="absolute"></div>
+				<div id="clickTag1" class="absolute"></div>
+				<div id="expand_text" class="absolute">
+				</div>
+				
+				<div id="expand_close" class="absolute"></div>
+				<div id="play_video" class="absolute"></div>
+				<div id="videoContainer" class="absolute">	
+					
+					<video id="html5-video-element" width="320" height="480" controls="true" src="http://mdn2origin.phluantmobile.net/3/mobilevideo/7710/mb_through%20and%20through%20%282%29_3457.mp4?passive=yes">
+						Your browser does not support HTML5.
+					</video>
+					
+					<!--<canvas id="video" width="320px" height="240px" class="absolute"></canvas>-->
+					<div id="html5-video-close-button" class="absolute">
+					</div>
+				</div>
+			</div>
+			
+			<script type="text/javascript" src="jquery.min.js"></script>
+			<script type="text/javascript" src="320x50_320x416.js"></script>
+		</div>
+	</body>
+</html>
